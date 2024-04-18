@@ -1,5 +1,4 @@
 <?php
-//holaaa
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
 

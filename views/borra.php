@@ -1,6 +1,5 @@
 
 <?php
-// puto el que lo lea
     require '../funcs/conexion.php';
     require '../funcs/funcs.php';
 
