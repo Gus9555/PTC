@@ -1,5 +1,7 @@
 <?php
     session_start();
+
+    // holaaaaa
     // require "conection.php";
     require '../funcs/conexion.php';
     require '../funcs/funcs.php';
