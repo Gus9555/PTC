@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLine</title>
+    <link rel="icon" href="../../assets/boss/images/favicon.png">
+</head>
+<body>
+    
+</body>
+</html>
+
 <?php
     session_start();
     // require "conection.php";
@@ -30,7 +43,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <title>Zegva - Responsive Admin & Dashboard Template | Themesdesign</title>
+    <title></title>
     <meta content="Responsive admin theme build on top of Bootstrap 4" name="description" />
     <meta content="Themesdesign" name="author" />
     <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -288,7 +301,13 @@
                                                 <td><?php echo $row['usuario']; ?></td>
                                                 <td><?php echo $row['correo']; ?></td>
                                                 <td><?php echo $row['nombre']; ?></td>
-                                                <td><?php echo $row['id_tipo']; ?></td>
+                                                <td><?php if  ($row['id_tipo']==2){
+
+                                                    echo "usuario";
+                                                    
+                                                } else if ($row['id_tipo']==1){
+                                                    echo "admin";
+                                                }; ?></td>
                                                 </tr>
                                                 <?php } ?>
                                         </tbody>

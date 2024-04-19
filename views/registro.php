@@ -21,7 +21,7 @@ require '../funcs/conexion.php';
 require '../funcs/funcs.php';
 
 $errors = array();
-if (!empty ($_POST)) {
+if (!empty($_POST)) {
 
     $nombre = $mysqli->real_escape_string($_POST['nombre']); //evita sql inyection
     $usuario = $mysqli->real_escape_string($_POST['usuario']);
@@ -34,17 +34,15 @@ if (!empty ($_POST)) {
     $tipo_usuario = 2; //indica privilegios que tendra el usuario NO ASIGNAREMOS ADMINS
     // $secret = ''; //colocar clave secreta del captcha.
 
-    if (isNull($nombre, $usuario, $password, $passwordc, $email)) 
-    {
+    if (isNull($nombre, $usuario, $password, $passwordc, $email)) {
         echo '<p><script>Swal.fire({
             title: "ERROR",
             text: "Do not leave empty fields",
             icon: "error"
-            });</script></p>'; 
+            });</script></p>';
     }
 
-    if (!isEmail($email)) 
-    {
+    if (!isEmail($email)) {
         echo '<p><script>Swal.fire({
             title: "ERROR",
             text: "Unvalid E-Mail address",
@@ -52,8 +50,7 @@ if (!empty ($_POST)) {
             });</script></p>';
     }
 
-    if (!validaPassword($password, $passwordc)) 
-    {
+    if (!validaPassword($password, $passwordc)) {
         $errors[] = "Both passwords need to match";
         echo '<p><script>Swal.fire({
             title: "ERROR",
@@ -62,8 +59,7 @@ if (!empty ($_POST)) {
             });</script></p>';
     }
 
-    if (usuarioExiste($usuario)) 
-    {
+    if (usuarioExiste($usuario)) {
         $errors[] = "The username: $usuario, already exists";
         echo '<p><script>Swal.fire({
             title: "ERROR",
@@ -72,8 +68,7 @@ if (!empty ($_POST)) {
             });</script></p>';
     }
 
-    if (emailExiste($email)) 
-    {
+    if (emailExiste($email)) {
         $errors[] = "The E-Mail: $email already exists";
         echo '<p><script>Swal.fire({
             title: "ERROR",
@@ -82,8 +77,7 @@ if (!empty ($_POST)) {
             });</script></p>';
     }
 
-    if (count($errors) == 0) 
-    {
+    if (count($errors) == 0) {
         //esto hace que las contraseñas tenga el encripatado en la base de datos
         $pass_hash = hashPassword($password);
         $token = generateToken();
@@ -161,7 +155,7 @@ if (!empty ($_POST)) {
 
 <body data-spy="scroll" data-target=".fixed-top"><a href="body" class="back-to-top page-scroll">Back to Top</a>
 
-    
+
 
 
     <!-- Navigation -->
@@ -172,7 +166,8 @@ if (!empty ($_POST)) {
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.php"><img src="../assets/boss/images/logo.png" alt="alternative"></a>
+            <a class="navbar-brand logo-image" href="index.php"><img src="../assets/boss/images/logo.png"
+                    alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -183,10 +178,19 @@ if (!empty ($_POST)) {
             <!-- end of mobile menu toggle button -->
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+                <!-- Preloader -->
+                <div class="spinner-wrapper">
+                    <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                </div>
+                <!-- end of preloader -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">HOME <span
-                                class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#features">FEATURES</a>
@@ -230,14 +234,14 @@ if (!empty ($_POST)) {
         <div class="container">
             <div class="row">
                 <!-- Preloader -->
-    <div class="spinner-wrapper" style="display: none;">
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-        </div>
-    </div>
-    <!-- end of preloader -->
+                <div class="spinner-wrapper" style="display: none;">
+                    <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                </div>
+                <!-- end of preloader -->
                 <div class="col-lg-12">
                     <h1>Sign Up</h1>
                     <br>
@@ -248,32 +252,37 @@ if (!empty ($_POST)) {
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="nombre">Full name</label>
-                                        <input class="form-control-input" id="nombre" name="nombre" type="text" placeholder="Enter Full name" required />
+                                        <input class="form-control-input" id="nombre" name="nombre" type="text"
+                                            placeholder="Enter Full name" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="usuario">Username</label>
-                                        <input class="form-control-input" id="usuario" name="usuario" type="text" placeholder="Enter Username" required/>
+                                        <input class="form-control-input" id="usuario" name="usuario" type="text"
+                                            placeholder="Enter Username" required />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                <input class="form-control-input" id="inputEmailAddress" name="email" type="email" aria-describedby="emailHelp" placeholder="Example@gmail.com" required />
+                                <input class="form-control-input" id="inputEmailAddress" name="email" type="email"
+                                    aria-describedby="emailHelp" placeholder="Example@gmail.com" required />
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputPassword">Password</label>
-                                        <input class="form-control-input" id="inputPassword" name="password" type="password"  required />
+                                        <input class="form-control-input" id="inputPassword" name="password"
+                                            placeholder="password" type="password" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputConfirmPassword">Confirm
                                             Password</label>
-                                        <input class="form-control-input" id="inputConfirmPassword" name="passwordc" type="password" placeholder="Confirm password" required />
+                                        <input class="form-control-input" id="inputConfirmPassword" name="passwordc"
+                                            type="password" placeholder="Confirm password" required />
                                     </div>
                                 </div>
                             </div>
@@ -294,7 +303,8 @@ if (!empty ($_POST)) {
     <script src="../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="../assets/boss/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="../assets/boss/js/jquery.easing.min.js"></script>
+    <!-- jQuery Easing for smooth scrolling between anchors -->
     <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
     <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!-- <script src="boss/js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
