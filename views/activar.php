@@ -1,4 +1,5 @@
 <?php
+//parte de yoha
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
 
