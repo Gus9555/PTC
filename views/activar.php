@@ -1,5 +1,6 @@
 <?php
-//parte de yoha 2
+//holaaaaaaaaa
+
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
 
