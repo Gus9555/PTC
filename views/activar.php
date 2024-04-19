@@ -1,4 +1,5 @@
 <?php
+//hola
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
 
