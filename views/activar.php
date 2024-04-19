@@ -10,4 +10,4 @@ if (isset($_GET["id"]) and isset($_GET['val'])) {
     $mensaje = validaIdToken($idUsuario, $token);
 }
 
-?>
+?>////////////////////
