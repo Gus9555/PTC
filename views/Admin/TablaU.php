@@ -301,13 +301,7 @@
                                                 <td><?php echo $row['usuario']; ?></td>
                                                 <td><?php echo $row['correo']; ?></td>
                                                 <td><?php echo $row['nombre']; ?></td>
-                                                <td><?php if  ($row['id_tipo']==2){
-
-                                                    echo "usuario";
-                                                    
-                                                } else if ($row['id_tipo']==1){
-                                                    echo "admin";
-                                                }; ?></td>
+                                                <td><?php if  ($row['id_tipo']==2){echo "usuario";} else if ($row['id_tipo']==1){echo "admin";}; ?></td>
                                                 </tr>
                                                 <?php } ?>
                                         </tbody>
