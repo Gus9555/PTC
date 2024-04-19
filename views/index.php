@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>LifeLine</title>
+    <link rel="icon" href="../assets/boss/images/favicon.png">
 </head>
 
 <body>

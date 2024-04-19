@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLine</title>
+    <!-- Favicon  -->
+    <link rel="icon" href="../assets/boss/images/favicon.png">
+
+</head>
+<body>
+    
+</body>
+</html>
+
 <?php
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
@@ -30,7 +45,7 @@ if (!verificaTokenPass($user_id, $token)) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Website Title -->
-    <title>Change Password</title>
+    <title>LifeLine</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"

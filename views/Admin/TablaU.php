@@ -62,8 +62,8 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <a href="index.html" class="logo">
-                    <img src="../../assets/images/logo-light.png" class="logo-lg" alt="" height="38">
-                    <img src="../../assets/images/logo-sm.png" class="logo-sm" alt="" height="24">
+                    <img src="../../assets/boss/images/logo.png" class="logo-lg" alt="" height="45">
+                    <img src="../../assets/boss/images/header-software-app.png" class="logo-sm" alt="" height="34">
                 </a>
             </div>
 
