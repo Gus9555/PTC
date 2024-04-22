@@ -285,25 +285,36 @@
                                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>Index</th>
+                                                <th>Id</th>
                                                 <th>Usuario</th>
                                                 <th>Correo</th>
                                                 <th>Nombre</th>
                                                 <th>Tipo Usuario</th>
+                                                
+<th>Eliminar</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
-                                        <?php $indice = 0;?>
-                                            <?php while($row = $resultado->fetch_assoc()){ ?>
-                                                <tr>
-                                                <td><?php echo $indice = $indice+1; ?>
+                                        <?php $indice = 0; ?>
+                                        <?php while ($row = $resultado->fetch_assoc()) { ?>
+                                            <tr>
+                                                <td><?php echo $row['id']; ?></td>
                                                 <td><?php echo $row['usuario']; ?></td>
                                                 <td><?php echo $row['correo']; ?></td>
                                                 <td><?php echo $row['nombre']; ?></td>
-                                                <td><?php if  ($row['id_tipo']==2){echo "usuario";} else if ($row['id_tipo']==1){echo "admin";}; ?></td>
-                                                </tr>
-                                                <?php } ?>
+                                                <td><?php if ($row['id_tipo'] == 2) {
+                                                    echo "usuario";
+                                                } else if ($row['id_tipo'] == 1) {
+                                                    echo "admin";
+                                                }
+                                                ; ?></td>
+                                        
+                                                <td>
+                                                    <a href="eliminar.php?id=<?php echo $row["id"] ?>">Eliminar</a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                         </tbody>
                                     </table>
 
