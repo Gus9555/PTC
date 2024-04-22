@@ -10,16 +10,10 @@
     <title>LifeLine</title>
     <link rel="icon" href="../assets/boss/images/favicon.png">
 </head>
-
-<body>
-
-</body>
-
 </html>
 <?php
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
-
 $errors = array();
 if (!empty($_POST)) {
 
@@ -78,19 +72,28 @@ if (!empty($_POST)) {
     }
 
     if (count($errors) == 0) {
+        function generador(){
+            $n = range(10, 20);
+            shuffle($n);
+            $resultado = '';
+            for ($x = 0; $x < 4; $x++) {
+                $resultado .= $n[$x].' ';
+            }
+            return $resultado;
+        }
         //esto hace que las contraseñas tenga el encripatado en la base de datos
         $pass_hash = hashPassword($password);
         $token = generateToken();
+        $codigo = generador();
         //convertimos el proceso del registro el una sola variable para mandarla a llamar 
-        $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario);
+        $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo);
         //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
         if ($registro > 0) {
 
-            //esta es la variable que redireccionara al usuario en el correo que se le enviara
-            $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
+            //$url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
             //el asuto y cuerpo es lo que ira en el mesaje del correo
-            $asunto = 'Confirm E-Mail - LIFELINE';
-            $cuerpo = "Deer $nombre: <br /><br /> For joining lifeline, click the next link. <a href='$url'>Confirm E-Mail</a>";
+            $asunto = 'PIN - LIFELINE';
+            $cuerpo = "Deer $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo " ;
             //aca se envia el correo usando las anteriores mencionadas variables
             if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
 
