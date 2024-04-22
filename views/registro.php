@@ -82,7 +82,7 @@ if (!empty($_POST)) {
         $pass_hash = hashPassword($password);
         $token = generateToken();
         //convertimos el proceso del registro el una sola variable para mandarla a llamar 
-        $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $activo, $token, $tipo_usuario);
+        $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario);
         //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
         if ($registro > 0) {
 
@@ -96,7 +96,7 @@ if (!empty($_POST)) {
 
                 echo '<p><script>swal({
                     title: "Good job!",
-                    text: "Check your E-Mail",
+                    text: "Succesfully registered",
                     icon: "success",
                      }).then(function() {
                     window.location = "../views/index.php";
@@ -105,7 +105,7 @@ if (!empty($_POST)) {
             } else {
                 echo '<p><script>Swal.fire({
                     title: "Opsss!",
-                    text: "We got a problem sending the E-Mail, try again",
+                    text: "We got a problem, try again",
                     type: "error"
                     }).then(function() {
                     window.location = "../views/registro.php";

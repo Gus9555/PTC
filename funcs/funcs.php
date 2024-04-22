@@ -103,12 +103,12 @@
     }
 
 //metodo para registrar el usuario
-    function registraUsuario($usuario, $pass_hash, $nombre, $email, $activo, $token, $tipo_usuario){
+    function registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario){
         //conexion a la base de datos 
         global $mysqli;
         //inserta los datos ingresados a la base de datos en su respectivo campo
-        $stmt = $mysqli->prepare("INSERT INTO usuarios (usuario, password, nombre, correo, activacion, token, id_tipo) VALUES(?,?,?,?,?,?,?)");
-        $stmt->bind_param('ssssisi', $usuario, $pass_hash, $nombre, $email, $activo, $token, $tipo_usuario);
+        $stmt = $mysqli->prepare("INSERT INTO usuarios (usuario, password, nombre, correo, token, id_tipo) VALUES(?,?,?,?,?,?)");
+        $stmt->bind_param('sssssi', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario);
         //bucle que al momento del execute con la conexion $mysqli insertara el id
        
         if($stmt->execute()){
@@ -118,8 +118,7 @@
             return 0;
         }
     }
-
-    function enviarEmail($email, $nombre, $asunto, $cuerpo){
+        function enviarEmail($email, $nombre, $asunto, $cuerpo){
         
 
         require("../plugins/PHPMailer-master/src/PHPMailer.php");
