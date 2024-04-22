@@ -16,6 +16,8 @@
 <?php
     use PHPMailer\PHPMailer\PHPMailer;
 
+    
+
     // funcion de validar espacios vacios
     function isNull($nombre, $user, $pass, $pass_con, $email){
         if(strlen(trim($nombre)) < 1 || strlen(trim($user)) < 1 || strlen(trim($email)) < 1){
@@ -103,12 +105,12 @@
     }
 
 //metodo para registrar el usuario
-    function registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario){
+    function registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo){
         //conexion a la base de datos 
         global $mysqli;
         //inserta los datos ingresados a la base de datos en su respectivo campo
-        $stmt = $mysqli->prepare("INSERT INTO usuarios (usuario, password, nombre, correo, token, id_tipo) VALUES(?,?,?,?,?,?)");
-        $stmt->bind_param('sssssi', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario);
+        $stmt = $mysqli->prepare("INSERT INTO usuarios (usuario, password, nombre, correo, token, id_tipo, codigo) VALUES(?,?,?,?,?,?,?)");
+        $stmt->bind_param('sssssis', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo);
         //bucle que al momento del execute con la conexion $mysqli insertara el id
        
         if($stmt->execute()){
@@ -117,6 +119,8 @@
              //y si no hara el return en falso 
             return 0;
         }
+    
+
     }
         function enviarEmail($email, $nombre, $asunto, $cuerpo){
         
@@ -251,7 +255,7 @@
 
             // valida si el usuario esta activo////////////////////////////////////////////////
 
-            if(isActivo($usuario)){
+           
                 // aca ya empieza a verificar si las contraseñas que estan insertadas en la base de datos conciden////////////////////////////////////////////////
 
                 $stmt->bind_result($id, $id_tipo, $passwd, $nombre);
@@ -287,13 +291,7 @@
                         });</script></p>';
                         
                 }
-            }else{
-                echo '<p><script>Swal.fire({
-                    title: "ERROR",
-                    text: "The account needs to be active, check your E-Mail",
-                    icon: "error"
-                    });</script></p>';
-            }
+            
         }else{
             echo '<p><script>Swal.fire({
                 title: "ERROR",

@@ -35,6 +35,7 @@ if (!empty($_POST)) {
 
     }
     $errors[] = login($usuario, $password);
+   
 }
 
 ?>
