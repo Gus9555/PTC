@@ -25,5 +25,6 @@ if(mysqli_num_rows($re) >0){
  header('Content-type: application/json; charset=utf-8');
  echo json_encode($jsondata);
  exit();
+ //dagreda
 
 ?>
