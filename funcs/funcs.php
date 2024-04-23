@@ -122,7 +122,7 @@ function registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_us
 	$estatus = "Activo";
     
      //inserta los datos ingresados a la base de datos en su respectivo campo
-     $stmt = $mysqli->prepare("INSERT INTO users (usuario, password, nombre, correo, token, id_tipo, codigo, image, estatus, fecha_registro) VALUES(?,?,?,?,?,?,?,?,?,?)");
+     $stmt = $mysqli->prepare("INSERT INTO users (usuario, password, nombre, correo, token, id_tipo, codigo, imagen, estatus, fecha_registro) VALUES(?,?,?,?,?,?,?,?,?,?)");
      $stmt->bind_param('sssssissss', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro);
      //bucle que al momento del execute con la conexion $mysqli insertara el id
      if($stmt->execute()){
@@ -198,6 +198,18 @@ function isNullLogin($usuario, $password)
         return false;
     }
 }
+
+function activarUsuario($id){
+    global $mysqli;
+
+    $stmt = $mysqli->prepare("UPDATE users SET activacion=1 WHERE id = ?");
+    $stmt->bind_param("s", $id);
+    $result = $stmt->execute();
+    $stmt->close();
+
+    return $result;
+}
+
 // metodo para el login////////////////////////////////////////////////
 function login($usuario, $password)
 {
@@ -223,23 +235,29 @@ function login($usuario, $password)
 
         // si las contraseñas consicen procede hacer el metodo de redireccion si es admin por medio de tipo de id 2, o si es 1 lo redirecciona con la vista usuario////////////////////////////////////////////////
         if ($validaPass) {
+            // Redireccionar según el tipo de usuario
             if ($id_tipo == "2") {
+                // Redireccionar al panel de usuario
                 lastSession($id);
                 $_SESSION['id_usuario'] = $id;
                 $_SESSION['tipo_usuario'] = $id_tipo;
                 $_SESSION['nombre'] = $nombre;
-                header("location: ../views/view_user.php"); // esta linea es la que designamos a donde lo redireccionara si es usuario
-            } else {
+                header("location: ../views/view_user.php");
+            } elseif ($id_tipo == "1") {
+                // Redireccionar al panel de administrador
                 lastSession($id);
                 $_SESSION['id_usuario'] = $id;
                 $_SESSION['tipo_usuario'] = $id_tipo;
                 $_SESSION['nombre'] = $nombre;
-                header("location: ../views/Admin/Admin.php"); // esta linea es la que designamos a donde lo redireccionara si es admin
-
-
+                header("location: ../views/Admin/Admin.php");
+            } elseif ($id_tipo == "3") {
+                // Redireccionar al panel de soporte
+                lastSession($id);
+                $_SESSION['id_usuario'] = $id;
+                $_SESSION['tipo_usuario'] = $id_tipo;
+                $_SESSION['nombre'] = $nombre;
+                header("location: ../views/support/home.php");
             }
-
-
             // estos elses son las alertas   
         } else {
             echo '<p><script>Swal.fire({
@@ -271,6 +289,51 @@ function lastSession($id)
     $stmt->execute();
     $stmt->close();
 }
+
+function validaIdToken($id, $token){
+    global $mysqli;
+
+    $stmt = $mysqli->prepare("SELECT activacion FROM users WHERE id = ? AND token = ? LIMIT 1");
+    $stmt->bind_param("is", $id, $token);
+    $stmt->execute();
+    $stmt->store_result();
+    $rows = $stmt->num_rows;
+
+    if($rows > 0){
+
+        $stmt->bind_result($activacion);
+        $stmt->fetch();
+
+        if($activacion == 1){
+            $msg = "This account is active.";
+             echo '<p><script>Swal.fire({
+                title: "Done!",
+                text: "Active",
+                 type: "success"
+                 }).then(function() {
+                 window.location = "../views/index.php";
+                 });</script></p>';
+        }else{
+            if(activarUsuario($id)){
+                $msg = 'Active account.';
+                echo '<p><script>Swal.fire({
+                    title: "Done!",
+                    text: "Active",
+                    icon: "success"
+                    }).then(function() {
+                    window.location = "../views/index.php";
+                    });</script></p>';
+            }else{
+                $msg = 'We got an error with the account activation';
+            }
+        }
+    }else{
+        $msg = 'There is no record with this account.';
+    }
+
+    return $msg;
+}
+
 
 function isActivo($usuario)
 {

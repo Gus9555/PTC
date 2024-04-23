@@ -17,13 +17,10 @@
 
 </html>
 <?php
-
-// require "conection.php";
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
 
 session_start();
-
 $errors = array();
 
 if (!empty($_POST)) {

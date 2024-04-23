@@ -1,5 +1,5 @@
 <?php
-include('../funcs/conexion.php');
+include('../config/config.php');
 
 session_start();
 $IdUserSession = $_REQUEST['id'];

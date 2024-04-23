@@ -1,5 +1,5 @@
 <?php
-include('config/config.php');
+include('../config/config.php');
 $jsondata = array();
 
 $idConectado = $_REQUEST['idConectado'];
@@ -25,6 +25,5 @@ if(mysqli_num_rows($re) >0){
  header('Content-type: application/json; charset=utf-8');
  echo json_encode($jsondata);
  exit();
- //dagreda
 
 ?>

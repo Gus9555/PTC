@@ -52,7 +52,7 @@
   include('config/config.php');
   $IdUser                 = $_REQUEST['id'];
   $idConectado            = $_REQUEST['idConectado'];
-  $email_user             = $_REQUEST['correo'];
+  $email_user             = $_REQUEST['email_user'];
 
   //Actualizando los mensajes no leidos ya que estoy entrando en mis mensajes
   if (!empty($IdUser)) {

@@ -1,8 +1,19 @@
 <?php
 session_start();
 header("Content-Type: text/html;charset=utf-8");
+
 include('config/config.php');
-//pruebaaaaaaaaaaaaaaa
+
+if (isset($_SESSION['correo']) != "") {
+  $email_user    = $_SESSION['correo'];
+  $imgPerfil    = $_SESSION['imagen'];
+  $idConectado  = $_SESSION['id'];
+} else {
+  echo '<script type="text/javascript">
+    alert("Debe Iniciar Sesion");
+    window.location.assign("../index.php");
+    </script>';
+}
 ?>
 
   <!DOCTYPE html>
@@ -27,6 +38,7 @@ include('config/config.php');
       }
     </style>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+    
   </head>
 
   <body>
@@ -103,5 +115,5 @@ include('config/config.php');
   </body>
 
   </html>
+
 <?php 
-?>

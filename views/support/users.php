@@ -31,12 +31,12 @@ if (isset($_SESSION['correo']) != "") {
     </div>
 
     <div class="col-sm-1 col-xs-1 heading-compose  pull-right">
-      <a href="./index.php?id=<?php echo $idConectado; ?>">
+      <a href="acciones/salir.php?id=<?php echo $idConectado; ?>">
         <i class="zmdi zmdi-power" style="font-size: 25px;"></i>
       </a>
     </div>
     <div class="col-sm-1 col-xs-1  pull-right icohome">
-      <a href="hom.php">
+      <a href="home.php">
         <i class="zmdi zmdi-refresh zmdi-hc-2x"></i>
       </a>
     </div>
@@ -124,7 +124,7 @@ if (isset($_SESSION['correo']) != "") {
         var id = $(this).attr('id');
         var idConectado = "<?php echo $idConectado; ?>";
         var email_user = "<?php echo $email_user; ?>";
-        var dataString = 'id=' + id + '&idConectado=' + idConectado + '&correo=' + email_user;
+        var dataString = 'id=' + id + '&idConectado=' + idConectado + '&email_user=' + email_user;
 
         var ruta = "UserSeleccionado.php";
         $('#capausermsj').html('<img src="assets/img/cargando.gif" class="ImgCargando"/>');

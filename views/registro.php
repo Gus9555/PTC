@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>LifeLine</title>
-    <link rel="icon" href="../assets/boss/images/favicon.png">
-</head>
-
-</html>
 <?php
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
@@ -30,47 +17,58 @@ if (!empty($_POST)) {
     $tipo_usuario = 2; //indica privilegios que tendra el usuario NO ASIGNAREMOS ADMINS
     // $secret = ''; //colocar clave secreta del captcha.
 
-    if (isNull($nombre, $usuario, $password, $passwordc, $email)) {
-        echo '<p><script>Swal.fire({
-            title: "ERROR",
+    trim($nombre);
+    trim($usuario);
+    trim($password);
+    trim($email);
+    if ($nombre == "" || $usuario == "" || $password == "" || $passwordc == "" || $email == "") {
+        echo '<p><script>swal({
+            title: "ERROR!",
             text: "Do not leave empty fields",
-            icon: "error"
+            icon: "error",
             });</script></p>';
-    }
+        $i = 100;
+        $errors[] = "blank spaces";
 
-    if (!isEmail($email)) {
-        echo '<p><script>Swal.fire({
+    } else {
+
+        if (!isEmail($email)) {
+            echo '<p><script>Swal.fire({
             title: "ERROR",
             text: "Unvalid E-Mail address",
             icon: "error"
             });</script></p>';
-    }
+        } else {
 
-    if (!validaPassword($password, $passwordc)) {
-        $errors[] = "Both passwords need to match";
-        echo '<p><script>Swal.fire({
+            if (!validaPassword($password, $passwordc)) {
+                $errors[] = "Both passwords need to match";
+                echo '<p><script>Swal.fire({
             title: "ERROR",
             text: "Both passwords need to match",
             icon: "error"
             });</script></p>';
-    }
+            } else {
 
-    if (usuarioExiste($usuario)) {
-        $errors[] = "The username: $usuario, already exists";
-        echo '<p><script>Swal.fire({
+                if (usuarioExiste($usuario)) {
+                    $errors[] = "The username: $usuario, already exists";
+                    echo '<p><script>Swal.fire({
             title: "ERROR",
             text: "This username already exists",
             icon: "error"
             });</script></p>';
-    }
+                } else {
 
-    if (emailExiste($email)) {
-        $errors[] = "The E-Mail: $email already exists";
-        echo '<p><script>Swal.fire({
+                    if (emailExiste($email)) {
+                        $errors[] = "The E-Mail: $email already exists";
+                        echo '<p><script>Swal.fire({
             title: "ERROR",
             text: "This E-Mail already exists",
             icon: "error"
             });</script></p>';
+                    }
+                }
+            }
+        }
     }
 
     if (count($errors) == 0) {
@@ -99,16 +97,16 @@ if (!empty($_POST)) {
         //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
         if ($registro > 0) {
 
-            //$url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
+            $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
             //el asuto y cuerpo es lo que ira en el mesaje del correo
             $asunto = 'PIN - LIFELINE';
-            $cuerpo = "Deer $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo ";
+            $cuerpo = "Deer $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo <br /><br /> Confirm your identity <a href='$url'>Confirm E-Mail</a>";
             //aca se envia el correo usando las anteriores mencionadas variables
             if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
 
                 echo '<p><script>swal({
                     title: "Good job!",
-                    text: "Succesfully registered",
+                    text: "Succesfully, Confirm your identity in your email ",
                     icon: "success",
                      }).then(function() {
                     window.location = "../views/index.php";
@@ -141,16 +139,20 @@ if (!empty($_POST)) {
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>LifeLine</title>
+    <link rel="icon" href="../assets/boss/images/favicon.png">
 
     <!-- SEO Meta Tags -->
     <meta name="description"
         content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
     <meta name="author" content="Inovatik">
 
-    <!-- Website Title -->
-    <title>Sign Up</title>
+   
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
@@ -265,28 +267,28 @@ if (!empty($_POST)) {
                                     <div class="form-group">
                                         <label class="small mb-1" for="nombre">Full name</label>
                                         <input class="form-control-input" id="nombre" name="nombre" type="text"
-                                            placeholder="Enter Full name" required />
+                                            placeholder="Enter Full name"  />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="usuario">Username</label>
                                         <input class="form-control-input" id="usuario" name="usuario" type="text"
-                                            placeholder="Enter Username" required />
+                                            placeholder="Enter Username"  />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1" for="inputEmailAddress">Email</label>
                                 <input class="form-control-input" id="inputEmailAddress" name="email" type="email"
-                                    aria-describedby="emailHelp" placeholder="Example@gmail.com" required />
+                                    aria-describedby="emailHelp" placeholder="Example@gmail.com"  />
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputPassword">Password</label>
                                         <input class="form-control-input" id="inputPassword" name="password"
-                                            placeholder="password" type="password" required />
+                                            placeholder="password" type="password"  />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -294,16 +296,16 @@ if (!empty($_POST)) {
                                         <label class="small mb-1" for="inputConfirmPassword">Confirm
                                             Password</label>
                                         <input class="form-control-input" id="inputConfirmPassword" name="passwordc"
-                                            type="password" placeholder="Confirm password" required />
+                                            type="password" placeholder="Confirm password"  />
                                     </div>
                                 </div>
                                 <br />
                                 <div style="width: 350px; margin: 0 auto;"> <!-- this div just for demo display -->
                                     <label class="dropimage miniprofile">
-                                        Ingrese una foto de perfil
+                                      Enter a profile picture
                                         <br />
                                         <br />
-                                        <input type="file" id="imagenPerfil" name="imagenPerfil" title="Elegir imagen" required="required"
+                                        <input type="file" id="imagenPerfil" name="imagenPerfil" title="Elegir imagen" 
                                             accept="image/*">
                                     </label>
                                 </div>
