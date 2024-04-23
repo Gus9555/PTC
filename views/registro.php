@@ -10,6 +10,7 @@
     <title>LifeLine</title>
     <link rel="icon" href="../assets/boss/images/favicon.png">
 </head>
+
 </html>
 <?php
 require '../funcs/conexion.php';
@@ -22,6 +23,7 @@ if (!empty($_POST)) {
     $password = $mysqli->real_escape_string($_POST['password']);
     $passwordc = $mysqli->real_escape_string($_POST['passwordc']);
     $email = $mysqli->real_escape_string($_POST['email']);
+
     // $captcha = $mysqli->real_escape_string($_POST['g-recaptcha-response']);
 
     $activo = 0; //indica que al registrar el usuario este desactivado
@@ -72,28 +74,35 @@ if (!empty($_POST)) {
     }
 
     if (count($errors) == 0) {
-        function generador(){
-            $n = range(10, 20);
+        function generador()
+        {
+            $n = range(11, 50);
             shuffle($n);
             $resultado = '';
             for ($x = 0; $x < 4; $x++) {
-                $resultado .= $n[$x].' ';
+                $resultado .= $n[$x] . ' ';
             }
             return $resultado;
         }
         //esto hace que las contraseñas tenga el encripatado en la base de datos
         $pass_hash = hashPassword($password);
+        ///////////////
         $token = generateToken();
-        $codigo = generador();
+         $codigo = generador();
+        $hora = date('h:i a', time() - 3600 * date('I'));
+        $fecha = date("d/m/Y");
+        $fechaRegistro = $fecha . " " . $hora;
+        $estatus = "Activo";
+        $image = $_POST["imagenPerfil"];
         //convertimos el proceso del registro el una sola variable para mandarla a llamar 
-        $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo);
+        $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro);
         //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
         if ($registro > 0) {
 
             //$url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
             //el asuto y cuerpo es lo que ira en el mesaje del correo
             $asunto = 'PIN - LIFELINE';
-            $cuerpo = "Deer $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo " ;
+            $cuerpo = "Deer $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo ";
             //aca se envia el correo usando las anteriores mencionadas variables
             if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
 
@@ -288,6 +297,18 @@ if (!empty($_POST)) {
                                             type="password" placeholder="Confirm password" required />
                                     </div>
                                 </div>
+                                <br />
+                                <div style="width: 350px; margin: 0 auto;"> <!-- this div just for demo display -->
+                                    <label class="dropimage miniprofile">
+                                        Ingrese una foto de perfil
+                                        <br />
+                                        <br />
+                                        <input type="file" id="imagenPerfil" name="imagenPerfil" title="Elegir imagen" required="required"
+                                            accept="image/*">
+                                    </label>
+                                </div>
+
+
                             </div>
                             <div class="form-group mt-4 mb-0"><button type="submit"
                                     class="form-control-submit-button">Create Account</button></div>

@@ -2,6 +2,39 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>LifeLine</title>
+    <link rel="icon" href="../assets/boss/images/favicon.png">
+</head>
+
+<body>
+
+</body>
+
+</html>
+<?php
+    session_start();
+
+    if(!isset($_SESSION['id_usuario'])){
+        echo '<p><script>Swal.fire({
+            title: "Warning",
+            text: "LogIn again"
+            }).then(function() {
+            window.location = "../../views/index.php";
+            });</script></p>';
+
+    }
+
+   
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -14,6 +47,9 @@
 
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="../../plugins/morris/morris.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../../assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
@@ -21,6 +57,7 @@
     <link href="../../assets/css/style2.css" rel="stylesheet" type="text/css">
 
 </head>
+
 
 <body>
 
@@ -80,7 +117,7 @@
 
                     <!-- notification -->
                     <li class="dropdown notification-list list-inline-item">
-                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="" role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="fas fa-bell noti-icon"></i>
                             <span class="badge badge-pill badge-danger noti-icon-badge">3</span>
                         </a>
@@ -140,7 +177,7 @@
                                 <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
                                 <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                                <a class="dropdown-item text-danger" href="../../views/logout.php"><i class="mdi mdi-power text-danger"></i> Logout</a>
                             </div>
                         </div>
                     </li>
