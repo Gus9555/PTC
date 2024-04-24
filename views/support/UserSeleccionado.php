@@ -46,24 +46,52 @@
 <body>
 
   <?php
-  sleep(1);
-  header("Content-Type: text/html;charset=utf-8");
-
+  session_start();
   include('config/config.php');
-  $IdUser                 = $_REQUEST['id'];
-  $idConectado            = $_REQUEST['idConectado'];
-  $email_user             = $_REQUEST['email_user'];
-
-  //Actualizando los mensajes no leidos ya que estoy entrando en mis mensajes
-  if (!empty($IdUser)) {
-    $leyendoMsj = ("UPDATE msjs SET leido = 'SI' WHERE  user_id='$IdUser' AND to_id='$idConectado' ");
-    $queryLeerMsjs = mysqli_query($con, $leyendoMsj);
-  }
-
-  $QueryUserSeleccionado = ("SELECT * FROM users WHERE id='$IdUser' LIMIT 1 ");
-  $QuerySeleccionado     = mysqli_query($con, $QueryUserSeleccionado);
-
-  while ($rowUser = mysqli_fetch_array($QuerySeleccionado)) {
+  
+  if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['imagen']) && isset($_SESSION['nombre'])) {
+      $idConectado = $_REQUEST['idConectado'];
+      $email_user = $_REQUEST['email_user'];
+  
+      // Verificar si el usuario en sesión es de tipo 3
+      $QueryTipoUsuario = "SELECT id_tipo FROM users WHERE id = '$idConectado'";
+      $resultTipoUsuario = mysqli_query($con, $QueryTipoUsuario);
+      $rowTipoUsuario = mysqli_fetch_assoc($resultTipoUsuario);
+      $idTipoUsuario = $rowTipoUsuario['id_tipo'];
+  
+      // Si el usuario es de tipo 3, ajustar la consulta de mensajes
+      if ($idTipoUsuario == 3) {
+          $IdUser = $_REQUEST['id'];
+          $QueryUserSeleccionado = "SELECT * FROM users WHERE id='$IdUser'";
+          $QuerySeleccionado = mysqli_query($con, $QueryUserSeleccionado);
+          $rowUser = mysqli_fetch_array($QuerySeleccionado);
+  
+          // Consulta de mensajes para usuarios tipo 3
+          $Msjs = "SELECT * FROM msjs WHERE (user_id = '$idConectado' AND to_id = '$IdUser') OR (user_id = '$IdUser' AND to_id = '$idConectado') ORDER BY id ASC";
+      } else {
+          // Si no es tipo 3, consulta de mensajes estándar
+          $IdUser = $_REQUEST['id'];
+          $QueryUserSeleccionado = "SELECT * FROM users WHERE id='$IdUser'";
+          $QuerySeleccionado = mysqli_query($con, $QueryUserSeleccionado);
+          $rowUser = mysqli_fetch_array($QuerySeleccionado);
+  
+          $QueryUserClick = "SELECT UserIdSession FROM clickuser WHERE UserIdSession='$idConectado' LIMIT 1";
+          $QueryClick = mysqli_query($con, $QueryUserClick);
+          $veririficaClick = mysqli_num_rows($QueryClick);
+  
+          if ($veririficaClick == 0) {
+              $InserClick = "INSERT INTO clickuser (UserIdSession,clickUser) VALUES ('$idConectado','$IdUser')";
+              $ResulInsertClick = mysqli_query($con, $InserClick);
+          } else {
+              $UpdateClick = "UPDATE clickuser SET clickUser='$IdUser' WHERE UserIdSession='$idConectado'";
+              $ResultUpdateClick = mysqli_query($con, $UpdateClick);
+          }
+  
+          // Consulta de mensajes estándar
+          $Msjs = "SELECT * FROM msjs WHERE (user_id = '$idConectado' AND to_id = '$IdUser') OR (user_id = '$IdUser' AND to_id = '$idConectado') ORDER BY id ASC";
+      }
+  
+      $QueryMsjs = mysqli_query($con, $Msjs);
   ?>
     <div class="status-bar"> </div>
     <div class="row heading">
@@ -211,7 +239,27 @@
         <i class="zmdi zmdi-mail-reply" style="font-size: 50px;color: grey;" id="volverformnormal" title="Volver . ."></i>
       </form>
     </div>
-  <?php } ?>
+  <?php 
+} else {
+    // Manejo de sesión no válida
+  echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>';
+  echo '<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">';
+  echo '<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>';
+  
+  echo '<script type="text/javascript">
+          Swal.fire({
+            title: "Oops!",
+            text: "Invalid session. Please log in.",
+            icon: "error",
+            confirmButtonText: "OK"
+          }).then(function() {
+            window.location = "../index.php";
+          });
+        </script>';
+  exit; // Termina el script después de mostrar la alerta y redireccionar
+   
+}
+?> 
 
 
   <script type="text/javascript">

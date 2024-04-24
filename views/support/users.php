@@ -1,14 +1,28 @@
 <?php
 session_start();
 include('config/config.php');
-if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['imagen']) && isset($_SESSION['nombre'])) {
-  $idConectado        = $_SESSION['id'];
-  $email_user         = $_SESSION['correo'];
-  $NombreUsarioSesion = $_SESSION['nombre'];
-  $imgPerfil          = $_SESSION['imagen'];
 
-  $QueryUsers = ("SELECT id, correo, imagen, nombre, fecha_session, estatus 
-  FROM users WHERE id !='$idConectado' ORDER BY correo ASC ");
+if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['imagen']) && isset($_SESSION['nombre'])) {
+  $idConectado = $_SESSION['id'];
+  $email_user = $_SESSION['correo'];
+  $NombreUsarioSesion = $_SESSION['nombre'];
+  $imgPerfil = $_SESSION['imagen'];
+
+  // Determinar el tipo de usuario que está ingresando al chat
+  $QueryTipoUsuario = "SELECT id_tipo FROM users WHERE id = '$idConectado'";
+  $resultTipoUsuario = mysqli_query($con, $QueryTipoUsuario);
+  $rowTipoUsuario = mysqli_fetch_assoc($resultTipoUsuario);
+  $idTipoUsuario = $rowTipoUsuario['id_tipo'];
+
+  // Definir la consulta SQL según el tipo de usuario
+  if ($idTipoUsuario == 2) {
+    // Si el usuario es tipo 2, solo puede ver usuarios tipo 3
+    $QueryUsers = "SELECT id, correo, imagen, nombre, fecha_session, estatus FROM users WHERE id_tipo = 3 AND id != '$idConectado' ORDER BY correo ASC";
+} elseif ($idTipoUsuario == 3) {
+    // Si el usuario es tipo 3, mostrar todos los usuarios
+    $QueryUsers = "SELECT id, correo, imagen, nombre, fecha_session, estatus FROM users WHERE id != '$idConectado' ORDER BY correo ASC";
+}
+
   $resultadoQuery = mysqli_query($con, $QueryUsers);
 ?>
 

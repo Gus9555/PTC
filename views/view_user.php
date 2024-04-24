@@ -111,6 +111,9 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#details">DETAILS</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../views/support/home.php">CHAT-SUPPORT <span class="sr-only">(current)</span></a>
+                    </li>
 
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
