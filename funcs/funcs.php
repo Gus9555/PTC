@@ -86,7 +86,7 @@ function emailExiste($email)
     $stmt = $mysqli->prepare("SELECT id FROM users WHERE correo = ? LIMIT 1"); // ?  indica que va un valor ahi
     $stmt->bind_param("s", $email); //aqui indicamos que tipo de valor va "s" string "i" int
     $stmt->execute();
-    $stmt->store_result();
+    $stmt->store_result(); 
     $num = $stmt->num_rows;
     $stmt->close();
 
@@ -101,6 +101,17 @@ function hashPassword($password)
 {
     $hash = password_hash($password, PASSWORD_DEFAULT);
     return $hash;
+}
+function caracterPassword($password) {
+    // Expresión regular para verificar la contraseña
+    $patron = "'/^(?=.*[A-Z])(?=.*[\W_]).{8,}$/'"; // al menos 1 mayúscula, 1 símbolo y longitud mínima de 8 caracteres
+    
+    // Verificar si la contraseña coincide con el patrón
+    if (preg_match($patron, $password)) {
+        return true; // La contraseña es válida
+    } else {
+        return false; // La contraseña no es válida
+    }
 }
 
 // generador del token al usuario para activar cuenta

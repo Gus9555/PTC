@@ -31,6 +31,13 @@ if (!empty($_POST)) {
         $errors[] = "blank spaces";
 
     } else {
+        if (!caracterPassword($password)){
+            echo '<p><script>Swal.fire({
+                title: "ERROR",
+                text: "Password needs to contain a Capital letter, and special characters",
+                icon: "error"
+                });</script></p>';
+        }else{
 
         if (!isEmail($email)) {
             echo '<p><script>Swal.fire({
@@ -69,6 +76,7 @@ if (!empty($_POST)) {
                 }
             }
         }
+    }
     }
 
     if (count($errors) == 0) {
