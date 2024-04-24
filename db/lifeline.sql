@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-04-2024 a las 22:48:12
+-- Tiempo de generación: 24-04-2024 a las 23:34:01
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -48,7 +48,9 @@ INSERT INTO `clickuser` (`id`, `UserIdSession`, `clickUser`) VALUES
 (12, '15', '14'),
 (13, '16', '17'),
 (14, '18', '19'),
-(15, '19', '18');
+(15, '19', '18'),
+(16, '41', '40'),
+(17, '40', '41');
 
 -- --------------------------------------------------------
 
@@ -92,7 +94,10 @@ INSERT INTO `msjs` (`id`, `user`, `user_id`, `to_user`, `to_id`, `message`, `fec
 (67, 'yohalmodaniel16@gmail.com', 16, 'yohalmo 2 ', 15, 'HOLA', '23/04/2024 02:00 pm', 'DESKTOP-1OTC173', 'NO', NULL, NULL),
 (68, 'yohalmodaniel16@gmail.com', 16, 'yohalmo daniel ', 17, 'HOLA', '23/04/2024 02:01 pm', 'DESKTOP-1OTC173', 'NO', NULL, NULL),
 (69, 'yohalmodaniel16@gmail.com', 18, 'Support ', 19, 'hola.buenas tardes', '23/04/2024 02:39 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL),
-(70, 'lifeline.ptc.2024@gmail.com', 19, 'yohalmo daniel ', 18, 'en que le puedo ayudar?', '23/04/2024 02:39 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL);
+(70, 'lifeline.ptc.2024@gmail.com', 19, 'yohalmo daniel ', 18, 'en que le puedo ayudar?', '23/04/2024 02:39 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL),
+(71, 'yohalmo.daniel@hotmail.com', 41, 'yohalmo daniel ', 40, 'holaa', '24/04/2024 04:06 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL),
+(72, 'yohalmodaniel16@gmail.com', 40, 'Diego Barrera ', 41, 'soy yohalmo', '24/04/2024 04:06 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL),
+(73, 'yohalmo.daniel@hotmail.com', 41, 'yohalmo daniel ', 40, 'yo agreda', '24/04/2024 04:06 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -146,7 +151,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `usuario`, `password`, `nombre`, `correo`, `last_session`, `token`, `token_password`, `password_request`, `activacion`, `id_tipo`, `codigo`, `imagen`, `estatus`, `fecha_registro`, `fecha_session`) VALUES
-(28, 'yoha', '$2y$10$oFkhr1qF6KYSd3wv0T5pT.WhMZrnx1JPqGbcGt4rPrhhYYaqTVIHG', 'yohalmo daniel', 'yohalmodaniel16@gmail.com', '0000-00-00 00:00:00', '9c3ae82ad21e702627ce4c8aa965761f', '', 0, 0, 2, '36 48 38 47 ', 'Captura de pantalla 2024-04-07 122600.png', 'Activo', '23/04/2024 03:45 pm', '');
+(39, '', '$2y$10$1qh1KOmjsxwIrzXQoqDXZutDDgHc8tnrl32KGqYo6kPLMnXEovZ7u', 'LIfeline Support', 'lifeline.ptc.2024@gmail.com', '0000-00-00 00:00:00', '', '', 0, 0, 3, '', 'b5f0a8b43d.png', 'Inactiva', '24/04/2024 03:56 pm', '24/04/2024 03:57 pm'),
+(40, 'yoha', '$2y$10$R.8.1LadsTNCNVIWMJkSDe/SY/arD3YM1ssESMZbyY57dh8WchK3i', 'yohalmo daniel', 'yohalmodaniel16@gmail.com', '0000-00-00 00:00:00', '15de356d62ef6820ea34424b55b67d9d', '', 0, 0, 3, '28 44 30 23 ', 'Captura de pantalla 2024-04-07 122600.png', 'Inactiva', '24/04/2024 04:04 pm', '24/04/2024 04:32 pm');
 
 --
 -- Índices para tablas volcadas
@@ -184,13 +190,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `clickuser`
 --
 ALTER TABLE `clickuser`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `msjs`
 --
 ALTER TABLE `msjs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_usuario`
@@ -202,7 +208,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
