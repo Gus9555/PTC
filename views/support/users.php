@@ -1,20 +1,13 @@
 <?php
 session_start();
 include('config/config.php');
-if (isset($_SESSION['correo']) != "") {
+if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['imagen']) && isset($_SESSION['nombre'])) {
   $idConectado        = $_SESSION['id'];
   $email_user         = $_SESSION['correo'];
   $NombreUsarioSesion = $_SESSION['nombre'];
   $imgPerfil          = $_SESSION['imagen'];
 
-
-
-  $QueryUsers = ("SELECT 
-    id,imagen,
-    correo,
-    nombre,
-    fecha_session,
-    estatus 
+  $QueryUsers = ("SELECT id, correo, imagen, nombre, fecha_session, estatus 
   FROM users WHERE id !='$idConectado' ORDER BY correo ASC ");
   $resultadoQuery = mysqli_query($con, $QueryUsers);
 ?>

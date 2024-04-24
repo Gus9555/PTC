@@ -86,7 +86,7 @@ function emailExiste($email)
     $stmt = $mysqli->prepare("SELECT id FROM users WHERE correo = ? LIMIT 1"); // ?  indica que va un valor ahi
     $stmt->bind_param("s", $email); //aqui indicamos que tipo de valor va "s" string "i" int
     $stmt->execute();
-    $stmt->store_result(); 
+    $stmt->store_result();
     $num = $stmt->num_rows;
     $stmt->close();
 
@@ -102,10 +102,11 @@ function hashPassword($password)
     $hash = password_hash($password, PASSWORD_DEFAULT);
     return $hash;
 }
-function caracterPassword($password) {
+function caracterPassword($password)
+{
     // Expresión regular para verificar la contraseña
     $patron = "'/^(?=.*[A-Z])(?=.*[\W_]).{8,}$/'"; // al menos 1 mayúscula, 1 símbolo y longitud mínima de 8 caracteres
-    
+
     // Verificar si la contraseña coincide con el patrón
     if (preg_match($patron, $password)) {
         return true; // La contraseña es válida
@@ -127,22 +128,22 @@ function registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_us
     //conexion a la base de datos 
     global $mysqli;
     date_default_timezone_set("America/Bogota");
-	$hora = date('h:i a', time() - 3600 * date('I'));
-	$fecha = date("d/m/Y");
-	$fechaRegistro = $fecha . " " . $hora;
-	$estatus = "Activo";
-    
-     //inserta los datos ingresados a la base de datos en su respectivo campo
-     $stmt = $mysqli->prepare("INSERT INTO users (usuario, password, nombre, correo, token, id_tipo, codigo, imagen, estatus, fecha_registro) VALUES(?,?,?,?,?,?,?,?,?,?)");
-     $stmt->bind_param('sssssissss', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro);
-     //bucle que al momento del execute con la conexion $mysqli insertara el id
-     if($stmt->execute()){
-         return $mysqli->insert_id;
-     }else{
-          //y si no hara el return en falso 
-         return 0;
-     }
-   
+    $hora = date('h:i a', time() - 3600 * date('I'));
+    $fecha = date("d/m/Y");
+    $fechaRegistro = $fecha . " " . $hora;
+    $estatus = "Activo";
+
+    //inserta los datos ingresados a la base de datos en su respectivo campo
+    $stmt = $mysqli->prepare("INSERT INTO users (usuario, password, nombre, correo, token, id_tipo, codigo, imagen, estatus, fecha_registro) VALUES(?,?,?,?,?,?,?,?,?,?)");
+    $stmt->bind_param('sssssissss', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro);
+    //bucle que al momento del execute con la conexion $mysqli insertara el id
+    if ($stmt->execute()) {
+        return $mysqli->insert_id;
+    } else {
+        //y si no hara el return en falso 
+        return 0;
+    }
+
 }
 
 
@@ -210,7 +211,8 @@ function isNullLogin($usuario, $password)
     }
 }
 
-function activarUsuario($id){
+function activarUsuario($id)
+{
     global $mysqli;
 
     $stmt = $mysqli->prepare("UPDATE users SET activacion=1 WHERE id = ?");
@@ -224,69 +226,61 @@ function activarUsuario($id){
 // metodo para el login////////////////////////////////////////////////
 function login($usuario, $password)
 {
-    global $mysqli;
-    // selecciona los datos del usuario que esta ingresando para validar si existen////////////////////////////////////////////////
-    $stmt = $mysqli->prepare("SELECT id, id_tipo, password, nombre FROM users WHERE usuario = ? || correo = ? LIMIT 1");
-    $stmt->bind_param("ss", $usuario, $usuario);
+    session_start();
+    include ('conexion.php');
+    
+    $usuario = trim($_POST['correo']);
+    $password = trim($_POST['password']);
+    
+    $stmt = $mysqli->prepare("SELECT id, id_tipo, password, nombre, imagen FROM users WHERE correo = ? LIMIT 1");
+    $stmt->bind_param("s", $usuario);
     $stmt->execute();
     $stmt->store_result();
     $rows = $stmt->num_rows;
-    // este if valida si el usuario existe en la base datos////////////////////////////////////////////////
+    
     if ($rows > 0) {
-
-        // valida si el usuario esta activo////////////////////////////////////////////////
-
-
-        // aca ya empieza a verificar si las contraseñas que estan insertadas en la base de datos conciden////////////////////////////////////////////////
-
-        $stmt->bind_result($id, $id_tipo, $passwd, $nombre);
+        $stmt->bind_result($id, $id_tipo, $passwd, $nombre, $imagen);
         $stmt->fetch();
-
-        $validaPass = password_verify($password, $passwd);
-
-        // si las contraseñas consicen procede hacer el metodo de redireccion si es admin por medio de tipo de id 2, o si es 1 lo redirecciona con la vista usuario////////////////////////////////////////////////
-        if ($validaPass) {
-            // Redireccionar según el tipo de usuario
-            if ($id_tipo == "2") {
-                // Redireccionar al panel de usuario
-                lastSession($id);
-                $_SESSION['id_usuario'] = $id;
-                $_SESSION['tipo_usuario'] = $id_tipo;
-                $_SESSION['nombre'] = $nombre;
-                header("location: ../views/view_user.php");
-            } elseif ($id_tipo == "1") {
-                // Redireccionar al panel de administrador
-                lastSession($id);
-                $_SESSION['id_usuario'] = $id;
-                $_SESSION['tipo_usuario'] = $id_tipo;
-                $_SESSION['nombre'] = $nombre;
-                header("location: ../views/Admin/Admin.php");
-            } elseif ($id_tipo == "3") {
-                // Redireccionar al panel de soporte
-                lastSession($id);
-                $_SESSION['id_usuario'] = $id;
-                $_SESSION['tipo_usuario'] = $id_tipo;
-                $_SESSION['nombre'] = $nombre;
-                header("location: ../views/support/home.php");
+    
+        if (password_verify($password, $passwd)) {
+            // Iniciando la sesión
+            $_SESSION['id'] = $id;
+            $_SESSION['tipo_usuario'] = $id_tipo;
+            $_SESSION['nombre'] = $nombre;
+            $_SESSION['correo'] = $usuario;
+            $_SESSION['imagen'] = $imagen;
+    
+            switch ($id_tipo) {
+                case "2":
+                    header("location:../views/view_user.php");
+                    exit;
+                case "1":
+                    header("location:../views/Admin/Admin.php");
+                    exit;
+                case "3":
+                    header("location:../views/support/home.php");
+                    exit;
+                default:
+                    echo '<p><script>Swal.fire({
+                            title: "ERROR",
+                            text: "Tipo de usuario no reconocido",
+                            icon: "error"
+                            });</script></p>';
             }
-            // estos elses son las alertas   
         } else {
             echo '<p><script>Swal.fire({
-                        title: "ERROR",
-                        text: "Wrong credentials, try again",
-                        icon: "error"
-                        });</script></p>';
-
+                    title: "ERROR",
+                    text: "Credenciales incorrectas, inténtalo de nuevo",
+                    icon: "error"
+                    });</script></p>';
         }
-
     } else {
         echo '<p><script>Swal.fire({
                 title: "ERROR",
-                text: "This username already exists",
+                text: "Este correo electrónico no está registrado",
                 icon: "error"
                 });</script></p>';
     }
-    return;
 }
 
 //// FIN DEL METODO LOGIN***************************************************************************************************
@@ -301,7 +295,8 @@ function lastSession($id)
     $stmt->close();
 }
 
-function validaIdToken($id, $token){
+function validaIdToken($id, $token)
+{
     global $mysqli;
 
     $stmt = $mysqli->prepare("SELECT activacion FROM users WHERE id = ? AND token = ? LIMIT 1");
@@ -310,22 +305,22 @@ function validaIdToken($id, $token){
     $stmt->store_result();
     $rows = $stmt->num_rows;
 
-    if($rows > 0){
+    if ($rows > 0) {
 
         $stmt->bind_result($activacion);
         $stmt->fetch();
 
-        if($activacion == 1){
+        if ($activacion == 1) {
             $msg = "This account is active.";
-             echo '<p><script>Swal.fire({
+            echo '<p><script>Swal.fire({
                 title: "Done!",
                 text: "Active",
                  type: "success"
                  }).then(function() {
                  window.location = "../views/index.php";
                  });</script></p>';
-        }else{
-            if(activarUsuario($id)){
+        } else {
+            if (activarUsuario($id)) {
                 $msg = 'Active account.';
                 echo '<p><script>Swal.fire({
                     title: "Done!",
@@ -334,11 +329,11 @@ function validaIdToken($id, $token){
                     }).then(function() {
                     window.location = "../views/index.php";
                     });</script></p>';
-            }else{
+            } else {
                 $msg = 'We got an error with the account activation';
             }
         }
-    }else{
+    } else {
         $msg = 'There is no record with this account.';
     }
 

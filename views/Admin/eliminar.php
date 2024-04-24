@@ -27,12 +27,12 @@ $id_tipo = $_GET["id_tipo"];
 if ($mysqli instanceof mysqli) {
 
    
-        $sentencia = $mysqli->prepare("DELETE FROM usuarios WHERE id = ?");
+        $sentencia = $mysqli->prepare("DELETE FROM users WHERE id = ?");
         if (!$sentencia) {
             exit("Error en la preparación de la consulta: " . $mysqli->error);
         }
         $sentencia->bind_param("i", $id);
-        if($id_tipo == 2)
+        if($id_tipo >= 2)
         {
             if($sentencia->execute()) 
             {
@@ -49,7 +49,7 @@ if ($mysqli instanceof mysqli) {
         {
             echo '<p><script>Swal.fire({
                 title: "ERROR",
-                text: "An andmin can not be deleted",
+                text: "An admin can not be deleted",
                 icon: "error"
                 }).then(function() {
                     window.location = "TablaU.php";

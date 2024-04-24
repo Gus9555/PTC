@@ -35,7 +35,7 @@ if ($tipo_usuario == 1) {
     $where = "WHERE id=$id";
 }
 
-$sql = "SELECT * FROM usuarios $where";
+$sql = "SELECT * FROM users $where";
 $resultado = $mysqli->query($sql);
 
 

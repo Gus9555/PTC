@@ -20,11 +20,11 @@
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
 
-session_start();
+
 $errors = array();
 
 if (!empty($_POST)) {
-    $usuario = $mysqli->real_escape_string($_POST['usuario']);
+    $usuario = $mysqli->real_escape_string($_POST['correo']); // Cambio aquí de 'usuario' a 'correo'
     $password = $mysqli->real_escape_string($_POST['password']);
 
     if (isNullLogin($usuario, $password)) {
@@ -157,7 +157,7 @@ if (!empty($_POST)) {
                         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                             <div class="form-group">
 
-                                <input class="form-control-input" id="inputEmailAddress" name="usuario" type="email"
+                                <input class="form-control-input" id="inputEmailAddress" name="correo" type="email"
                                     placeholder="Enter email address" required />
                             </div>
                             <div class="form-group">

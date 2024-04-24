@@ -1,4 +1,3 @@
-
 <?php
 require '../funcs/conexion.php';
 require '../funcs/funcs.php';
@@ -31,113 +30,100 @@ if (!empty($_POST)) {
         $errors[] = "blank spaces";
 
     } else {
-        if (!caracterPassword($password)){
-            echo '<p><script>Swal.fire({
-                title: "ERROR",
-                text: "Password needs to contain a Capital letter, and special characters",
-                icon: "error"
-                });</script></p>';
-        }else{
-
         if (!isEmail($email)) {
             echo '<p><script>Swal.fire({
-            title: "ERROR",
-            text: "Unvalid E-Mail address",
-            icon: "error"
-            });</script></p>';
-        } else {
+                title: "ERROR",
+                text: "Unvalid E-Mail address",
+                icon: "error"
+                });</script></p>';
 
-            if (!validaPassword($password, $passwordc)) {
-                $errors[] = "Both passwords need to match";
-                echo '<p><script>Swal.fire({
+        } elseif (!validaPassword($password, $passwordc)) {
+            $errors[] = "Both passwords need to match";
+            echo '<p><script>Swal.fire({
             title: "ERROR",
             text: "Both passwords need to match",
             icon: "error"
             });</script></p>';
-            } else {
 
-                if (usuarioExiste($usuario)) {
-                    $errors[] = "The username: $usuario, already exists";
-                    echo '<p><script>Swal.fire({
-            title: "ERROR",
-            text: "This username already exists",
-            icon: "error"
-            });</script></p>';
-                } else {
-
-                    if (emailExiste($email)) {
-                        $errors[] = "The E-Mail: $email already exists";
-                        echo '<p><script>Swal.fire({
+        } elseif (usuarioExiste($usuario)) {
+            $errors[] = "The username: $usuario, already exists";
+            echo '<p><script>Swal.fire({
+                   title: "ERROR",
+                   text: "This username already exists",
+                   icon: "error"
+                   });</script></p>';
+        } elseif (emailExiste($email)) {
+            $errors[] = "The E-Mail: $email already exists";
+            echo '<p><script>Swal.fire({
             title: "ERROR",
             text: "This E-Mail already exists",
             icon: "error"
             });</script></p>';
+
+        }else{
+            if (count($errors) == 0) {
+                function generador()
+                {
+                    $n = range(11, 50);
+                    shuffle($n);
+                    $resultado = '';
+                    for ($x = 0; $x < 4; $x++) {
+                        $resultado .= $n[$x] . ' ';
                     }
+                    return $resultado;
+                }
+                //esto hace que las contraseñas tenga el encripatado en la base de datos
+                $pass_hash = hashPassword($password);
+                ///////////////
+                $token = generateToken();
+                $codigo = generador();
+                $hora = date('h:i a', time() - 3600 * date('I'));
+                $fecha = date("d/m/Y");
+                $fechaRegistro = $fecha . " " . $hora;
+                $estatus = "Activo";
+                $image = $_POST["imagenPerfil"];
+                //convertimos el proceso del registro el una sola variable para mandarla a llamar 
+                $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro);
+                //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
+                if ($registro > 0) {
+        
+                    $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
+                    //el asuto y cuerpo es lo que ira en el mesaje del correo
+                    $asunto = 'PIN - LIFELINE';
+                    $cuerpo = "Deer $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo <br /><br /> Confirm your identity <a href='$url'>Confirm E-Mail</a>";
+                    //aca se envia el correo usando las anteriores mencionadas variables
+                    if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
+        
+                        echo '<p><script>swal({
+                            title: "Good job!",
+                            text: "Succesfully, Confirm your identity in your email ",
+                            icon: "success",
+                             }).then(function() {
+                            window.location = "../views/index.php";
+                            });</script></p>';
+        
+                    } else {
+                        echo '<p><script>Swal.fire({
+                            title: "Opsss!",
+                            text: "We got a problem, try again",
+                            type: "error"
+                            }).then(function() {
+                            window.location = "../views/registro.php";
+                            });</script></p>';
+                    }
+        
+                } else {
+                    $errors[] = "Error";
+                    echo '<p><script>Swal.fire({
+                        title: "ERROR",
+                        text: "Sign Up ERROR",
+                        icon: "error"
+                        });</script></p>';
                 }
             }
+
         }
-    }
-    }
 
-    if (count($errors) == 0) {
-        function generador()
-        {
-            $n = range(11, 50);
-            shuffle($n);
-            $resultado = '';
-            for ($x = 0; $x < 4; $x++) {
-                $resultado .= $n[$x] . ' ';
-            }
-            return $resultado;
-        }
-        //esto hace que las contraseñas tenga el encripatado en la base de datos
-        $pass_hash = hashPassword($password);
-        ///////////////
-        $token = generateToken();
-         $codigo = generador();
-        $hora = date('h:i a', time() - 3600 * date('I'));
-        $fecha = date("d/m/Y");
-        $fechaRegistro = $fecha . " " . $hora;
-        $estatus = "Activo";
-        $image = $_POST["imagenPerfil"];
-        //convertimos el proceso del registro el una sola variable para mandarla a llamar 
-        $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro);
-        //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
-        if ($registro > 0) {
-
-            $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
-            //el asuto y cuerpo es lo que ira en el mesaje del correo
-            $asunto = 'PIN - LIFELINE';
-            $cuerpo = "Deer $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo <br /><br /> Confirm your identity <a href='$url'>Confirm E-Mail</a>";
-            //aca se envia el correo usando las anteriores mencionadas variables
-            if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
-
-                echo '<p><script>swal({
-                    title: "Good job!",
-                    text: "Succesfully, Confirm your identity in your email ",
-                    icon: "success",
-                     }).then(function() {
-                    window.location = "../views/index.php";
-                    });</script></p>';
-
-            } else {
-                echo '<p><script>Swal.fire({
-                    title: "Opsss!",
-                    text: "We got a problem, try again",
-                    type: "error"
-                    }).then(function() {
-                    window.location = "../views/registro.php";
-                    });</script></p>';
-            }
-
-        } else {
-            $errors[] = "Error";
-            echo '<p><script>Swal.fire({
-                title: "ERROR",
-                text: "Sign Up ERROR",
-                icon: "error"
-                });</script></p>';
-        }
     }
 
 }
@@ -147,7 +133,7 @@ if (!empty($_POST)) {
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
@@ -160,7 +146,7 @@ if (!empty($_POST)) {
         content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
     <meta name="author" content="Inovatik">
 
-   
+
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
@@ -275,28 +261,28 @@ if (!empty($_POST)) {
                                     <div class="form-group">
                                         <label class="small mb-1" for="nombre">Full name</label>
                                         <input class="form-control-input" id="nombre" name="nombre" type="text"
-                                            placeholder="Enter Full name"  />
+                                            placeholder="Enter Full name" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="usuario">Username</label>
                                         <input class="form-control-input" id="usuario" name="usuario" type="text"
-                                            placeholder="Enter Username"  />
+                                            placeholder="Enter Username" />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1" for="inputEmailAddress">Email</label>
                                 <input class="form-control-input" id="inputEmailAddress" name="email" type="email"
-                                    aria-describedby="emailHelp" placeholder="Example@gmail.com"  />
+                                    aria-describedby="emailHelp" placeholder="Example@gmail.com" />
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputPassword">Password</label>
                                         <input class="form-control-input" id="inputPassword" name="password"
-                                            placeholder="password" type="password"  />
+                                            placeholder="password" type="password" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -304,16 +290,16 @@ if (!empty($_POST)) {
                                         <label class="small mb-1" for="inputConfirmPassword">Confirm
                                             Password</label>
                                         <input class="form-control-input" id="inputConfirmPassword" name="passwordc"
-                                            type="password" placeholder="Confirm password"  />
+                                            type="password" placeholder="Confirm password" />
                                     </div>
                                 </div>
                                 <br />
                                 <div style="width: 350px; margin: 0 auto;"> <!-- this div just for demo display -->
                                     <label class="dropimage miniprofile">
-                                      Enter a profile picture
+                                        Enter a profile picture
                                         <br />
                                         <br />
-                                        <input type="file" id="imagenPerfil" name="imagenPerfil" title="Elegir imagen" 
+                                        <input type="file" id="imagenPerfil" name="imagenPerfil" title="Elegir imagen"
                                             accept="image/*">
                                     </label>
                                 </div>

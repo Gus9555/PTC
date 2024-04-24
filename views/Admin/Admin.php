@@ -19,15 +19,18 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['id_usuario'])){
+    if (!isset($_SESSION['id'])) {
         echo '<p><script>Swal.fire({
             title: "Warning",
             text: "LogIn again"
             }).then(function() {
             window.location = "../../views/index.php";
             });</script></p>';
-
+        exit; // Salir del script si no hay sesión iniciada
     }
+    
+    $nombre = $_SESSION['nombre'];
+    $tipo_usuario = $_SESSION['tipo_usuario'];
 
    
 ?>
@@ -117,52 +120,10 @@
 
                     <!-- notification -->
                     <li class="dropdown notification-list list-inline-item">
-                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="" href="../../views/support/home.php" role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="fas fa-bell noti-icon"></i>
                             <span class="badge badge-pill badge-danger noti-icon-badge">3</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-menu-lg px-1">
-                            <!-- item-->
-                            <h6 class="dropdown-item-text">
-                                        Notifications
-                                    </h6>
-                            <div class="slimscroll notification-item-list">
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                                    <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
-                                    <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-danger"><i class="mdi mdi-message-text-outline"></i></div>
-                                    <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-info"><i class="mdi mdi-filter-outline"></i></div>
-                                    <p class="notify-details"><b>Your item is shipped</b><span class="text-muted">It is a long established fact that a reader will</span></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-success"><i class="mdi mdi-message-text-outline"></i></div>
-                                    <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-warning"><i class="mdi mdi-cart-outline"></i></div>
-                                    <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
-                                </a>
-
-                            </div>
-                            <!-- All-->
-                            <a href="javascript:void(0);" class="dropdown-item text-center notify-all text-primary">
-                                        View all <i class="fi-arrow-right"></i>
-                                    </a>
-                        </div>
                     </li>
 
                     <li class="dropdown notification-list list-inline-item">
@@ -177,7 +138,7 @@
                                 <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
                                 <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="../../views/logout.php"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                                <a class="dropdown-item text-danger" href="../../#featuresviews/logout.php"><i class="mdi mdi-power text-danger"></i> Logout</a>
                             </div>
                         </div>
                     </li>

@@ -17,20 +17,20 @@
 
 </html>
 <?php
-    session_start();
+  session_start();
 
-    if(!isset($_SESSION['id_usuario'])){
-        echo '<p><script>Swal.fire({
-            title: "Warning",
-            text: "LogIn again"
-            }).then(function() {
-            window.location = "../views/index.php";
-            });</script></p>';
-
-    }
-
-    $nombre = $_SESSION['nombre'];
-    $tipo_usuario = $_SESSION['tipo_usuario'];
+  if (!isset($_SESSION['id'])) {
+      echo '<p><script>Swal.fire({
+          title: "Warning",
+          text: "LogIn again"
+          }).then(function() {
+          window.location = "../views/index.php";
+          });</script></p>';
+      exit; // Salir del script si no hay sesión iniciada
+  }
+  
+  $nombre = $_SESSION['nombre'];
+  $tipo_usuario = $_SESSION['tipo_usuario'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
