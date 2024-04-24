@@ -38,9 +38,9 @@
                   //esta es la variable que redireccionara al usuario en el correo que se le enviara
                 $url = 'http://'.$_SERVER["SERVER_NAME"].'/PTC/views/cambiaPass.php? id='.$user_id.'&token='.$token;
                 //el asuto y cuerpo es lo que ira en el mesaje del correo
-                $asunto = 'Recuperar Password - Sistema PHP';
-                $cuerpo = "Estimado $nombre: <br /><br /> Se ha solicitado un reinicio
-                de contrase&ntilde;a. <br/> Para restaurar la contrase&ntilde;a, haz click en el siguiente enlace: <a href='$url'>$url</a>";
+                $asunto = 'Recover Password - LIFELINE';
+                $cuerpo = "DEER $nombre: <br /><br /> A restart has been requested
+                from Password .<br /> To reset your password, click on the following link: <a href='$url'>$url</a>";
                 //aca se envia el correo usando las anteriores mencionadas variables
                 if(enviarEmail($email, $nombre, $asunto, $cuerpo))
                 {

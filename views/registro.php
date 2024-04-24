@@ -64,10 +64,10 @@ if (!empty($_POST)) {
             if (count($errors) == 0) {
                 function generador()
                 {
-                    $n = range(11, 50);
+                    $n = range(10, 99);
                     shuffle($n);
                     $resultado = '';
-                    for ($x = 0; $x < 4; $x++) {
+                    for ($x = 0; $x < 5; $x++) {
                         $resultado .= $n[$x] . ' ';
                     }
                     return $resultado;

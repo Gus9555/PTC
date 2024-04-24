@@ -241,43 +241,57 @@ function login($usuario, $password)
     if ($rows > 0) {
         $stmt->bind_result($id, $id_tipo, $passwd, $nombre, $imagen);
         $stmt->fetch();
-    
-        if (password_verify($password, $passwd)) {
-            // Iniciando la sesión
-            $_SESSION['id'] = $id;
-            $_SESSION['tipo_usuario'] = $id_tipo;
-            $_SESSION['nombre'] = $nombre;
-            $_SESSION['correo'] = $usuario;
-            $_SESSION['imagen'] = $imagen;
-    
-            switch ($id_tipo) {
-                case "2":
-                    header("location:../views/view_user.php");
-                    exit;
-                case "1":
-                    header("location:../views/Admin/Admin.php");
-                    exit;
-                case "3":
-                    header("location:../views/support/home.php");
-                    exit;
-                default:
-                    echo '<p><script>Swal.fire({
-                            title: "ERROR",
-                            text: "Tipo de usuario no reconocido",
-                            icon: "error"
-                            });</script></p>';
+
+        if(isActivo($usuario)){
+            if (password_verify($password, $passwd)) {
+                // Iniciando la sesión
+                $_SESSION['id'] = $id;
+                $_SESSION['tipo_usuario'] = $id_tipo;
+                $_SESSION['nombre'] = $nombre;
+                $_SESSION['correo'] = $usuario;
+                $_SESSION['imagen'] = $imagen;
+        
+                switch ($id_tipo) {
+                    case "2":
+                        header("location:../views/view_user.php");
+                        exit;
+                    case "1":
+                        header("location:../views/Admin/Admin.php");
+                        exit;
+                    case "3":
+                        header("location:../views/support/home.php");
+                        exit;
+                    default:
+                        echo '<p><script>Swal.fire({
+                                title: "ERROR",
+                                text: "User type not recognized",
+                                icon: "error"
+                                });</script></p>';
+                }
+            } else {
+                echo '<p><script>Swal.fire({
+                        title: "ERROR",
+                        text: "Incorrect credentials, try again.",
+                        icon: "error"
+                        });</script></p>';
             }
-        } else {
+
+
+        }else{
+
+
             echo '<p><script>Swal.fire({
                     title: "ERROR",
-                    text: "Credenciales incorrectas, inténtalo de nuevo",
+                    text: "The account needs to be active, check your E-Mail",
                     icon: "error"
                     });</script></p>';
+
         }
+
     } else {
         echo '<p><script>Swal.fire({
                 title: "ERROR",
-                text: "Este correo electrónico no está registrado",
+                text: "This e-mail address is not registered",
                 icon: "error"
                 });</script></p>';
     }
