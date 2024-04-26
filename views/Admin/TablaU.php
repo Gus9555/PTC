@@ -203,7 +203,7 @@ $resultado = $mysqli->query($sql);
                                 <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock
                                     screen</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i>
+                                <a class="dropdown-item text-danger" href="../../views/logout.php"><i class="mdi mdi-power text-danger"></i>
                                     Logout</a>
                             </div>
                         </div>

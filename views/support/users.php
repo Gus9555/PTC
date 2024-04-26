@@ -17,10 +17,10 @@ if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['ima
   // Definir la consulta SQL según el tipo de usuario
   if ($idTipoUsuario == 2) {
     // Si el usuario es tipo 2, solo puede ver usuarios tipo 3
-    $QueryUsers = "SELECT id, correo, imagen, nombre, fecha_session, estatus FROM users WHERE id_tipo = 3 AND id != '$idConectado' ORDER BY correo ASC";
+    $QueryUsers = "SELECT id, correo, imagen, nombre, fecha_session, estatus, id_tipo FROM users WHERE id_tipo = 3 AND id != '$idConectado' ORDER BY correo ASC";
   } elseif ($idTipoUsuario == 3) {
-    // Si el usuario es tipo 3, mostrar todos los usuarios
-    $QueryUsers = "SELECT id, correo, imagen, nombre, fecha_session, estatus FROM users WHERE id != '$idConectado' ORDER BY correo ASC";
+    // Si el usuario es tipo 3, mostrar todos los usuarios excepto tipo 1
+    $QueryUsers = "SELECT id, correo, imagen, nombre, fecha_session, estatus, id_tipo FROM users WHERE id_tipo != 1 AND id != '$idConectado' ORDER BY correo ASC";
   }
 
   $resultadoQuery = mysqli_query($con, $QueryUsers);
@@ -90,7 +90,7 @@ if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['ima
           if ($FilaUsers['estatus'] != 'Inactiva') { ?>
             <div class="avatar-icon">
               <?php if ($FilaUsers['id_tipo'] == 2) { ?>
-                <img src="imagenesperfil/17d760c7b0.JPEG" class="notification-container" style="border:3px solid #28a745 !important;">
+                <img src="imagenesperfil/17d760c7b0.jpeg" class="notification-container" style="border:3px solid #28a745 !important;">
               <?php } else { ?>
                 <img src="<?php echo 'imagenesperfil/' . $FilaUsers['imagen']; ?>" class="notification-container"
                   style="border:3px solid #28a745 !important;">
@@ -99,7 +99,7 @@ if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['ima
           <?php } else { ?>
             <div class="avatar-icon">
               <?php if ($FilaUsers['id_tipo'] == 2) { ?>
-                <img src="ruta_a_tu_imagen_fija" class="notification-container" style="border:3px solid #696969 !important;">
+                <img src="imagenesperfil/17d760c7b0.jpeg" class="notification-container" style="border:3px solid #696969 !important;">
               <?php } else { ?>
                 <img src="<?php echo 'imagenesperfil/' . $FilaUsers['imagen']; ?>" class="notification-container"
                   style="border:3px solid #696969 !important;">
