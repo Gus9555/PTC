@@ -16,17 +16,15 @@
 
 <?php
 session_start();
-// require "conection.php";
 require '../../funcs/conexion.php';
 require '../../funcs/funcs.php';
 
-
-if (!isset($_SESSION['id_usuario'])) {
-
-    header("Location: index.php");
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../views/index.php");
+    exit();
 }
 
-$id = $_SESSION['id_usuario'];
+$id = $_SESSION['id'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 
 if ($tipo_usuario == 1) {
@@ -37,7 +35,6 @@ if ($tipo_usuario == 1) {
 
 $sql = "SELECT * FROM users $where";
 $resultado = $mysqli->query($sql);
-
 
 ?>
 
