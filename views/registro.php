@@ -20,6 +20,12 @@ if (!empty($_POST)) {
     trim($usuario);
     trim($password);
     trim($email);
+
+    $uppercase = preg_match('@[A-Z]@', $password);
+$lowercase = preg_match('@[a-z]@', $password);
+$number= preg_match('@[0-9]@', $password);
+$specialChars = preg_match('@[^\w]@', $password);
+
     if ($nombre == "" || $usuario == "" || $password == "" || $passwordc == "" || $email == "") {
         echo '<p><script>swal({
             title: "ERROR!",
@@ -37,6 +43,13 @@ if (!empty($_POST)) {
                 icon: "error"
                 });</script></p>';
 
+        } elseif(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8){
+            $errors[] = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
+            echo '<p><script>Swal.fire({
+            title: "ERROR",
+            text: "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.",
+            icon: "error"
+            });</script></p>';
         } elseif (!validaPassword($password, $passwordc)) {
             $errors[] = "Both passwords need to match";
             echo '<p><script>Swal.fire({
