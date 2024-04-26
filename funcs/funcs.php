@@ -125,24 +125,28 @@ function generateToken()
 //metodo para registrar el usuario
 function registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro)
 {
-    //conexion a la base de datos 
-    global $mysqli;
-    date_default_timezone_set("America/Bogota");
-    $hora = date('h:i a', time() - 3600 * date('I'));
-    $fecha = date("d/m/Y");
-    $fechaRegistro = $fecha . " " . $hora;
-    $estatus = "Activo";
+    // Definir la ruta de la imagen predeterminada
+$rutaImagenPredeterminada = '../../views/support/imagenesperfil/user.jpg';
 
-    //inserta los datos ingresados a la base de datos en su respectivo campo
-    $stmt = $mysqli->prepare("INSERT INTO users (usuario, password, nombre, correo, token, id_tipo, codigo, imagen, estatus, fecha_registro) VALUES(?,?,?,?,?,?,?,?,?,?)");
-    $stmt->bind_param('sssssissss', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro);
-    //bucle que al momento del execute con la conexion $mysqli insertara el id
-    if ($stmt->execute()) {
-        return $mysqli->insert_id;
-    } else {
-        //y si no hara el return en falso 
-        return 0;
-    }
+//conexion a la base de datos 
+global $mysqli;
+date_default_timezone_set("America/Bogota");
+$hora = date('h:i a', time() - 3600 * date('I'));
+$fecha = date("d/m/Y");
+$fechaRegistro = $fecha . " " . $hora;
+$estatus = "Activo";
+
+//inserta los datos ingresados a la base de datos en su respectivo campo
+$stmt = $mysqli->prepare("INSERT INTO users (usuario, password, nombre, correo, token, id_tipo, codigo, imagen, estatus, fecha_registro) VALUES(?,?,?,?,?,?,?,?,?,?)");
+// Modificar la consulta para asignar la imagen predeterminada al campo 'imagen'
+$stmt->bind_param('sssssissss', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $rutaImagenPredeterminada, $estatus, $fechaRegistro);
+//bucle que al momento del execute con la conexion $mysqli insertara el id
+if ($stmt->execute()) {
+    return $mysqli->insert_id;
+} else {
+    //y si no hara el return en falso 
+    return 0;
+}
 
 }
 

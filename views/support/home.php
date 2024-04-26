@@ -47,7 +47,7 @@ if (isset($_SESSION['correo'])) {
     content="Chat - WhatApp,una sala para compartir mensajes, audios, imagenes, videos entre muchascosas mas.">
   <meta name="author" content="URIAN VIERA">
   <meta name="keyword" content="Web Developer Urian Viera">
-  <title>Chat - WhatApp!</title>
+  <title>Support chat!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="stylesheet" src="https://fonts.googleapis.com/css?family=Roboto:400,700,300" />

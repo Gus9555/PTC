@@ -22,9 +22,9 @@ if (!empty($_POST)) {
     trim($email);
 
     $uppercase = preg_match('@[A-Z]@', $password);
-$lowercase = preg_match('@[a-z]@', $password);
-$number= preg_match('@[0-9]@', $password);
-$specialChars = preg_match('@[^\w]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number= preg_match('@[0-9]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
 
     if ($nombre == "" || $usuario == "" || $password == "" || $passwordc == "" || $email == "") {
         echo '<p><script>swal({
@@ -94,7 +94,6 @@ $specialChars = preg_match('@[^\w]@', $password);
                 $fecha = date("d/m/Y");
                 $fechaRegistro = $fecha . " " . $hora;
                 $estatus = "Activo";
-                $image = $_POST["imagenPerfil"];
                 //convertimos el proceso del registro el una sola variable para mandarla a llamar 
                 $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro);
                 //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
@@ -306,18 +305,6 @@ $specialChars = preg_match('@[^\w]@', $password);
                                             type="password" placeholder="Confirm password" />
                                     </div>
                                 </div>
-                                <br />
-                                <div style="width: 350px; margin: 0 auto;"> <!-- this div just for demo display -->
-                                    <label class="dropimage miniprofile">
-                                        Enter a profile picture
-                                        <br />
-                                        <br />
-                                        <input type="file" id="imagenPerfil" name="imagenPerfil" title="Elegir imagen"
-                                            accept="image/*">
-                                    </label>
-                                </div>
-
-
                             </div>
                             <div class="form-group mt-4 mb-0"><button type="submit"
                                     class="form-control-submit-button">Create Account</button></div>
