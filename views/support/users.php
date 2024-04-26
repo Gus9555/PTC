@@ -93,7 +93,7 @@ if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['ima
             </div>
           <?php } else { ?>
             <div class="avatar-icon">
-              <img src="<?php echo 'imagenesperfil/' . $FilaUsers['imagen']; ?>" class="notification-container" style="border:3px solid #696969 !important;">
+              <img src="<?php echo '..-imagenesperfil/' . $FilaUsers['imagen']; ?>" class="notification-container" style="border:3px solid #696969 !important;">
             </div>
           <?php } ?>
         </div>
