@@ -96,27 +96,27 @@ if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['ima
         <div class="col-sm-3 col-xs-3 sideBar-avatar">
           <?php
           if ($FilaUsers['estatus'] != 'Inactiva') { ?>
-            <div class="avatar-icon">
-              <?php if ($FilaUsers['id_tipo'] == 2) { ?>
-                <img src="imagenesperfil/user.jpeg" class="notification-container" style="border:3px solid #28a745 !important;">
-              <?php } elseif ($FilaUsers['id_tipo'] == 3) { ?>
-                <img src="imagenesperfil/support.png" class="notification-container" style="border:3px solid #28a745 !important;">
-              <?php } else { ?>
-                <img src="<?php echo 'imagenesperfil/' . $FilaUsers['imagen']; ?>" class="notification-container"
-                  style="border:3px solid #28a745 !important;">
-              <?php } ?>
-            </div>
-          <?php } else { ?>
-            <div class="avatar-icon">
-              <?php if ($FilaUsers['id_tipo'] == 2) { ?>
-                <img src="imagenesperfil/user.jpeg" class="notification-container" style="border:3px solid #696969 !important;">
-              <?php } elseif ($FilaUsers['id_tipo'] == 3) { ?>
-                <img src="imagenesperfil/support.png" class="notification-container" style="border:3px solid #696969 !important;">
-              <?php } else { ?>
-                <img src="<?php echo 'imagenesperfil/' . $FilaUsers['imagen']; ?>" class="notification-container" style="border:3px solid #696969 !important;">
-              <?php } ?>
-            </div>
-          <?php } ?>
+               <div class="avatar-icon">
+                 <?php if ($FilaUsers['id_tipo'] == 2) { ?>
+                     <img src="imagenesperfil/user.jpeg" class="notification-container" style="border:3px solid #28a745 !important;">
+                 <?php } elseif ($FilaUsers['id_tipo'] == 3) { ?>
+                     <img src="imagenesperfil/support.png" class="notification-container" style="border:3px solid #28a745 !important;">
+                 <?php } else { ?>
+                     <img src="<?php echo 'imagenesperfil/' . $FilaUsers['imagen']; ?>" class="notification-container"
+                       style="border:3px solid #28a745 !important;">
+                 <?php } ?>
+               </div>
+           <?php } else { ?>
+               <div class="avatar-icon">
+                 <?php if ($FilaUsers['id_tipo'] == 2) { ?>
+                     <img src="imagenesperfil/user.jpeg" class="notification-container" style="border:3px solid #696969 !important;">
+                 <?php } elseif ($FilaUsers['id_tipo'] == 3) { ?>
+                     <img src="imagenesperfil/support.png" class="notification-container" style="border:3px solid #696969 !important;">
+                 <?php } else { ?>
+                     <img src="<?php echo 'imagenesperfil/' . $FilaUsers['imagen']; ?>" class="notification-container" style="border:3px solid #696969 !important;">
+                 <?php } ?>
+               </div>
+           <?php } ?>
         </div>
 
         <div class="col-sm-9 col-xs-9 sideBar-main">
