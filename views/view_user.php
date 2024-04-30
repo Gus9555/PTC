@@ -106,15 +106,8 @@
                         <a class="nav-link page-scroll" href="view_user.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#features">FEATURES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#details">DETAILS</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link page-scroll" href="../views/support/home.php">CHAT-SUPPORT <span class="sr-only">(current)</span></a>
                     </li>
-
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
@@ -131,10 +124,7 @@
                         </div>
                     </li>
                     <!-- end of dropdown menu -->
-
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#pricing">PRICING</a>
-                    </li>
+   
                 </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="logout.php">LOG OUT</a>
@@ -651,9 +641,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="footer-col first">
-                        <h4>About Tivo</h4>
-                        <p class="p-small">We're passionate about designing and developing one of the best marketing
-                            apps in the market</p>
+                        <h4>About LifeLine</h4>
+                        <p class="p-small">We are one of your best options in the market to acquire an insurance policy. </p>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
@@ -680,13 +669,14 @@
                         <ul class="list-unstyled li-space-lg p-small">
                             <li class="media">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <div class="media-body">22 Innovative, San Francisco, CA 94043, US</div>
+                                <div class="media-body"> Calle Don Bosco y Av. Manuel Gallardo, 1-1, Santa Tecla</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-envelope"></i>
-                                <div class="media-body"><a class="white"
-                                        href="mailto:contact@tivo.com">contact@tivo.com</a> <i
-                                        class="fas fa-globe"></i><a class="white" href="#your-link">www.tivo.com</a>
+                                <div class="media-body">
+                                <a class="white" href="mailto:lifeline.ptc.2024@gmail.com">lifeline.ptc.2024@gmail.com</a>
+                                <i class="fas fa-globe"></i>
+                                <a class="white" href="#your-link">www.LifeLine.com</a>
                                 </div>
                             </li>
                         </ul>
@@ -703,7 +693,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Template by Inovatik</a></p>
+                    <p class="p-small">Copyright © 2020 Template by LifeLine</p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->
