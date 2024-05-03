@@ -95,7 +95,7 @@ if (!empty($_POST)) {
                 $fechaRegistro = $fecha . " " . $hora;
                 $estatus = "Activo";
                 //convertimos el proceso del registro el una sola variable para mandarla a llamar 
-                $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro);
+                $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $rutaImagenPredeterminada, $estatus, $fechaRegistro);
                 //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
                 if ($registro > 0) {
         

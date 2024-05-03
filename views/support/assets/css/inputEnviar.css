@@ -19,7 +19,7 @@
 
 .status-bar {
   height: 25px;
-  background: #004e45;
+  background: #3B5D50;
   color: #fff;
   font-size: 14px;
   padding: 0 8px;
@@ -134,12 +134,12 @@
 
 .conversation #capawelcome{
   width: 100%;
-  width: 700px;
-  position: absolute;
-  left: 50px;
+ 
+  position: flex;
+  left: 100px;
   right: 0px;
-  top: 100px;
-  margin: 0 auto;
+  top: 150px;
+  margin:  auto;
 }
 .conversation ::-webkit-scrollbar {
   transition: all .5s;
