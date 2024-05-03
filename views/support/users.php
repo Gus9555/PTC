@@ -66,9 +66,8 @@ if (isset($_SESSION['correo']) && isset($_SESSION['id']) && isset($_SESSION['ima
 </script>
 
   <div class="col-sm-1 col-xs-1 heading-compose pull-right">
-    <a href="acciones/salir.php?id=<?php echo $idConectado; ?>">
-      <i class="zmdi zmdi-power" style="font-size: 25px;"></i>
-    </a>
+    <a href="../../views/view_user.php?id=<?php echo $idConectado; ?>">
+    
   </div>
   <div class="col-sm-1 col-xs-1 pull-right icohome">
     <a href="home.php">

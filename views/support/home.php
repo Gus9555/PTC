@@ -53,6 +53,7 @@ if (isset($_SESSION['correo'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="stylesheet" src="https://fonts.googleapis.com/css?family=Roboto:400,700,300" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/home.css">
   <link rel="stylesheet" href="assets/css/inputEnviar.css">
@@ -84,7 +85,7 @@ if (isset($_SESSION['correo'])) {
       <div class="col-sm-8 conversation">
         <div id="capausermsj">
 
-          <img src="assets/img/capa.png" id="capawelcome" />
+          <img src="assets/img/fondo_support.png" id="capawelcome" />
         </div>
       </div>
       <!---fin--->
