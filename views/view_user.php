@@ -459,7 +459,7 @@
                         </li>
 
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="sign-up.html">SIGN UP</a> <a
+                    <a class="btn-solid-reg mfp-close" href="vehicles.php">INSURANCE</a> <a
                         class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->

@@ -230,29 +230,38 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>Now Is The Time To Upgrade Your Marketing Solution</h2>
-                        <p>Target the right customers for your business with the help of Tivo's patented segmentation
-                            technology and deploy efficient marketing campaigns. Keep your customers happy and loyal.
+                        <h2>Now is the time to upgrade your car insurance</h2>
+                        <p>Here at LifeLine we focus on our customer's safety, that's why we offer the best car
+                            insurance plans. Click down below to enter a request for a price quote.
                         </p>
                         <ul class="list-unstyled li-space-lg">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Understand customers and meet their requirements</div>
+                                <div class="media-body">Damage to the insured vehicle</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Targeted client base with Tivo's efficient technology</div>
+                                <div class="media-body">Civil Liability for injury or death of third parties</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Targeted client base with Tivo's efficient technology</div>
+                                <div class="media-body">Total or Partial Theft</div>
                             </li>
-                        </ul>                  
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Civil Liability for property damage to third parties' assets
+                                </div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">24/7 towing service all around the country</div>
+                            </li>
+                        </ul>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="../assets/images/details.png" alt="alternative">
+                        <img class="img-fluid" src="../assets/images/33.png" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -262,7 +271,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
     <!-- Pricing -->
-    <div id="pricing" class="cards-2">
+    <div id="pricing" class="cards-2 tabs">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -272,121 +281,386 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-12">
+                    <!-- Tabs Links -->
+                    <ul class="nav nav-tabs" id="argoTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab"
+                                aria-controls="tab-1" aria-selected="true"><i class="fas fa-motorcycle"></i>Motorcycle</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab"
+                                aria-controls="tab-2" aria-selected="false"><i class="fas fa-car"></i>Civil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab"
+                                aria-controls="tab-3" aria-selected="false"><i class="fas fa-tractor"></i>Industrial</a>
+                        </li>
+                    </ul>
+                    <!-- end of tabs links -->
 
-                    <!-- Card-->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">BASIC</div>
-                            <div class="price"><span class="currency">$</span><span class="value">Free</span></div>
-                            <div class="frequency">14 days trial</div>
-                            <div class="divider"></div>
-                            <ul class="list-unstyled li-space-lg">
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">Email Marketing Module</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">User Control Management</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i>
-                                    <div class="media-body">List Building And Cleaning</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i>
-                                    <div class="media-body">Collected Data Reports</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i>
-                                    <div class="media-body">Planning And Evaluation</div>
-                                </li>
-                            </ul>
-                            <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
-                            </div>
-                        </div>
-                    </div> <!-- end of card -->
-                    <!-- end of card -->
+                    <!-- Tabs Content -->
+                    <div class="tab-content" id="argoTabsContent">
 
-                    <!-- Card-->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">ADVANCED</div>
-                            <div class="price"><span class="currency">$</span><span class="value">29.99</span></div>
-                            <div class="frequency">monthly</div>
-                            <div class="divider"></div>
-                            <ul class="list-unstyled li-space-lg">
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">Email Marketing Module</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">User Control Management</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">List Building And Cleaning</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i>
-                                    <div class="media-body">Collected Data Reports</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-times"></i>
-                                    <div class="media-body">Planning And Evaluation</div>
-                                </li>
-                            </ul>
-                            <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
-                            </div>
-                        </div>
-                    </div> <!-- end of card -->
-                    <!-- end of card -->
+                        <!-- Tab -->
+                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                            <div class="row">
 
-                    <!-- Card-->
-                    <div class="card">
-                        <!--<div class="label">
-                            <p class="best-value">Best Value</p>
-                        </div> -->
-                        <div class="card-body">
-                            <div class="card-title">COMPLETE</div>
-                            <div class="price"><span class="currency">$</span><span class="value">39.99</span></div>
-                            <div class="frequency">monthly</div>
-                            <div class="divider"></div>
-                            <ul class="list-unstyled li-space-lg">
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">Email Marketing Module</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">User Control Management</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">List Building And Cleaning</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">Collected Data Reports</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-check"></i>
-                                    <div class="media-body">Planning And Evaluation</div>
-                                </li>
-                            </ul>
-                            <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
-                            </div>
-                        </div>
-                    </div> <!-- end of card -->
-                    <!-- end of card -->
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <div class="card-title">SILVER</div>
+                                        <div class="price"><span class="currency">$</span><span
+                                                class="value">19.99</span></div>
+                                        <div class="frequency">Monthly</div>
+                                        <div class="divider"></div>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Crash injuries</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Damage to property of third parties</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Total loss crash</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Theft</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Road Assistance</div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrapper">
+                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of card -->
 
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
+                                <div class=" card">
+                                    <div class="card-body ">
+                                        <div class="card-title">GOLD</div>
+                                        <div class="price"><span class="currency">$</span><span
+                                                class="value">29.99</span></div>
+                                        <div class="frequency">Monthly</div>
+                                        <div class="divider"></div>
+                                        <ul class="list-unstyled li-space-lg">
+                                        <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Crash injuries</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Damage to property of third parties</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Total loss crash</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Theft</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Road Assistance</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Your Vehicle's Damage</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Third Parties Vehicles Damage</div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrapper">
+                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of card -->
+
+                                <div class=" card">
+                                    <div class="card-body ">
+                                        <div class="card-title">DIAMOND</div>
+                                        <div class="price"><span class="currency">$</span><span
+                                                class="value">39.99</span></div>
+                                        <div class="frequency">Monthly</div>
+                                        <div class="divider"></div>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Email Marketing Module</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">User Control Management</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">List Building And Cleaning</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Collected Data Reports</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Planning And Evaluation</div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrapper">
+                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of card -->
+
+                            </div> <!-- end of col -->
+
+                        </div> <!-- end of tab-pane -->
+                        <!-- end of tab -->
+
+                        <!-- Tab -->
+                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                            <div class="row">
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <div class="card-title">SILVER</div>
+                                        <div class="price"><span class="currency">$</span><span
+                                                class="value">24.99</span></div>
+                                        <div class="frequency">Monthly</div>
+                                        <div class="divider"></div>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Email Marketing Module</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">User Control Management</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">List Building And Cleaning</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Collected Data Reports</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Planning And Evaluation</div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrapper">
+                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of card -->
+
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <div class="card-title">GOLD</div>
+                                        <div class="price"><span class="currency">$</span><span
+                                                class="value">39.99</span></div>
+                                        <div class="frequency">Monthly</div>
+                                        <div class="divider"></div>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Email Marketing Module</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">User Control Management</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">List Building And Cleaning</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Collected Data Reports</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Planning And Evaluation</div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrapper">
+                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of card -->
+
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <div class="card-title">DIAMOND</div>
+                                        <div class="price"><span class="currency">$</span><span
+                                                class="value">49.99</span></div>
+                                        <div class="frequency">Monthly</div>
+                                        <div class="divider"></div>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Email Marketing Module</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">User Control Management</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">List Building And Cleaning</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Collected Data Reports</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Planning And Evaluation</div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrapper">
+                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of card -->
+
+                            </div> <!-- end of col -->
+                        </div> <!-- end of col -->
+
+
+                        <!-- end of tab -->
+
+                        <!-- Tab -->
+                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                            <div class="row">
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <div class="card-title">SILVER</div>
+                                        <div class="price"><span class="currency">$</span><span
+                                                class="value">49.99</span>
+                                        </div>
+                                        <div class="frequency">Monthly</div>
+                                        <div class="divider"></div>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Email Marketing Module</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">User Control Management</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">List Building And Cleaning</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Collected Data Reports</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Planning And Evaluation</div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrapper">
+                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of card -->
+
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <div class="card-title">GOLD</div>
+                                        <div class="price"><span class="currency">$</span><span
+                                                class="value">64.99</span>
+                                        </div>
+                                        <div class="frequency">Monthly</div>
+                                        <div class="divider"></div>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Email Marketing Module</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">User Control Management</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">List Building And Cleaning</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Collected Data Reports</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Planning And Evaluation</div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrapper">
+                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of card -->
+
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <div class="card-title">DIAMOND</div>
+                                        <div class="price"><span class="currency">$</span><span
+                                                class="value">99.99</span>
+                                        </div>
+                                        <div class="frequency">Monthly</div>
+                                        <div class="divider"></div>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Email Marketing Module</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">User Control Management</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">List Building And Cleaning</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Collected Data Reports</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Planning And Evaluation</div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrapper">
+                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of card -->
+
+                            </div> <!-- end of col -->
+                        </div> <!-- end of col -->
+                    </div> <!-- end of tab-pane -->
+                </div> <!-- end of row -->
+            </div> <!-- end of tab-pane -->
+            <!-- end of tab -->
+
+        </div> <!-- end of tab content -->
+
+
+    </div> <!-- end of col -->
+    </div> <!-- end of row -->
+    </div> <!-- end of container -->
     </div> <!-- end of cards-2 -->
     <!-- end of pricing -->
 

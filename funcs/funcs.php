@@ -126,27 +126,27 @@ function generateToken()
 function registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $image, $estatus, $fechaRegistro)
 {
     // Definir la ruta de la imagen predeterminada
-$rutaImagenPredeterminada = '../../views/support/imagenesperfil/user.jpg';
+    $rutaImagenPredeterminada = '../../views/support/imagenesperfil/user.jpg';
 
-//conexion a la base de datos 
-global $mysqli;
-date_default_timezone_set("America/Bogota");
-$hora = date('h:i a', time() - 3600 * date('I'));
-$fecha = date("d/m/Y");
-$fechaRegistro = $fecha . " " . $hora;
-$estatus = "Activo";
+    //conexion a la base de datos 
+    global $mysqli;
+    date_default_timezone_set("America/Bogota");
+    $hora = date('h:i a', time() - 3600 * date('I'));
+    $fecha = date("d/m/Y");
+    $fechaRegistro = $fecha . " " . $hora;
+    $estatus = "Activo";
 
-//inserta los datos ingresados a la base de datos en su respectivo campo
-$stmt = $mysqli->prepare("INSERT INTO users (usuario, password, nombre, correo, token, id_tipo, codigo, imagen, estatus, fecha_registro) VALUES(?,?,?,?,?,?,?,?,?,?)");
-// Modificar la consulta para asignar la imagen predeterminada al campo 'imagen'
-$stmt->bind_param('sssssissss', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $rutaImagenPredeterminada, $estatus, $fechaRegistro);
-//bucle que al momento del execute con la conexion $mysqli insertara el id
-if ($stmt->execute()) {
-    return $mysqli->insert_id;
-} else {
-    //y si no hara el return en falso 
-    return 0;
-}
+    //inserta los datos ingresados a la base de datos en su respectivo campo
+    $stmt = $mysqli->prepare("INSERT INTO users (usuario, password, nombre, correo, token, id_tipo, codigo, imagen, estatus, fecha_registro) VALUES(?,?,?,?,?,?,?,?,?,?)");
+    // Modificar la consulta para asignar la imagen predeterminada al campo 'imagen'
+    $stmt->bind_param('sssssissss', $usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $rutaImagenPredeterminada, $estatus, $fechaRegistro);
+    //bucle que al momento del execute con la conexion $mysqli insertara el id
+    if ($stmt->execute()) {
+        return $mysqli->insert_id;
+    } else {
+        //y si no hara el return en falso 
+        return 0;
+    }
 
 }
 
@@ -232,21 +232,21 @@ function login($usuario, $password)
 {
     session_start();
     include ('conexion.php');
-    
+
     $usuario = trim($_POST['correo']);
     $password = trim($_POST['password']);
-    
+
     $stmt = $mysqli->prepare("SELECT id, id_tipo, password, nombre, imagen FROM users WHERE correo = ? LIMIT 1");
     $stmt->bind_param("s", $usuario);
     $stmt->execute();
     $stmt->store_result();
     $rows = $stmt->num_rows;
-    
+
     if ($rows > 0) {
         $stmt->bind_result($id, $id_tipo, $passwd, $nombre, $imagen);
         $stmt->fetch();
 
-        if(isActivo($usuario)){
+        if (isActivo($usuario)) {
             if (password_verify($password, $passwd)) {
                 // Iniciando la sesión
                 $_SESSION['id'] = $id;
@@ -254,7 +254,7 @@ function login($usuario, $password)
                 $_SESSION['nombre'] = $nombre;
                 $_SESSION['correo'] = $usuario;
                 $_SESSION['imagen'] = $imagen;
-        
+
                 switch ($id_tipo) {
                     case "2":
                         header("location:../views/view_user.php");
@@ -281,7 +281,7 @@ function login($usuario, $password)
             }
 
 
-        }else{
+        } else {
 
 
             echo '<p><script>Swal.fire({
