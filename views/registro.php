@@ -102,7 +102,7 @@ if (!empty($_POST)) {
                     $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
                     //el asuto y cuerpo es lo que ira en el mesaje del correo
                     $asunto = 'PIN - LIFELINE';
-                    $cuerpo = "Deer $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo <br /><br /> Confirm your identity <a href='$url'>Confirm E-Mail</a>";
+                    $cuerpo = "Dear $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo <br /><br /> Confirm your identity <a href='$url'>Confirm E-Mail</a>";
                     //aca se envia el correo usando las anteriores mencionadas variables
                     if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
         
