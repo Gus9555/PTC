@@ -222,7 +222,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab"
-                                aria-controls="tab-3" aria-selected="false"><i class="fas fa-tractor"></i>Industrial</a>
+                                aria-controls="tab-3" aria-selected="false"><i class="fas fa-tractor"></i>Utility</a>
                         </li>
                     </ul>
                     <!-- end of tabs links -->
@@ -244,23 +244,27 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Crash injuries</div>
+                                                <div class="media-body">Third-Party Liability</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Damage to property of third parties</div>
+                                                <div class="media-body">Damage to your Motorcycle</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Total loss crash</div>
+                                                <div class="media-body">Roadside Assistance</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-check"></i>
+                                                <i class="fas fa-times"></i>
                                                 <div class="media-body">Theft</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Road Assistance</div>
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Legal Assistance</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Coverage for Rider's Injuries</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
@@ -279,35 +283,31 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <ul class="list-unstyled li-space-lg">
                                         <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Crash injuries</div>
+                                                <div class="media-body">Extended Third-Party Liability</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Damage to property of third parties</div>
+                                                <div class="media-body">Expanded Motorcycle Damage Coverage</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Total loss crash</div>
+                                                <div class="media-body">Total and Partial Theft</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Theft</div>
+                                                <div class="media-body">Legal Assistance</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Road Assistance</div>
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Extended Travel Assistance</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Your Vehicle's Damage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Third Parties Vehicles Damage</div>
+                                                <i class="fas fa-times"></i>
+                                                <div class="media-body">Coverage for Rider's Injuries</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -322,27 +322,27 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Email Marketing Module</div>
+                                                <div class="media-body">Maximum Third-Party Liability</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">User Control Management</div>
+                                                <div class="media-body">Maximum Motorcycle Damage Coverage with Agreed Value</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">List Building And Cleaning</div>
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Total and Partial Theft Expanded</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Collected Data Reports</div>
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Maximum Travel Assistance</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Planning And Evaluation</div>
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Coverage for Rider's Injuries</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -365,27 +365,31 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Email Marketing Module</div>
+                                                <div class="media-body">Third-Party Liability</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">User Control Management</div>
+                                                <div class="media-body">Collision Coverage</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Comprehensive Coverage</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Roadside Assistance</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">List Building And Cleaning</div>
+                                                <div class="media-body">Legal Assistance</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Collected Data Reports</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Planning And Evaluation</div>
+                                                <div class="media-body">Coverage for Occupant Injuries</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -400,27 +404,31 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Email Marketing Module</div>
+                                                <div class="media-body">Extended Third-Party Liability</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">User Control Management</div>
+                                                <div class="media-body">Expanded Collision Coverage</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Expanded Non-collision Coverage</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Total and Partial Theft</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Legal Assistance</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">List Building And Cleaning</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Collected Data Reports</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Planning And Evaluation</div>
+                                                <div class="media-body">Coverage for Occupant Injuries</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -435,27 +443,31 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Email Marketing Module</div>
+                                                <div class="media-body">Maximum Third-Party Liability</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">User Control Management</div>
+                                                <div class="media-body">Expanded Collision Coverage with Agreed Value</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">List Building And Cleaning</div>
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Expanded Comprehensive Coverage with Deductible Waiver</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Collected Data Reports</div>
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Total and Partial Theft Expanded</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Planning And Evaluation</div>
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Maximum Travel Assistance</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Coverage for Occupant Injuries</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -480,27 +492,19 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Email Marketing Module</div>
+                                                <div class="media-body">Liability Coverage</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">User Control Management</div>
+                                                <div class="media-body">Collision Coverage</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">List Building And Cleaning</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Collected Data Reports</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Planning And Evaluation</div>
+                                                <div class="media-body">Non-collision Coverage</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -516,27 +520,23 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Email Marketing Module</div>
+                                                <div class="media-body">Extended Liability Coverage</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">User Control Management</div>
+                                                <div class="media-body">Rental Reimbursement</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">List Building And Cleaning</div>
+                                                <div class="media-body">Towing and Roadside Assistance</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Collected Data Reports</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Planning And Evaluation</div>
+                                                <div class="media-body">Uninsured/Underinsured Motorist Coverage</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -552,27 +552,27 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Email Marketing Module</div>
+                                                <div class="media-body">Agreed Value Coverage</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">User Control Management</div>
+                                                <div class="media-body">Business Interruption Coverage</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">List Building And Cleaning</div>
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Equipment Coverage</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Collected Data Reports</div>
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Loss of Use Coverage</div>
                                             </li>
                                             <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Planning And Evaluation</div>
+                                                <i class="fas fa-check"></i>
+                                                <div class="media-body">Enhanced Medical Payments</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
+                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
