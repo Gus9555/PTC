@@ -39,10 +39,10 @@ if ($rows > 0) {
 }
 $url = 'http://' . $_SERVER["SERVER_NAME"] . ':81/PTC/views/cotizacion.php';
 //el asuto y cuerpo es lo que ira en el mesaje del correo
+$file = 'MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf';
 $asunto = 'PRICE QUOTE - LIFELINE';
 $cuerpo = "Dear $nombre: <br /><br />Price Quote <br /><br /> Confirm your identity <a href='$url'>Price Quote</a>";
-if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
-
+if (enviarPDF($email, $nombre, $asunto, $cuerpo, $file)) {
     echo '<p><script>swal({
         title: "Check Your E-Mail!",
         text: "We sent a link to your E-Mail",
