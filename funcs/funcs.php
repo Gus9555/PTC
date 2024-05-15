@@ -281,71 +281,77 @@ function activarUsuario($id)
 
 // metodo para el login////////////////////////////////////////////////
 function login($usuario, $password)
-{
-    session_start();
-include ('conexion.php');
-
-$usuario = trim($_POST['correo']);
-$password = trim($_POST['password']);
-
-$stmt = $mysqli->prepare("SELECT id, id_tipo, unique_id, password, nombre, imagen FROM users WHERE correo = ? LIMIT 1");
-$stmt->bind_param("s", $usuario);
-$stmt->execute();
-$stmt->store_result();
-$rows = $stmt->num_rows;
-
-if ($rows > 0) {
-    $stmt->bind_result($id, $id_tipo, $unique_id, $passwd, $nombre, $imagen);
-    $stmt->fetch();
-
-    if (isActivo($usuario)) {
-        if (password_verify($password, $passwd)) {
-            // Iniciando la sesión
-            $_SESSION['id'] = $id;
-            $_SESSION['tipo_usuario'] = $id_tipo;
-            $_SESSION['nombre'] = $nombre;
-            $_SESSION['correo'] = $usuario;
-            $_SESSION['imagen'] = $imagen;
-            $_SESSION['unique_id'] = $unique_id; // Asignando el unique_id a la sesión
-
-            switch ($id_tipo) {
-                case "2":
-                    header("location:../views/view_user.php");
-                    exit;
-                case "1":
-                    header("location:../views/Admin/Admin.php");
-                    exit;
-                case "3":
-                    header("location:../views/support/home.php");
-                    exit;
-                default:
-                    echo '<p><script>Swal.fire({
-                            title: "ERROR",
-                            text: "User type not recognized",
-                            icon: "error"
-                            });</script></p>';
+{session_start();
+    include ('conexion.php');
+    
+    $usuario = trim($_POST['correo']);
+    $password = trim($_POST['password']);
+    
+    $stmt = $mysqli->prepare("SELECT id, id_tipo, unique_id, password, nombre, imagen FROM users WHERE correo = ? LIMIT 1");
+    $stmt->bind_param("s", $usuario);
+    $stmt->execute();
+    $stmt->store_result();
+    $rows = $stmt->num_rows;
+    
+    if ($rows > 0) {
+        $stmt->bind_result($id, $id_tipo, $unique_id, $passwd, $nombre, $imagen);
+        $stmt->fetch();
+    
+        if (isActivo($usuario)) {
+            if (password_verify($password, $passwd)) {
+                // Iniciando la sesión
+                $_SESSION['id'] = $id;
+                $_SESSION['tipo_usuario'] = $id_tipo;
+                $_SESSION['nombre'] = $nombre;
+                $_SESSION['correo'] = $usuario;
+                $_SESSION['imagen'] = $imagen;
+                $_SESSION['unique_id'] = $unique_id; // Asignando el unique_id a la sesión
+    
+                // Actualizar estado del usuario a "en línea"
+                $stmt_update_status = $mysqli->prepare("UPDATE users SET estatus = 'Active now' WHERE id = ?");
+                $stmt_update_status->bind_param("i", $id);
+                $stmt_update_status->execute();
+                $stmt_update_status->close();
+    
+                switch ($id_tipo) {
+                    case "2":
+                        header("location:../views/view_user.php");
+                        exit;
+                    case "1":
+                        header("location:../views/Admin/Admin.php");
+                        exit;
+                    case "3":
+                        header("location:../views/support/users.php");
+                        exit;
+                    default:
+                        echo '<p><script>Swal.fire({
+                                title: "ERROR",
+                                text: "User type not recognized",
+                                icon: "error"
+                                });</script></p>';
+                }
+            } else {
+                echo '<p><script>Swal.fire({
+                        title: "ERROR",
+                        text: "Incorrect credentials, try again.",
+                        icon: "error"
+                        });</script></p>';
             }
         } else {
             echo '<p><script>Swal.fire({
                     title: "ERROR",
-                    text: "Incorrect credentials, try again.",
+                    text: "The account needs to be active, check your E-Mail",
                     icon: "error"
                     });</script></p>';
         }
     } else {
         echo '<p><script>Swal.fire({
                 title: "ERROR",
-                text: "The account needs to be active, check your E-Mail",
+                text: "This e-mail address is not registered",
                 icon: "error"
                 });</script></p>';
     }
-} else {
-    echo '<p><script>Swal.fire({
-            title: "ERROR",
-            text: "This e-mail address is not registered",
-            icon: "error"
-            });</script></p>';
-}
+    
 
 }
 
