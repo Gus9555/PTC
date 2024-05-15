@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-04-2024 a las 23:34:01
+-- Tiempo de generación: 15-05-2024 a las 07:59:50
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -26,78 +26,32 @@ USE `lifeline`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clickuser`
+-- Estructura de tabla para la tabla `messages`
 --
 
-DROP TABLE IF EXISTS `clickuser`;
-CREATE TABLE `clickuser` (
-  `id` int(10) NOT NULL,
-  `UserIdSession` varchar(50) DEFAULT NULL,
-  `clickUser` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE `messages` (
+  `msg_id` int(11) NOT NULL,
+  `incoming_msg_id` int(255) NOT NULL,
+  `outgoing_msg_id` int(255) NOT NULL,
+  `msg` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `clickuser`
+-- Volcado de datos para la tabla `messages`
 --
 
-INSERT INTO `clickuser` (`id`, `UserIdSession`, `clickUser`) VALUES
-(8, '9', '12'),
-(9, '12', '9'),
-(10, '13', '14'),
-(11, '14', '17'),
-(12, '15', '14'),
-(13, '16', '17'),
-(14, '18', '19'),
-(15, '19', '18'),
-(16, '41', '40'),
-(17, '40', '41');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `msjs`
---
-
-DROP TABLE IF EXISTS `msjs`;
-CREATE TABLE `msjs` (
-  `id` int(11) NOT NULL,
-  `user` varchar(250) DEFAULT NULL,
-  `user_id` int(250) DEFAULT NULL,
-  `to_user` varchar(250) DEFAULT NULL,
-  `to_id` int(250) DEFAULT NULL,
-  `message` text DEFAULT NULL,
-  `fecha` varchar(250) DEFAULT NULL,
-  `nombre_equipo_user` varchar(250) DEFAULT NULL,
-  `leido` varchar(100) DEFAULT NULL,
-  `sonido` varchar(10) DEFAULT NULL,
-  `archivos` varchar(50) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Volcado de datos para la tabla `msjs`
---
-
-INSERT INTO `msjs` (`id`, `user`, `user_id`, `to_user`, `to_id`, `message`, `fecha`, `nombre_equipo_user`, `leido`, `sonido`, `archivos`) VALUES
-(54, 'gustavomcastillo120@gmail.com', 13, 'yohalmo cruz ', 14, 'tttttt', '05/04/2024 03:46 pm', 'C-31', 'SI', NULL, NULL),
-(55, 'yohalmodaniel@gmail.com', 14, 'Gustavo Castillo ', 13, 'motherfucker', '05/04/2024 03:53 pm', 'C-31', 'SI', NULL, NULL),
-(56, 'yohalmodaniel@gmail.com', 14, 'Gustavo Castillo ', 13, 'hola', '05/04/2024 03:55 pm', 'C-31', 'SI', NULL, NULL),
-(57, 'gustavomcastillo120@gmail.com', 13, 'yohalmo cruz ', 14, 'puto', '05/04/2024 03:56 pm', 'C-31', 'SI', NULL, NULL),
-(58, 'yohalmodaniel@gmail.com', 14, 'Gustavo Castillo ', 13, 'cabron', '05/04/2024 03:56 pm', 'C-31', 'SI', NULL, NULL),
-(59, 'gustavomcastillo120@gmail.com', 13, 'yohalmo cruz ', 14, 'ay', '05/04/2024 03:57 pm', 'C-31', 'SI', NULL, NULL),
-(60, 'gustavomcastillo120@gmail.com', 13, 'yohalmo cruz ', 14, 'chi', '05/04/2024 03:57 pm', 'C-31', 'SI', NULL, NULL),
-(61, 'yohalmodaniel@gmail.com', 14, 'Gustavo Castillo ', 13, 'ti', '05/04/2024 03:57 pm', 'C-31', 'SI', NULL, NULL),
-(62, 'lifeline.ptc.2024@gmail.com', 15, 'yohalmo daniel ', 1, 'hola', '23/04/2024 01:55 pm', 'DESKTOP-1OTC173', 'NO', NULL, NULL),
-(63, 'lifeline.ptc.2024@gmail.com', 15, 'fssds ', 14, 'hola', '23/04/2024 01:56 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL),
-(64, 'yohalmodaniel16@gmail.com', 14, 'yohalmo 2 ', 15, 'hoda', '23/04/2024 01:56 pm', 'DESKTOP-1OTC173', 'NO', NULL, NULL),
-(65, 'yohalmodaniel16@gmail.com', 14, 'yohalmo daniel ', 16, 'hoda', '23/04/2024 02:00 pm', 'DESKTOP-1OTC173', 'NO', NULL, NULL),
-(66, 'yohalmodaniel16@gmail.com', 14, 'yohalmo daniel ', 16, 'HOLLAAA', '23/04/2024 02:00 pm', 'DESKTOP-1OTC173', 'NO', NULL, NULL),
-(67, 'yohalmodaniel16@gmail.com', 16, 'yohalmo 2 ', 15, 'HOLA', '23/04/2024 02:00 pm', 'DESKTOP-1OTC173', 'NO', NULL, NULL),
-(68, 'yohalmodaniel16@gmail.com', 16, 'yohalmo daniel ', 17, 'HOLA', '23/04/2024 02:01 pm', 'DESKTOP-1OTC173', 'NO', NULL, NULL),
-(69, 'yohalmodaniel16@gmail.com', 18, 'Support ', 19, 'hola.buenas tardes', '23/04/2024 02:39 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL),
-(70, 'lifeline.ptc.2024@gmail.com', 19, 'yohalmo daniel ', 18, 'en que le puedo ayudar?', '23/04/2024 02:39 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL),
-(71, 'yohalmo.daniel@hotmail.com', 41, 'yohalmo daniel ', 40, 'holaa', '24/04/2024 04:06 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL),
-(72, 'yohalmodaniel16@gmail.com', 40, 'Diego Barrera ', 41, 'soy yohalmo', '24/04/2024 04:06 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL),
-(73, 'yohalmo.daniel@hotmail.com', 41, 'yohalmo daniel ', 40, 'yo agreda', '24/04/2024 04:06 pm', 'DESKTOP-1OTC173', 'SI', NULL, NULL);
+INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`) VALUES
+(29, 414125766, 674448409, 'hola'),
+(30, 414125766, 674448409, 'hola'),
+(31, 414125766, 674448409, 'asa'),
+(32, 414125766, 674448409, 'ada'),
+(33, 414125766, 147109824, 'as'),
+(34, 414125766, 147109824, 'asa'),
+(35, 674448409, 147109824, 'a\\'),
+(36, 674448409, 147109824, 'a\\'),
+(37, 414125766, 674448409, 'asa'),
+(38, 674448409, 414125766, 'gsd');
 
 -- --------------------------------------------------------
 
@@ -143,32 +97,26 @@ CREATE TABLE `users` (
   `imagen` varchar(50) DEFAULT NULL,
   `estatus` varchar(100) NOT NULL,
   `fecha_registro` varchar(50) NOT NULL,
-  `fecha_session` varchar(250) NOT NULL
+  `unique_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `usuario`, `password`, `nombre`, `correo`, `last_session`, `token`, `token_password`, `password_request`, `activacion`, `id_tipo`, `codigo`, `imagen`, `estatus`, `fecha_registro`, `fecha_session`) VALUES
-(39, '', '$2y$10$1qh1KOmjsxwIrzXQoqDXZutDDgHc8tnrl32KGqYo6kPLMnXEovZ7u', 'LIfeline Support', 'lifeline.ptc.2024@gmail.com', '0000-00-00 00:00:00', '', '', 0, 0, 3, '', 'b5f0a8b43d.png', 'Inactiva', '24/04/2024 03:56 pm', '24/04/2024 03:57 pm'),
-(40, 'yoha', '$2y$10$R.8.1LadsTNCNVIWMJkSDe/SY/arD3YM1ssESMZbyY57dh8WchK3i', 'yohalmo daniel', 'yohalmodaniel16@gmail.com', '0000-00-00 00:00:00', '15de356d62ef6820ea34424b55b67d9d', '', 0, 0, 3, '28 44 30 23 ', 'Captura de pantalla 2024-04-07 122600.png', 'Inactiva', '24/04/2024 04:04 pm', '24/04/2024 04:32 pm');
+INSERT INTO `users` (`id`, `usuario`, `password`, `nombre`, `correo`, `last_session`, `token`, `token_password`, `password_request`, `activacion`, `id_tipo`, `codigo`, `imagen`, `estatus`, `fecha_registro`, `unique_id`) VALUES
+(42, 'yoha', '$2y$10$Tc1vMguBQqut2jUz/xdO9OofnNwWp2Fv8NGsr/WCqgkLajKCMXvMa', 'yohalmo daniel', 'yohalmodaniel16@gmail.com', '0000-00-00 00:00:00', '4c389bf11ad79d9d9bffc7ff403c241f', '', 0, 1, 2, '19 78 33 52 94 ', NULL, 'Offline now', '14/05/2024 10:42 pm', 674448409),
+(43, 'support', '$2y$10$vW2L5I4yWwxcebFklaYPae15V/gASthamN6kclLdwB.DhzMp6axmG', 'Support Lifeline', 'lifeline.ptc.2024@gmail.com', '0000-00-00 00:00:00', '32080d54c360ced12b4fbf3a47ec9920', '', 0, 1, 2, '85 68 99 89 23 ', NULL, 'Offline now', '14/05/2024 11:10 pm', 414125766);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `clickuser`
+-- Indices de la tabla `messages`
 --
-ALTER TABLE `clickuser`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `msjs`
---
-ALTER TABLE `msjs`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`msg_id`);
 
 --
 -- Indices de la tabla `tipo_usuario`
@@ -187,16 +135,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT de la tabla `clickuser`
+-- AUTO_INCREMENT de la tabla `messages`
 --
-ALTER TABLE `clickuser`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT de la tabla `msjs`
---
-ALTER TABLE `msjs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+ALTER TABLE `messages`
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_usuario`
@@ -208,7 +150,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
