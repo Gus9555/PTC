@@ -503,14 +503,10 @@
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Invalidez total y permanente</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
                             <div class="media-body">Total and permanent disability</div>
                         </li>
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="views/sign-up.html">SIGN UP</a> <a
+                    <a class="btn-solid-reg mfp-close" href="Medical.php">INSURANCE</a> <a
                         class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -544,7 +540,7 @@
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Explosión</div>
+                            <div class="media-body">Gas leaks</div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
@@ -559,7 +555,7 @@
                             <div class="media-body">Theft</div>
                         </li>
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="views/registro.php">SIGN UP</a> <a
+                    <a class="btn-solid-reg mfp-close" href="Home.php">INSURANCE</a> <a
                         class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
