@@ -93,9 +93,10 @@ if (!empty($_POST)) {
                 $hora = date('h:i a', time() - 3600 * date('I'));
                 $fecha = date("d/m/Y");
                 $fechaRegistro = $fecha . " " . $hora;
-                $estatus = "Activo";
+                $estatus = "Active now";
+                $ran_id = rand(time(), 100000000);
                 //convertimos el proceso del registro el una sola variable para mandarla a llamar 
-                $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $rutaImagenPredeterminada, $estatus, $fechaRegistro);
+                $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $estatus, $fechaRegistro, $ran_id);
                 //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
                 if ($registro > 0) {
         
