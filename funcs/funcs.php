@@ -192,6 +192,58 @@ function enviarEmail($email, $nombre, $asunto, $cuerpo)
         return false;
 }
 
+function enviarPDF($email, $nombre, $asunto, $cuerpo, $file)
+{
+
+
+    require ("../plugins/PHPMailer-master/src/PHPMailer.php");
+    require ("../plugins/PHPMailer-master/src/Exception.php");
+    require ("../plugins/PHPMailer-master/src/SMTP.php");
+    // $mail = new PHPMailer();
+
+    $mail = new PHPMailer;
+
+    // Configurar el servidor SMTP
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'lifeline.ptc.2024@gmail.com';
+    $mail->Password = 'xufuzzvkjdgxqqck';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+
+    // Configurar el remitente y destinatario
+    $mail->setFrom('lifeline.ptc.2024@gmail.com', 'LifeLine');
+    $mail->addAddress($email, $nombre);
+
+    // Asignar asunto y cuerpo del mensaje
+    $mail->Subject = 'Prueba de adjunto con PHPMailer';
+    $mail->Body = 'Este es un correo de prueba con un archivo adjunto.';
+//"C:\xampp\htdocs\PTC\assets\images\MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf";
+    // Adjuntar un archivo
+    $file_path = '../assets\images\MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf'; // Ruta del archivo a adjuntar
+    $mail->addAttachment($file_path); // Adjuntar el archivo
+
+    // Enviar el correo
+    if ($mail->send()) {
+        echo '<p><script>swal({
+            title: "Check Your E-Mail!",
+            text: "We sent a link to your E-Mail",
+            icon: "success",
+             }).then(function() {
+            window.location = "../views/vehicles.php";
+            });</script></p>';
+    } else {
+        echo '<p><script>swal({
+            title: "Try Again!",
+            text: "We got an error sending the E-Mail",
+            icon: "error",
+             }).then(function() {
+            window.location = "../views/view_user.php";
+            });</script></p>';
+    }
+}
+
 function resultBlock($errors)
 {
     if (count($errors) > 0) {
