@@ -15,9 +15,12 @@
         ($row['estatus'] == "Offline now") ? $offline = "offline" : $offline = "";
         ($outgoing_id == $row['unique_id']) ? $hid_me = "hide" : $hid_me = "";
 
+        // Verifica el tipo de usuario para determinar qué imagen mostrar
+        $userTypeImage = ($row['id_tipo'] == 2) ? "php/images/OIP_2.jpeg" : "php/images/support.png";
+
         $output .= '<a href="chat.php?user_id='. $row['unique_id'] .'">
                     <div class="content">
-                    <img src="php/images/OIP_2.jpeg" alt="">
+                    <img src="' . $userTypeImage . '" alt="">
                     <div class="details">
                         <span>'. $row['nombre']. " " .'</span>
                         <p>'. $you . $msg .'</p>
