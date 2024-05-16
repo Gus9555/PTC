@@ -192,7 +192,7 @@ function enviarEmail($email, $nombre, $asunto, $cuerpo)
         return false;
 }
 
-function enviarPDF($email, $nombre, $asunto, $cuerpo, $file)
+function enviarPDF($email, $nombre, $asunto, $cuerpo)
 {
 
 
@@ -221,7 +221,49 @@ function enviarPDF($email, $nombre, $asunto, $cuerpo, $file)
     $mail->Body = 'Este es un correo de prueba con un archivo adjunto.';
 //"C:\xampp\htdocs\PTC\assets\images\MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf";
     // Adjuntar un archivo
-    $file_path = '../assets\images\MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf'; // Ruta del archivo a adjuntar
+    $accion = $_POST['pdf'];
+    if ($accion == "moto") {
+        $pdf = 'casa.png';
+        echo "moto";
+    } elseif ($accion == "car") {
+        $pdf = 'carros.png';
+        echo "car";
+    } else {
+        $pdf = 'MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf';
+    }
+            // Realizar una acción dependiendo del botón
+            // switch ($accion) {
+            //     case 'moto':
+            //         // Acción para el botón 1
+            //         $pdf = 'casa.png';
+            //         echo "moto";
+            //         break;
+            //     case 'car':
+            //         // Acción para el botón 2
+            //         $pdf = 'carros.png';
+            //         echo "car";
+            //         break;
+            //     case 'industry':
+            //         // Acción para el botón 3
+            //         $pdf = 'MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf';
+            //         break;
+            //     case 'health':
+            //         // Acción para el botón 3
+            //         $pdf = 'MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf';
+            //         break;
+            //     case 'home':
+            //         // Acción para el botón 3
+            //         $pdf = 'MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf';
+            //         break;
+            //     default:
+            //         // Si no se reconoce la acción
+            //         echo "Acción no reconocida";
+            //         break;
+            
+        
+    
+$file = $pdf;
+    $file_path = '../assets/images/'.$file; // Ruta del archivo a adjuntar
     $mail->addAttachment($file_path); // Adjuntar el archivo
 
     // Enviar el correo
@@ -233,6 +275,7 @@ function enviarPDF($email, $nombre, $asunto, $cuerpo, $file)
              }).then(function() {
             window.location = "../views/vehicles.php";
             });</script></p>';
+            echo $pdf;
     } else {
         echo '<p><script>swal({
             title: "Try Again!",
