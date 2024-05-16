@@ -238,7 +238,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body">
                                         <div class="card-title">SILVER</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">19.99</span></div>
+                                                class="value">14.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -279,7 +279,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">GOLD</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">29.99</span></div>
+                                                class="value">24.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -320,7 +320,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">DIAMOND</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">39.99</span></div>
+                                                class="value">49.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -407,7 +407,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">GOLD</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">39.99</span></div>
+                                                class="value">49.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -448,7 +448,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">DIAMOND</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">49.99</span></div>
+                                                class="value">99.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -499,7 +499,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">SILVER</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">49.99</span>
+                                                class="value">44.99</span>
                                         </div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
@@ -529,7 +529,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">GOLD</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">64.99</span>
+                                                class="value">84.99</span>
                                         </div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
@@ -563,7 +563,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">DIAMOND</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">99.99</span>
+                                                class="value">149.99</span>
                                         </div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>

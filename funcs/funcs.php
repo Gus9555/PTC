@@ -222,20 +222,15 @@ function enviarPDF($email, $nombre, $asunto, $cuerpo)
 
     $accion = $_POST['pdf'];
     if ($accion == "moto") {
-        $pdf = 'logo.png';
-        echo "moto";
+        $pdf = 'Motorcycle Insurance.pdf';
     } elseif ($accion == "car") {
-        $pdf = 'carros.png';
-        echo "car";
+        $pdf = 'Car Insurance.pdf';
     } elseif ($accion == "industry") {
-        $pdf = '33.png';
-        echo "industry";
+        $pdf = 'Utility Vehicles Insurance.pdf';
     }  elseif ($accion == "medical") {
-        $pdf = 'corazon.png';
-        echo "medical";
+        $pdf = 'Healthcare Insurance.pdf';
     } elseif ($accion == "home") {
-        $pdf = 'casa.png';
-        echo "home";
+        $pdf = 'Home Insurance.pdf';
     } else {
         echo "There is no file";
     }
