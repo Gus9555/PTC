@@ -194,8 +194,6 @@ function enviarEmail($email, $nombre, $asunto, $cuerpo)
 
 function enviarPDF($email, $nombre, $asunto, $cuerpo)
 {
-
-
     require ("../plugins/PHPMailer-master/src/PHPMailer.php");
     require ("../plugins/PHPMailer-master/src/Exception.php");
     require ("../plugins/PHPMailer-master/src/SMTP.php");
@@ -221,49 +219,32 @@ function enviarPDF($email, $nombre, $asunto, $cuerpo)
     $mail->Body = 'Este es un correo de prueba con un archivo adjunto.';
 //"C:\xampp\htdocs\PTC\assets\images\MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf";
     // Adjuntar un archivo
+
     $accion = $_POST['pdf'];
     if ($accion == "moto") {
-        $pdf = 'casa.png';
+        $pdf = 'logo.png';
         echo "moto";
     } elseif ($accion == "car") {
         $pdf = 'carros.png';
         echo "car";
+    } elseif ($accion == "industry") {
+        $pdf = '33.png';
+        echo "industry";
+    }  elseif ($accion == "medical") {
+        $pdf = 'corazon.png';
+        echo "medical";
+    } elseif ($accion == "home") {
+        $pdf = 'casa.png';
+        echo "home";
     } else {
-        $pdf = 'MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf';
+        echo "There is no file";
     }
-            // Realizar una acción dependiendo del botón
-            // switch ($accion) {
-            //     case 'moto':
-            //         // Acción para el botón 1
-            //         $pdf = 'casa.png';
-            //         echo "moto";
-            //         break;
-            //     case 'car':
-            //         // Acción para el botón 2
-            //         $pdf = 'carros.png';
-            //         echo "car";
-            //         break;
-            //     case 'industry':
-            //         // Acción para el botón 3
-            //         $pdf = 'MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf';
-            //         break;
-            //     case 'health':
-            //         // Acción para el botón 3
-            //         $pdf = 'MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf';
-            //         break;
-            //     case 'home':
-            //         // Acción para el botón 3
-            //         $pdf = 'MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf';
-            //         break;
-            //     default:
-            //         // Si no se reconoce la acción
-            //         echo "Acción no reconocida";
-            //         break;
-            
-        
     
-$file = $pdf;
-    $file_path = '../assets/images/'.$file; // Ruta del archivo a adjuntar
+
+
+
+    $file = $pdf;
+    $file_path = '../assets/images/' . $file; // Ruta del archivo a adjuntar
     $mail->addAttachment($file_path); // Adjuntar el archivo
 
     // Enviar el correo
@@ -273,9 +254,9 @@ $file = $pdf;
             text: "We sent a link to your E-Mail",
             icon: "success",
              }).then(function() {
-            window.location = "../views/vehicles.php";
+            window.location = "../views/view_user.php";
             });</script></p>';
-            echo $pdf;
+        echo $pdf;
     } else {
         echo '<p><script>swal({
             title: "Try Again!",
@@ -324,22 +305,23 @@ function activarUsuario($id)
 
 // metodo para el login////////////////////////////////////////////////
 function login($usuario, $password)
-{session_start();
+{
+    session_start();
     include ('conexion.php');
-    
+
     $usuario = trim($_POST['correo']);
     $password = trim($_POST['password']);
-    
+
     $stmt = $mysqli->prepare("SELECT id, id_tipo, unique_id, password, nombre, imagen FROM users WHERE correo = ? LIMIT 1");
     $stmt->bind_param("s", $usuario);
     $stmt->execute();
     $stmt->store_result();
     $rows = $stmt->num_rows;
-    
+
     if ($rows > 0) {
         $stmt->bind_result($id, $id_tipo, $unique_id, $passwd, $nombre, $imagen);
         $stmt->fetch();
-    
+
         if (isActivo($usuario)) {
             if (password_verify($password, $passwd)) {
                 // Iniciando la sesión
@@ -349,13 +331,13 @@ function login($usuario, $password)
                 $_SESSION['correo'] = $usuario;
                 $_SESSION['imagen'] = $imagen;
                 $_SESSION['unique_id'] = $unique_id; // Asignando el unique_id a la sesión
-    
+
                 // Actualizar estado del usuario a "en línea"
                 $stmt_update_status = $mysqli->prepare("UPDATE users SET estatus = 'Active now' WHERE id = ?");
                 $stmt_update_status->bind_param("i", $id);
                 $stmt_update_status->execute();
                 $stmt_update_status->close();
-    
+
                 switch ($id_tipo) {
                     case "2":
                         header("location:../views/view_user.php");

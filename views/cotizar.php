@@ -44,12 +44,6 @@ $url = 'http://' . $_SERVER["SERVER_NAME"] . ':81/PTC/views/cotizacion.php';
 $asunto = 'PRICE QUOTE - LIFELINE';
 $cuerpo = "Dear $nombre: <br /><br />Price Quote <br /><br /> Confirm your identity <a href='$url'>Price Quote</a>";
 if (enviarPDF($email, $nombre, $asunto, $cuerpo)) {
-    echo '<p><script>swal({
-        title: "Check Your E-Mail!",
-        text: "We sent a link to your E-Mail",
-        icon: "success",
-         }).then(function() {
-        window.location = "../views/vehicles.php";
-        });</script></p>';
+    
 }
 ?>

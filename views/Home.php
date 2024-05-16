@@ -255,7 +255,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="home" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -286,7 +288,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="home" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -321,7 +325,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="home" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
