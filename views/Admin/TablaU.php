@@ -76,7 +76,7 @@ $resultado = $mysqli->query($sql);
 
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="index.html" class="logo">
+                <a href="Admin.php" class="logo">
                     <img src="../../assets/boss/images/logo.png" class="logo-lg" alt="" height="45">
                     <img src="../../assets/boss/images/header-software-app.png" class="logo-sm" alt="" height="34">
                 </a>
@@ -234,7 +234,7 @@ $resultado = $mysqli->query($sql);
                     <ul class="metismenu" id="side-menu">
                         <li class="menu-title">Menu</li>
                         <li>
-                            <a href="index.html" class="waves-effect">
+                            <a href="Admin.php" class="waves-effect">
                                 <i class="dripicons-meter"></i><span
                                     class="badge badge-info badge-pill float-right">9+</span> <span> Dashboard </span>
                             </a>
@@ -273,15 +273,15 @@ $resultado = $mysqli->query($sql);
                         <div class="row align-items-center ">
                             <div class="col-md-8">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Data Table</h4>
+                                    <h4 class="page-title">User Table</h4>
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item">
-                                            <a href="javascript:void(0);">Zegva</a>
+                                            <a href="javascript:void(0);">LifeLine</a>
                                         </li>
                                         <li class="breadcrumb-item">
                                             <a href="javascript:void(0);">Tables</a>
                                         </li>
-                                        <li class="breadcrumb-item active">Data Table</li>
+                                        <li class="breadcrumb-item active">User Table</li>
                                     </ol>
                                 </div>
                             </div>
@@ -304,11 +304,8 @@ $resultado = $mysqli->query($sql);
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="mt-0 header-title">Buttons example</h4>
-                                    <p class="sub-title">The Buttons extension for DataTables provides a common set of
-                                        options, API methods and styling to display buttons on a page that will interact
-                                        with a DataTable. The core library provides the based framework upon which
-                                        plug-ins can built.
+                                    <h4 class="mt-0 header-title">lifeline user table</h4>
+                                    <p class="sub-title">In this section, a detailed list of all users who have completed the registration process on the platform is presented. Here you can access key information about each user, such as their username and contact details if available. This resource provides a valuable overview of the platform's user base, which can help in community management, audience segmentation and data analysis to improve the user experience.
                                     </p>
 
                                     <table id="datatable-buttons"
@@ -367,7 +364,7 @@ $resultado = $mysqli->query($sql);
             <!-- content -->
 
             <footer class="footer">
-                © 2019 Zegva <a href="https://1.envato.market/themesdesign" target="_blank" class="">Themesdesign</a>
+                © 2024 LifeLine
             </footer>
 
         </div>
