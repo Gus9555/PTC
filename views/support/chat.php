@@ -27,6 +27,7 @@
         </div>
       </header>
       <div class="chat-box">
+        
 
       </div>
       <form action="#" class="typing-area">
