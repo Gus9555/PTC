@@ -15,12 +15,13 @@
           $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
           if(mysqli_num_rows($sql) > 0){
             $row = mysqli_fetch_assoc($sql);
+            $imagen_predeterminada = ($row['id_tipo'] == 2) ? "php/images/OIP_2.jpeg" : "php/images/support.png";
           }else{
             header("location: users.php");
           }
         ?>
         <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-        <img src="php/images/OIP_2.jpeg" alt="">
+        <img src="<?php echo $imagen_predeterminada; ?>" alt="">
         <div class="details">
           <span><?php echo $row['nombre']. " "  ?></span>
           <p><?php echo $row['estatus']; ?></p>

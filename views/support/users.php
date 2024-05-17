@@ -20,7 +20,7 @@
 session_start();
 require 'php/config.php'; // Aquí incluye el archivo que contiene la conexión a la base de datos
 
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['unique_id'])) {
     echo '<p><script>Swal.fire({
         title: "Warning",
         text: "LogIn again"
@@ -31,7 +31,6 @@ if (!isset($_SESSION['id'])) {
 }
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
-
 include_once "header.php";
 ?>
 
@@ -39,14 +38,15 @@ include_once "header.php";
   <div class="wrapper">
     <section class="users">
       <header>
-      <div class="content">
+        <div class="content">
           <?php 
             $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
             if(mysqli_num_rows($sql) > 0){
               $row = mysqli_fetch_assoc($sql);
+              $imagen_predeterminada = ($row['id_tipo'] == 2) ? "php/images/OIP_2.jpeg" : "php/images/support.png";
             }
           ?>
-          <img src="php/images/OIP_2.jpeg" alt="">
+          <img src="<?php echo $imagen_predeterminada; ?>" alt="">
           <div class="details">
             <span><?php echo $row['nombre']. " " ?></span>
             <p><?php echo $row['estatus']; ?></p>
@@ -60,13 +60,13 @@ include_once "header.php";
         <button><i class="fas fa-search"></i></button>
       </div>
       <div class="users-list">
-
+        <!-- Aquí se mostrarán los usuarios -->
       </div>
     </section>
   </div>
 
   <script src="javascript/users.js"></script>
-
 </body>
+
 
 </html>

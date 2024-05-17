@@ -16,6 +16,7 @@
 </body>
 
 </html>
+<b></b>
 <?php
 session_start();
 
@@ -229,16 +230,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                     <!-- Tabs Content -->
                     <div class="tab-content" id="argoTabsContent">
-
                         <!-- Tab -->
                         <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
                             <div class="row">
 
                                 <div class="card">
-                                    <div class="card-body ">
+                                    <div class="card-body">
                                         <div class="card-title">SILVER</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">19.99</span></div>
+                                                class="value">14.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -268,7 +268,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="moto" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -277,7 +279,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">GOLD</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">29.99</span></div>
+                                                class="value">24.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -307,7 +309,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="moto" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -316,7 +320,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">DIAMOND</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">39.99</span></div>
+                                                class="value">49.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -342,7 +346,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                            <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="moto" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -353,6 +359,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <!-- end of tab -->
 
                         <!-- Tab -->
+                        
                         <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
                             <div class="row">
                                 <div class="card">
@@ -389,7 +396,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="car" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -398,7 +407,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">GOLD</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">39.99</span></div>
+                                                class="value">49.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -428,7 +437,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="car" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -437,7 +448,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">DIAMOND</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">49.99</span></div>
+                                                class="value">99.99</span></div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
@@ -467,25 +478,28 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="car" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
 
                             </div> <!-- end of col -->
                         </div> <!-- end of col -->
-
+                        
 
                         <!-- end of tab -->
 
                         <!-- Tab -->
+                        
                         <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
                             <div class="row">
                                 <div class="card">
                                     <div class="card-body ">
                                         <div class="card-title">SILVER</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">49.99</span>
+                                                class="value">44.99</span>
                                         </div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
@@ -504,7 +518,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="industry" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -513,7 +529,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">GOLD</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">64.99</span>
+                                                class="value">84.99</span>
                                         </div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
@@ -536,7 +552,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="industry" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -545,7 +563,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                     <div class="card-body ">
                                         <div class="card-title">DIAMOND</div>
                                         <div class="price"><span class="currency">$</span><span
-                                                class="value">99.99</span>
+                                                class="value">149.99</span>
                                         </div>
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
@@ -572,13 +590,16 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                            <a class="btn-solid-reg page-scroll" href="cotizar.php">Price Quote</a>
+                                        <form method="POST" action="cotizar.php">
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="industry" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
 
                             </div> <!-- end of col -->
                         </div> <!-- end of col -->
+                        
                     </div> <!-- end of tab-pane -->
                 </div> <!-- end of row -->
             </div> <!-- end of tab-pane -->

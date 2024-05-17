@@ -18,8 +18,10 @@
                           </div>
                         </div>';
           }else{
+            // Verifica el tipo de usuario para determinar qué imagen mostrar
+            $userTypeImage = ($row['id_tipo'] == 2) ? "php/images/OIP_2.jpeg" : "php/images/support.png";
             $output .= '<div class="chat incoming">
-                          <img src="php/images/OIP_2.jpeg" alt="">
+                          <img src="' . $userTypeImage . '" alt="">
                           <div class="details">
                             <p>'. $row['msg'] .'</p>
                           </div>
@@ -33,5 +35,4 @@
     }else{
       header("location: ../login.php");
     }
-
 ?>

@@ -192,10 +192,8 @@ function enviarEmail($email, $nombre, $asunto, $cuerpo)
         return false;
 }
 
-function enviarPDF($email, $nombre, $asunto, $cuerpo, $file)
+function enviarPDF($email, $nombre, $asunto, $cuerpo)
 {
-
-
     require ("../plugins/PHPMailer-master/src/PHPMailer.php");
     require ("../plugins/PHPMailer-master/src/Exception.php");
     require ("../plugins/PHPMailer-master/src/SMTP.php");
@@ -221,7 +219,27 @@ function enviarPDF($email, $nombre, $asunto, $cuerpo, $file)
     $mail->Body = 'Este es un correo de prueba con un archivo adjunto.';
 //"C:\xampp\htdocs\PTC\assets\images\MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf";
     // Adjuntar un archivo
-    $file_path = '../assets\images\MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf'; // Ruta del archivo a adjuntar
+
+    $accion = $_POST['pdf'];
+    if ($accion == "moto") {
+        $pdf = 'Motorcycle Insurance.pdf';
+    } elseif ($accion == "car") {
+        $pdf = 'Car Insurance.pdf';
+    } elseif ($accion == "industry") {
+        $pdf = 'Utility Vehicles Insurance.pdf';
+    }  elseif ($accion == "medical") {
+        $pdf = 'Healthcare Insurance.pdf';
+    } elseif ($accion == "home") {
+        $pdf = 'Home Insurance.pdf';
+    } else {
+        echo "There is no file";
+    }
+    
+
+
+
+    $file = $pdf;
+    $file_path = '../assets/images/' . $file; // Ruta del archivo a adjuntar
     $mail->addAttachment($file_path); // Adjuntar el archivo
 
     // Enviar el correo
@@ -231,8 +249,9 @@ function enviarPDF($email, $nombre, $asunto, $cuerpo, $file)
             text: "We sent a link to your E-Mail",
             icon: "success",
              }).then(function() {
-            window.location = "../views/vehicles.php";
+            window.location = "../views/view_user.php";
             });</script></p>';
+        echo $pdf;
     } else {
         echo '<p><script>swal({
             title: "Try Again!",
@@ -281,22 +300,23 @@ function activarUsuario($id)
 
 // metodo para el login////////////////////////////////////////////////
 function login($usuario, $password)
-{session_start();
+{
+    session_start();
     include ('conexion.php');
-    
+
     $usuario = trim($_POST['correo']);
     $password = trim($_POST['password']);
-    
+
     $stmt = $mysqli->prepare("SELECT id, id_tipo, unique_id, password, nombre, imagen FROM users WHERE correo = ? LIMIT 1");
     $stmt->bind_param("s", $usuario);
     $stmt->execute();
     $stmt->store_result();
     $rows = $stmt->num_rows;
-    
+
     if ($rows > 0) {
         $stmt->bind_result($id, $id_tipo, $unique_id, $passwd, $nombre, $imagen);
         $stmt->fetch();
-    
+
         if (isActivo($usuario)) {
             if (password_verify($password, $passwd)) {
                 // Iniciando la sesión
@@ -306,13 +326,13 @@ function login($usuario, $password)
                 $_SESSION['correo'] = $usuario;
                 $_SESSION['imagen'] = $imagen;
                 $_SESSION['unique_id'] = $unique_id; // Asignando el unique_id a la sesión
-    
+
                 // Actualizar estado del usuario a "en línea"
                 $stmt_update_status = $mysqli->prepare("UPDATE users SET estatus = 'Active now' WHERE id = ?");
                 $stmt_update_status->bind_param("i", $id);
                 $stmt_update_status->execute();
                 $stmt_update_status->close();
-    
+
                 switch ($id_tipo) {
                     case "2":
                         header("location:../views/view_user.php");

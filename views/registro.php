@@ -213,12 +213,6 @@ if (!empty($_POST)) {
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#features">FEATURES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#details">DETAILS</a>
-                    </li>
 
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
@@ -237,9 +231,7 @@ if (!empty($_POST)) {
                     </li>
                     <!-- end of dropdown menu -->
 
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#pricing">PRICING</a>
-                    </li>
+                    
                 </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="index.php">LOG IN</a>

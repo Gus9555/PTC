@@ -97,13 +97,7 @@ if (!empty($_POST)) {
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#features">FEATURES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#details">DETAILS</a>
-                    </li>
-
+                    
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
@@ -121,9 +115,7 @@ if (!empty($_POST)) {
                     </li>
                     <!-- end of dropdown menu -->
 
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#pricing">PRICING</a>
-                    </li>
+                  
                 </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="registro.php">SIGN UP</a>
@@ -155,21 +147,19 @@ if (!empty($_POST)) {
                     <!-- Sign Up Form -->
                     <div class="form-container">
                         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                            <div class="form-group">
 
-                                <input class="form-control-input" id="inputEmailAddress" name="correo" type="email"
-                                    placeholder="Enter email address" required />
-                            </div>
                             <div class="form-group">
-
-                                <input class="form-control-input" id="inputPassword" name="password" type="password"
-                                    placeholder="Enter password" />
+                                <input class="form-control-input" id="inputEmailAddress" name="correo" type="email" placeholder="Enter email address" required />
                             </div>
+
+                            <div class="form-group">
+                               <input class="form-control-input" id="inputPassword" name="password" type="password" placeholder="Enter password" />
+                            </div>
+                            
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                    <label class="custom-control-label" for="rememberPasswordCheck">Remember
-                                        password</label>
+                                    <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
                                 </div>
                             </div>
                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">

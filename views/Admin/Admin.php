@@ -72,11 +72,12 @@
 
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="index.html" class="logo">
-                    <img src="../../assets/images/logo-light.png" class="logo-lg" alt="" height="22">
-                    <img src="../../assets/images/logo-sm.png" class="logo-sm" alt="" height="24">
+                <a href="Admin.php" class="logo">
+                    <img src="../../assets/boss/images/logo.png" class="logo-lg" alt="" height="45">
+                    <img src="../../assets/boss/images/header-software-app.png" class="logo-sm" alt="" height="34">
                 </a>
             </div>
+
 
             <!-- Search input -->
             <div class="search-wrap" id="search-wrap">
@@ -168,7 +169,7 @@
                     <ul class="metismenu" id="side-menu">
                         <li class="menu-title">Menu</li>
                         <li>
-                            <a href="index.html" class="waves-effect">
+                            <a href="Admin.php" class="waves-effect">
                                 <i class="dripicons-meter"></i><span class="badge badge-info badge-pill float-right">9+</span> <span> Dashboard </span>
                             </a>
                         </li>
@@ -696,9 +697,8 @@
             <!-- content -->
 
             <footer class="footer">
-                © 2019 Zegva <a href="https://1.envato.market/themesdesign" target="_blank" class="">Themesdesign</a>
+                © 2024 LifeLine
             </footer>
-
         </div>
         <!-- ============================================================== -->
         <!-- End Right content here -->
