@@ -294,11 +294,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab"
-                                aria-controls="tab-2" aria-selected="false"><i class="fas fa-heartbeat"></i>Home</a>
+                                aria-controls="tab-2" aria-selected="false"><i class="fas fa-heartbeat"></i>Medical</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab"
-                                aria-controls="tab-3" aria-selected="false"><i class="fas fa-house-damage"></i>Medical</a>
+                                aria-controls="tab-3" aria-selected="false"><i class="fas fa-house-damage"></i>Home</a>
                         </li>
                     </ul>
                     <!-- end of tabs links -->
