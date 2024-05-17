@@ -115,9 +115,7 @@ if (!empty($_POST)) {
                     </li>
                     <!-- end of dropdown menu -->
 
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#pricing">PRICING</a>
-                    </li>
+                  
                 </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="registro.php">SIGN UP</a>

@@ -319,7 +319,7 @@ $resultado = $mysqli->query($sql);
                                                 <th>Nombre</th>
                                                 <th>Tipo Usuario</th>
 
-                                                <th>Eliminar</th>
+                                               <!-- <th>Eliminar</th> -->
                                             </tr>
                                         </thead>
 
@@ -340,11 +340,11 @@ $resultado = $mysqli->query($sql);
 
 
 
-                                                    <td>
+                                                     <!--<td>
                                                         <a
                                                             href="eliminar.php?id=<?php echo $row["id"]; ?>&id_tipo=<?php echo $row["id_tipo"]; ?>">Eliminar</a>
 
-                                                    </td>
+                                                    </td>  -->
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
