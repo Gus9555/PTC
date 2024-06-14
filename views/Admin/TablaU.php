@@ -20,7 +20,7 @@ require '../../funcs/conexion.php';
 require '../../funcs/funcs.php';
 
 if (!isset($_SESSION['id'])) {
-    header("Location: ../../views/index.php");
+    header("Location: ../../views/login.php");
     exit();
 }
 

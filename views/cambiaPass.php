@@ -18,11 +18,11 @@ require '../funcs/conexion.php';
 require '../funcs/funcs.php';
 
 if (empty ($_GET['id'])) {
-    header('Location: ../views/index.php');
+    header('Location: ../views/login.php');
 }
 
 if (empty ($_GET['token'])) {
-    header('Location: ../views/index.php');
+    header('Location: ../views/login.php');
 }
 
 $user_id = $mysqli->real_escape_string($_GET['id']);
@@ -96,7 +96,7 @@ if (!verificaTokenPass($user_id, $token)) {
                                 
                                     <button type="submit" class="form-control-submit-button">Send</a>
                                 </div>
-                                <a class="small" href="index.php">Return to login</a>
+                                <a class="small" href="login.php">Return to login</a>
                             </form>
 
                     </div> <!-- end of form container -->

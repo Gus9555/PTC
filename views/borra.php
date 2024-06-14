@@ -38,7 +38,7 @@
 
                                         <h1><?php echo $mensaje; ?></h1>
                                         <br>
-                                        <p><a href="index.php" class="btn btn-primary btn-lg" role="button">Login</a></p>
+                                        <p><a href="login.php" class="btn btn-primary btn-lg" role="button">Login</a></p>
                                     </div>
                                     <div class="card-footer text-center">
                                         <div class="small"><a href="login.html">Have an account? Go to Login</a></div>

@@ -50,7 +50,7 @@
                         text: "Check your E-Mail",
                         icon: "success",
                          }).then(function() {
-                        window.location = "../views/index.php";
+                        window.location = "../views/login.php";
                         });</script></p>';
         
                     exit;
@@ -141,7 +141,7 @@
                                         <button type="submit" class="form-control-submit-button">Send</a>
                                     </div>
                                     <div>
-                                        <a class="small" href="../views/index.php">Return to login</a>
+                                        <a class="small" href="../views/login.php">Return to login</a>
                                     </div>
                                 </form>
                                 <?php echo resultBlock($errors); ?>

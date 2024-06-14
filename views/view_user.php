@@ -17,20 +17,21 @@
 
 </html>
 <?php
-  session_start();
+ session_start();
 
-  if (!isset($_SESSION['id'])) {
-      echo '<p><script>Swal.fire({
-          title: "Warning",
-          text: "LogIn again"
-          }).then(function() {
-          window.location = "../views/index.php";
-          });</script></p>';
-      exit; // Salir del script si no hay sesión iniciada
-  }
+ if (!isset($_SESSION['id'])) {
+     echo '<p><script>Swal.fire({
+         title: "Warning",
+         text: "LogIn again"
+         }).then(function() {
+         window.location = "../views/login.php";
+         });</script></p>';
+     exit; // Salir del script si no hay sesión iniciada
+ }
+ 
+ $nombre = $_SESSION['nombre'];
+ $tipo_usuario = $_SESSION['tipo_usuario'];
   
-  $nombre = $_SESSION['nombre'];
-  $tipo_usuario = $_SESSION['tipo_usuario'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,7 +128,7 @@
    
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="logout.php">LOG OUT</a>
+                    <a class="btn-outline-sm" href="login.php">LOG IN</a>
                 </span>
             </div>
         </div> <!-- end of container -->

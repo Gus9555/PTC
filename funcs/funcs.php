@@ -409,7 +409,7 @@ function validaIdToken($id, $token)
                 text: "Active",
                  type: "success"
                  }).then(function() {
-                 window.location = "../views/index.php";
+                 window.location = "../views/login.php";
                  });</script></p>';
         } else {
             if (activarUsuario($id)) {
@@ -419,7 +419,7 @@ function validaIdToken($id, $token)
                     text: "Active",
                     icon: "success"
                     }).then(function() {
-                    window.location = "../views/index.php";
+                    window.location = "../views/login.php";
                     });</script></p>';
             } else {
                 $msg = 'We got an error with the account activation';

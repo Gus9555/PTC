@@ -112,7 +112,7 @@ if (!empty($_POST)) {
                             text: "Succesfully, Confirm your identity in your email ",
                             icon: "success",
                              }).then(function() {
-                            window.location = "../views/index.php";
+                            window.location = "../views/login.php";
                             });</script></p>';
         
                     } else {
@@ -187,7 +187,7 @@ if (!empty($_POST)) {
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.php"><img src="../assets/boss/images/logo.png"
+            <a class="navbar-brand logo-image" href="login.php"><img src="../assets/boss/images/logo.png"
                     alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
@@ -211,7 +211,7 @@ if (!empty($_POST)) {
                 <!-- end of preloader -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="login.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
 
                     <!-- Dropdown Menu -->
@@ -234,7 +234,7 @@ if (!empty($_POST)) {
                     
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="index.php">LOG IN</a>
+                    <a class="btn-outline-sm" href="login.php">LOG IN</a>
                 </span>
             </div>
         </div> <!-- end of container -->

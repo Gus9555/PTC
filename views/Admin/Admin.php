@@ -24,7 +24,7 @@
             title: "Warning",
             text: "LogIn again"
             }).then(function() {
-            window.location = "../../views/index.php";
+            window.location = "../../views/login.php";
             });</script></p>';
         exit; // Salir del script si no hay sesión iniciada
     }
