@@ -273,7 +273,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <form method="POST" action="cotizar.php">
                                             <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="moto" href="cotizar.php">Buy</button>
                                             <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="Polizas.php">Price Quote</button>
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -317,7 +317,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <form method="POST" action="cotizar.php">
                                             <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="moto" href="cotizar.php">Buy</button>
                                             <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="Polizas.php">Price Quote</button>
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -356,7 +356,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <form method="POST" action="cotizar.php">
                                             <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="moto" href="cotizar.php">Buy</button>
                                             <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="Polizas.php">Price Quote</button>
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -409,7 +409,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <form method="POST" action="cotizar.php">
                                             <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="car" href="cotizar.php">Buy</button>
                                             <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="Polizas.php">Price Quote</button>
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
                                         </form>
                                         </div>
                                     </div>
@@ -453,7 +453,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <form method="POST" action="cotizar.php">
                                             <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="car" href="cotizar.php">Buy</button>
                                             <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="Polizas.php">Price Quote</button>
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
                                         </form>
                                         </div>
                                     </div>
@@ -496,7 +496,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <form method="POST" action="cotizar.php">
                                             <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="car" href="cotizar.php">Buy</button>
                                             <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="Polizas.php">Price Quote</button>
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -539,7 +539,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <form method="POST" action="cotizar.php">
                                             <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="industry" href="cotizar.php">Buy</button>
                                             <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="Polizas.php">Price Quote</button>
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -576,7 +576,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <form method="POST" action="cotizar.php">
                                             <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="industry" href="cotizar.php">Buy</button>
                                             <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="Polizas.php">Price Quote</button>
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
                                         </form>
                                         </div>
                                     </div>
@@ -616,7 +616,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <form method="POST" action="cotizar.php">
                                             <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="industry" href="cotizar.php">Buy</button>
                                             <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="Polizas.php">Price Quote</button>
+                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
