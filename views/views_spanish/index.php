@@ -91,28 +91,25 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
                             aria-haspopup="false" aria-expanded="false">VIDEO</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE
-                                    DETAILS</span></a>
+                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICULOS</span></a>
                             <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS
-                                    CONDITIONS</span></a>
+                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMINOS Y CONDICIONES </span></a>
                             <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY
-                                    POLICY</span></a>
+                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACIDAD Y POLITICA</span></a>
                         </div>
                     </li>
                     <!-- end of dropdown menu -->
 
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="login.php">LOG IN</a>
+                    <a class="btn-outline-sm" href="login.php">INICIO DE SESION</a>
                 </span>
             </div>
         </div> <!-- end of container -->
@@ -127,9 +124,9 @@
                 <div class="row">
                     <div class="col-lg-6 col-xl-5">
                         <div class="text-container">
-                            <h1>Your reliable Insurance Company</h1>
-                            <p class="p-large">At LifeLine we know how valuable your life is, that's why we work for
-                                your convenience.</p>
+                            <h1>Su compañía de seguros de confianza</h1>
+                            <p class="p-large">En LifeLine sabemos lo valiosa que es su vida, por eso trabajamos para
+                            su comodidad.</p>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6 col-xl-7">
@@ -211,8 +208,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="above-heading">SECURE YOUR FUTURE</div>
-                    <h2 class="h2-heading">Whatever you need to feel protected, we got it!</h2>
+                    <div class="above-heading">ASEGURE SU FUTURO</div>
+                    <h2 class="h2-heading">Lo que necesites para sentirte protegido, ¡lo tenemos!</h2>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -224,9 +221,9 @@
                             <img class="img-fluid" src="../../assets/boss/images/carros.png" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title" style="color:#3b5d50">Vehicles</h4>
-                            <p>Safeguard both your vehicle and passengers with comprehensive protection, ensuring their
-                                safety and providing you with peace of mind.</p>
+                            <h4 class="card-title" style="color:#3b5d50">Vehiculos</h4>
+                            <p>Proteja tanto su vehículo como a los pasajeros con una protección integral, garantizando su seguridad y proporcionándole tranquilidad.
+                            su seguridad y su tranquilidad.</p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -237,9 +234,9 @@
                             <img class="img-fluid" src="../../assets/boss/images/favicon.png" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title" style="color:#3b5d50">Medical</h4>
-                            <p>Prioritize the well-being of yourself and your loved ones, ensuring their care and safety
-                                at all times.</p>
+                            <h4 class="card-title" style="color:#3b5d50">Medico</h4>
+                            <p>Priorice su bienestar y el de sus seres queridos, garantizando su cuidado y seguridad
+                            en todo momento.</p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -250,9 +247,9 @@
                             <img class="img-fluid" src="../../assets/boss/images/casa.png" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title" style="color:#3b5d50">Home</h4>
-                            <p>Secure comprehensive protection for your home and valuable furniture, ensuring their
-                                safety and preserving your peace of mind.</p>
+                            <h4 class="card-title" style="color:#3b5d50">Casa</h4>
+                            <p>Asegure una protección integral para su hogar y sus valiosos muebles, garantizando su
+                            su seguridad y su tranquilidad.</p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -280,32 +277,32 @@
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>Vehicle</h3>
+                    <h3>Vehiculos</h3>
                     <hr>
-                    <h5>Tailor-made insurance</h5>
-                    <p>With LifeLine we offer a variety of coverages to fit your budget. Whether you are looking for
-                        basic auto insurance or comprehensive coverage.</p>
+                    <h5>Seguros a medida</h5>
+                    <p>Con LifeLine ofrecemos una variedad de coberturas que se ajustan a su presupuesto. Tanto si busca
+                    un seguro de automóvil básico o una cobertura a todo riesgo.</p>
                     <ul class="list-unstyled li-space-lg">
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Damage to the insured vehicle</div>
+                            <div class="media-body">Daños al vehículo asegurado</div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Civil Liability for injury or death of third parties</div>
+                            <div class="media-body">Responsabilidad civil por lesiones o muerte de terceros</div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Total or Partial Theft</div>
+                            <div class="media-body">Robo total o parcial</div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Civil Liability for property damage to third parties' assets</div>
+                            <div class="media-body">Responsabilidad civil por daños materiales a bienes de terceros</div>
                         </li>
 
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="vehicles.php">INSURANCE</a> <a
-                        class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
+                    <a class="btn-solid-reg mfp-close" href="vehicles.php">SEGURO</a> <a
+                        class="btn-outline-reg mfp-close as-button" href="#screenshots">VOLVER</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -323,36 +320,36 @@
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>Medical</h3>
+                    <h3>Medico</h3>
                     <hr>
-                    <h5>Thinking for your family</h5>
-                    <p>It is a medical insurance to protect the health and well-being of you and your family. It covers
-                        medical and hospital expenses in case of illness or accident, as well as pregnancy and
-                        maternity.</p>
+                    <h5>Pensando en su familia</h5>
+                    <p>Es un seguro médico para proteger la salud y el bienestar de usted y su familia. Cubre
+                        los gastos médicos y hospitalarios en caso de enfermedad o accidente, así como los de embarazo y
+                        maternidad.</p>
                     <ul class="list-unstyled li-space-lg">
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Death from any cause</div>
+                            <div class="media-body">Muerte por cualquier causa</div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Natural death, accidental death and/or suicide</div>
+                            <div class="media-body">Muerte natural, muerte accidental y/o suicidio</div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Funeral expenses</div>
+                            <div class="media-body">Gastos funerarios</div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Personal accidents</div>
+                            <div class="media-body">Accidentes personales</div>
                         </li>
                         <li class="media">
                             <i class="fas fa-square"></i>
-                            <div class="media-body">Total and permanent disability</div>
+                            <div class="media-body">Invalidez absoluta y permanente</div>
                         </li>
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="Medical.php">INSURANCE</a> <a
-                        class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
+                    <a class="btn-solid-reg mfp-close" href="Medical.php">SEGURO</a> <a
+                        class="btn-outline-reg mfp-close as-button" href="#screenshots">VOLVER</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -370,9 +367,9 @@
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>Home<h3>
+                    <h3>Casa<h3>
                             <hr>
-                            <h5>Damage-proof protection</h5>
+                            <h5>Protección a prueba de daños</h5>
                             <p>This insurance protects against all risks of loss or damage to your home and personal
                                 belongings caused by any accidental, sudden or unforeseen event.</p>
                             <ul class="list-unstyled li-space-lg">

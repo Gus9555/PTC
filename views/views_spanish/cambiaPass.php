@@ -73,11 +73,11 @@ if (!verificaTokenPass($user_id, $token)) {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Change Password</h1>
+                    <h1>Restauracion de contraseña</h1>
                     <br>
                     <!-- Sign Up Form -->
                     <div class="form-container">
-                            <form id="loginform" action="guarda_pass.php" method="POST">
+                            <form id="loginform" action="../guarda_pass.php" method="POST">
                             <div class="card-header">
                                 <a class="navbar-brand logo-image" href=""><img src="../../assets/boss/images/padlock-unlock.png"
                                         alt="alternative" width="100px"></a>
@@ -85,18 +85,18 @@ if (!verificaTokenPass($user_id, $token)) {
                                 <input type="hidden" id="user_id" name="user_id" value="<?php echo $user_id; ?>" />
                                 <input type="hidden" id="token" name="token" value="<?php echo $token; ?>" />
                                 <div class="form-group">
-                                    <label class="small mb-1" for="inputPassword">New Password</label>
+                                    <label class="small mb-1" for="inputPassword">Nueva contraseña</label>
                                     <input class="form-control py-4" id="inputPassword" name="password" type="password"
-                                        placeholder="Enter password" required/>
-                                    <label class="small mb-1" for="inputPassword">Confirm Password</label>
+                                        placeholder="Ingrese su nueva contraseña" required/>
+                                    <label class="small mb-1" for="inputPassword">Confirmar contraseña</label>
                                     <input class="form-control py-4" id="inputPassword" name="con_password"
-                                        type="password" placeholder="Enter password" required/>
+                                        type="password" placeholder="Repita la contraseña" required/>
                                 </div>
                                 <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                 
-                                    <button type="submit" class="form-control-submit-button">Send</a>
+                                    <button type="submit" class="form-control-submit-button">Guardar</a>
                                 </div>
-                                <a class="small" href="login.php">Return to login</a>
+                                <a class="small" href="login.php">Volver al inicio de sesion</a>
                             </form>
 
                     </div> <!-- end of form container -->

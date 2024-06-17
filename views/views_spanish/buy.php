@@ -6,23 +6,23 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Document</title>
+    <title>LifeLine</title>
 </head>
 <body>
     
 </body>
 </html>
 <?php
-require '../../funcs/conexion.php';
-require '../../funcs/funcs.php';
+require '../funcs/conexion.php';
+require '../funcs/funcs.php';
 session_start();
 
 if (!isset($_SESSION['id'])) {
     echo '<p><script>Swal.fire({
-          title: "Warning",
-          text: "LogIn again"
+          title: "OPS",
+          text: "Logueate otra vez"
           }).then(function() {
-          window.location = "../../views/login.php";
+          window.location = "../views/login.php";
           });</script></p>';
     exit; // Salir del script si no hay sesión iniciada
 }
@@ -42,7 +42,7 @@ if ($rows > 0) {
 $url = 'http://' . $_SERVER["SERVER_NAME"] . ':81/PTC/views/cotizacion.php';
 //el asuto y cuerpo es lo que ira en el mesaje del correo$file = $pdf;
 $asunto = 'PRICE QUOTE - LIFELINE';
-$cuerpo = "Dear $nombre: <br /><br />Price Quote <br /><br /> Confirm your identity <a href='$url'>Price Quote</a>";
+$cuerpo = "Dear $nombre: <br /><br />Price Quote <br /><br /> Start buying insurance <a href='$url'>Price Quote</a>";
 if (enviarPDF($email, $nombre, $asunto, $cuerpo)) {
     
 }
