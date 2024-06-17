@@ -13,8 +13,8 @@
 </body>
 </html>
 <?php
-require '../../funcs/conexion.php';
-require '../../funcs/funcs.php';
+require '../funcs/conexion.php';
+require '../funcs/funcs.php';
 session_start();
 
 if (!isset($_SESSION['id'])) {
@@ -22,7 +22,7 @@ if (!isset($_SESSION['id'])) {
           title: "Warning",
           text: "LogIn again"
           }).then(function() {
-          window.location = "../../views/login.php";
+          window.location = "../views/login.php";
           });</script></p>';
     exit; // Salir del script si no hay sesión iniciada
 }
@@ -42,7 +42,7 @@ if ($rows > 0) {
 $url = 'http://' . $_SERVER["SERVER_NAME"] . ':81/PTC/views/cotizacion.php';
 //el asuto y cuerpo es lo que ira en el mesaje del correo$file = $pdf;
 $asunto = 'PRICE QUOTE - LIFELINE';
-$cuerpo = "Dear $nombre: <br /><br />Price Quote <br /><br /> Confirm your identity <a href='$url'>Price Quote</a>";
+$cuerpo = "Dear $nombre: <br /><br />Price Quote <br /><br /> Start buying insurance <a href='$url'>Price Quote</a>";
 if (enviarPDF($email, $nombre, $asunto, $cuerpo)) {
     
 }

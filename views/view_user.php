@@ -128,7 +128,7 @@
    
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="login.php">LOG IN</a>
+                    <a class="btn-outline-sm" href="logout.php">LOG OUT</a>
                 </span>
             </div>
         </div> <!-- end of container -->

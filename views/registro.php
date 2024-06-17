@@ -298,7 +298,8 @@ if (!empty($_POST)) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group mt-4 mb-0"><button type="submit"
+                            <div class="form-group mt-4 mb-0">
+                                <button type="submit"
                                     class="form-control-submit-button">Create Account</button></div>
                         </form>
                     </div> <!-- end of form container -->

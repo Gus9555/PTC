@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>LifeLine</title>
-    <link rel="icon" href="../assets/boss/images/favicon.png">
+    <link rel="icon" href="../../assets/boss/images/favicon.png">
 </head>
 
 <body>
@@ -46,14 +46,14 @@
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
         rel="stylesheet">
-    <link href="../assets/boss/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/boss/css/fontawesome-all.css" rel="stylesheet">
-    <link href="../assets/boss/css/swiper.css" rel="stylesheet">
-    <link href="../assets/boss/css/magnific-popup.css" rel="stylesheet">
-    <link href="../assets/boss/css/styles.css" rel="stylesheet">
+    <link href="../../assets/boss/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/boss/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../../assets/boss/css/swiper.css" rel="stylesheet">
+    <link href="../../assets/boss/css/magnific-popup.css" rel="stylesheet">
+    <link href="../../assets/boss/css/styles.css" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="../assets/boss/images/latido-del-corazon2.png">
+    <link rel="icon" href="../../assets/boss/images/latido-del-corazon2.png">
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -77,7 +77,7 @@
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.php"><img src="../assets/boss/images/logo.png"
+            <a class="navbar-brand logo-image" href="index.php"><img src="../../assets/boss/images/logo.png"
                     alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
@@ -135,7 +135,7 @@
                     <div class="col-lg-6 col-xl-7">
                         <div class="image-container">
                             <div class="img-wrapper">
-                                <img class="img-fluid" src="../assets/boss/images/header-software-app.png"
+                                <img class="img-fluid" src="../../assets/boss/images/header-software-app.png"
                                     alt="alternative">
                             </div> <!-- end of img-wrapper -->
                         </div> <!-- end of image-container -->
@@ -171,27 +171,27 @@
                             <div class="swiper-wrapper">
 
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-1.png"
+                                    <img class="img-fluid" src="../../assets/boss/images/customer-logo-1.png"
                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-2.png"
+                                    <img class="img-fluid" src="../../assets/boss/images/customer-logo-2.png"
                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-3.png"
+                                    <img class="img-fluid" src="../../assets/boss/images/customer-logo-3.png"
                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-4.png"
+                                    <img class="img-fluid" src="../../assets/boss/images/customer-logo-4.png"
                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-5.png"
+                                    <img class="img-fluid" src="../../assets/boss/images/customer-logo-5.png"
                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-6.png"
+                                    <img class="img-fluid" src="../../assets/boss/images/customer-logo-6.png"
                                         alt="alternative">
                                 </div>
                             </div> <!-- end of swiper-wrapper -->
@@ -221,7 +221,7 @@
                     <!-- Card -->
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-fluid" src="../assets/boss/images/carros.png" alt="alternative">
+                            <img class="img-fluid" src="../../assets/boss/images/carros.png" alt="alternative">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title" style="color:#3b5d50">Vehicles</h4>
@@ -234,7 +234,7 @@
                     <!-- Card -->
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-fluid" src="../assets/boss/images/favicon.png" alt="alternative">
+                            <img class="img-fluid" src="../../assets/boss/images/favicon.png" alt="alternative">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title" style="color:#3b5d50">Medical</h4>
@@ -247,7 +247,7 @@
                     <!-- Card -->
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-fluid" src="../assets/boss/images/casa.png" alt="alternative">
+                            <img class="img-fluid" src="../../assets/boss/images/casa.png" alt="alternative">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title" style="color:#3b5d50">Home</h4>
@@ -276,7 +276,7 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
                     <div class="image-container">
-                        <img class="img-fluid" src="../assets/boss/images/33.png" alt="alternative">
+                        <img class="img-fluid" src="../../assets/boss/images/33.png" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
@@ -319,7 +319,7 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
                     <div class="image-container">
-                        <img class="img-fluid" src="../assets/boss/images/44.png" alt="alternative">
+                        <img class="img-fluid" src="../../assets/boss/images/44.png" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
@@ -366,7 +366,7 @@
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
                     <div class="image-container">
-                        <img class="img-fluid" src="../assets/boss/images/333.png" alt="alternative">
+                        <img class="img-fluid" src="../../assets/boss/images/333.png" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
@@ -424,12 +424,12 @@
                             your interests and facilitating problem resolution.
                         </p>
 
-                        <a class="btn-solid-reg page-scroll" href="../views/registro.php">BLOG</a>
+                        <a class="btn-solid-reg page-scroll" href="../../views/registro.php">BLOG</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="../assets/boss/images/Diseño_sin_título__7_-removebg-preview.png"
+                        <img class="img-fluid" src="../../assets/boss/images/Diseño_sin_título__7_-removebg-preview.png"
                             alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
@@ -450,7 +450,7 @@
                         <div class="video-wrapper">
                             <a class="popup-youtube" href="https://www.youtube.com/watch?v=wd7oDCb3gUY"
                                 data-effect="fadeIn">
-                                <img class="img-fluid" src="../assets/boss/images/video-image.png" alt="alternative">
+                                <img class="img-fluid" src="../../assets/boss/images/video-image.png" alt="alternative">
                                 <span class="video-play-button">
                                     <span></span>
                                 </span>
@@ -552,15 +552,15 @@
 
 
     <!-- Scripts -->
-    <script src="../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="../assets/boss/js/jquery.easing.min.js"></script>
+    <script src="../../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../../assets/boss/js/jquery.easing.min.js"></script>
     <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!--<script src="js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
-    <script src="../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 
 </html>

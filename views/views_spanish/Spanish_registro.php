@@ -1,6 +1,6 @@
 <?php
-require '../funcs/conexion.php';
-require '../funcs/funcs.php';
+require '../../funcs/conexion.php';
+require '../../funcs/funcs.php';
 $errors = array();
 if (!empty($_POST)) {
 
@@ -112,7 +112,7 @@ if (!empty($_POST)) {
                             text: "Succesfully, Confirm your identity in your email ",
                             icon: "success",
                              }).then(function() {
-                            window.location = "../views/login.php";
+                            window.location = "../../views/login.php";
                             });</script></p>';
         
                     } else {
@@ -121,7 +121,7 @@ if (!empty($_POST)) {
                             text: "We got a problem, try again",
                             type: "error"
                             }).then(function() {
-                            window.location = "../views/registro.php";
+                            window.location = "../../views/registro.php";
                             });</script></p>';
                     }
         
@@ -164,14 +164,14 @@ if (!empty($_POST)) {
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
         rel="stylesheet">
-    <link href="../assets/boss/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/boss/boss/css/fontawesome-all.css" rel="stylesheet">
-    <link href="../assets/boss/css/swiper.css" rel="stylesheet">
-    <link href="../assets/boss/css/magnific-popup.css" rel="stylesheet">
-    <link href="../assets/boss/css/styles2.css" rel="stylesheet">
+    <link href="../../assets/boss/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/boss/boss/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../../assets/boss/css/swiper.css" rel="stylesheet">
+    <link href="../../assets/boss/css/magnific-popup.css" rel="stylesheet">
+    <link href="../../assets/boss/css/styles2.css" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="../assets/images/favicon.png">
+    <link rel="icon" href="../../assets/images/favicon.png">
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top"><a href="body" class="back-to-top page-scroll">Back to Top</a>
@@ -187,7 +187,7 @@ if (!empty($_POST)) {
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="login.php"><img src="../assets/boss/images/logo.png"
+            <a class="navbar-brand logo-image" href="login.php"><img src="../../assets/boss/images/logo.png"
                     alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
@@ -312,15 +312,15 @@ if (!empty($_POST)) {
 
 
     <!-- Scripts -->
-    <script src="../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="../assets/boss/js/jquery.easing.min.js"></script>
+    <script src="../../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../../assets/boss/js/jquery.easing.min.js"></script>
     <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!-- <script src="boss/js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
-    <script src="../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
 
 </body>
 

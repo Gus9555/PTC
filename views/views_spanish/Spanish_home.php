@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>LifeLine</title>
-    <link rel="icon" href="../assets/boss/images/favicon.png">
+    <link rel="icon" href="../../assets/boss/images/favicon.png">
 </head>
 
 <body>
@@ -24,7 +24,7 @@ if (!isset($_SESSION['id'])) {
           title: "Warning",
           text: "LogIn again"
           }).then(function() {
-          window.location = "../views/login.php";
+          window.location = "../../views/login.php";
           });</script></p>';
     exit; // Salir del script si no hay sesión iniciada
 }
@@ -59,14 +59,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
         rel="stylesheet">
-    <link href="../assets/boss/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/boss/css/fontawesome-all.css" rel="stylesheet">
-    <link href="../assets/boss/css/swiper.css" rel="stylesheet">
-    <link href="../assets/boss/css/magnific-popup.css" rel="stylesheet">
-    <link href="../assets/boss/css/styles.css" rel="stylesheet">
+    <link href="../../assets/boss/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/boss/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../../assets/boss/css/swiper.css" rel="stylesheet">
+    <link href="../../assets/boss/css/magnific-popup.css" rel="stylesheet">
+    <link href="../../assets/boss/css/styles.css" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="../assets/boss/images/latido-del-corazon2.png">
+    <link rel="icon" href="../../assets/boss/images/latido-del-corazon2.png">
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -141,15 +141,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
-            
+
         </div> <!-- end of header-content -->
     </header> <!-- end of header -->
-    
+
     <!-- end of header -->
 
 
     <!-- Customers -->
-    
+
     <!-- end of customers -->
 
 
@@ -193,7 +193,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="../assets/images/333.png" alt="alternative">
+                        <img class="img-fluid" src="../../assets/images/333.png" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -202,6 +202,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <!-- end of details -->
 
 
+    <!-- Pricing -->
     <!-- Pricing -->
     <div id="pricing" class="cards-2 tabs">
         <div class="container">
@@ -217,7 +218,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <ul class="nav nav-tabs" id="argoTabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab"
-                                aria-controls="tab-1" aria-selected="true"><i class="fas fa-heartbeat"></i>HealthCare</a>
+                                aria-controls="tab-1" aria-selected="true"><i
+                                    class="fas fa-house-damage"></i>Home</a>
                         </li>
                     </ul>
                     <!-- end of tabs links -->
@@ -252,12 +254,20 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
                                                 <div class="media-body">Additional Living Expenses</div>
-                                            </li>
+                                            </li><br><br><br><br>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="home" href="cotizar.php">Price Quote</button>
+                                        <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="home" href="buy.php">Buy</button>
+                                                <br><br>
+                                                
                                             </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="home" href="cotizar.php">Price Quote</button>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -270,13 +280,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
-                                        <li class="media">
+                                            <li class="media">
                                                 <i class="fas fa-check"></i>
                                                 <div class="media-body">Extended Dwelling Coverage</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Enhanced Personal Property Coverage</div>
+                                                <div class="media-body">Enhanced Personal Property Coverage
+                                                </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
@@ -285,11 +296,18 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
                                                 <div class="media-body">Equipment Breakdown Coverage</div>
-                                            </li>
+                                            </li><br>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="home" href="cotizar.php">Price Quote</button>
+                                        <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="home" href="buy.php">Buy</button>
+                                                <br><br>
+                                                
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="home" href="cotizar.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -325,8 +343,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="home" href="cotizar.php">Price Quote</button>
+                                        <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="home" href="buy.php">Buy</button>
+                                                <br><br>
+                                                
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="home" href="cotizar.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -337,28 +362,19 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </div> <!-- end of tab-pane -->
                         <!-- end of tab -->
 
-                        
+
 
 
                         <!-- end of tab -->
 
                         <!-- Tab -->
-                        
 
-                            </div> <!-- end of col -->
-                        </div> <!-- end of col -->
-                    </div> <!-- end of tab-pane -->
-                </div> <!-- end of row -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of col -->
             </div> <!-- end of tab-pane -->
-            <!-- end of tab -->
-
-        </div> <!-- end of tab content -->
-
-
-    </div> <!-- end of col -->
-    </div> <!-- end of row -->
-    </div> <!-- end of container -->
-    </div> <!-- end of cards-2 -->
+        </div> <!-- end of row -->
+    </div> <!-- end of tab-pane -->
     <!-- end of pricing -->
 
 
@@ -432,15 +448,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
     <!-- Scripts -->
-    <script src="../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="../assets/boss/js/jquery.easing.min.js"></script>
+    <script src="../../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../../assets/boss/js/jquery.easing.min.js"></script>
     <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!--<script src="js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
-    <script src="../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 
 </html>

@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>LifeLine</title>
-    <link rel="icon" href="../assets/boss/images/favicon.png">
+    <link rel="icon" href="../../assets/boss/images/favicon.png">
 </head>
 
 <body>
@@ -25,7 +25,7 @@ if (!isset($_SESSION['id'])) {
           title: "Warning",
           text: "LogIn again"
           }).then(function() {
-          window.location = "../views/login.php";
+          window.location = "../../views/login.php";
           });</script></p>';
     exit; // Salir del script si no hay sesión iniciada
 }
@@ -60,14 +60,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
         rel="stylesheet">
-    <link href="../assets/boss/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/boss/css/fontawesome-all.css" rel="stylesheet">
-    <link href="../assets/boss/css/swiper.css" rel="stylesheet">
-    <link href="../assets/boss/css/magnific-popup.css" rel="stylesheet">
-    <link href="../assets/boss/css/styles.css" rel="stylesheet">
+    <link href="../../assets/boss/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/boss/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../../assets/boss/css/swiper.css" rel="stylesheet">
+    <link href="../../assets/boss/css/magnific-popup.css" rel="stylesheet">
+    <link href="../../assets/boss/css/styles.css" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="../assets/boss/images/latido-del-corazon2.png">
+    <link rel="icon" href="../../assets/boss/images/latido-del-corazon2.png">
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -91,7 +91,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="view_user.php"><img src="../assets/boss/images/logo.png"
+            <a class="navbar-brand logo-image" href="view_user.php"><img src="../../assets/boss/images/logo.png"
                     alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
@@ -105,11 +105,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="view_user.php">HOME <span
+                        <a class="nav-link page-scroll" href="../view_user.php">HOME <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../views/support/home.php">CHAT-SUPPORT <span
+                        <a class="nav-link page-scroll" href="../../views/support/home.php">CHAT-SUPPORT <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <!-- Dropdown Menu -->
@@ -142,15 +142,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
-            
+
         </div> <!-- end of header-content -->
     </header> <!-- end of header -->
-    
+
     <!-- end of header -->
 
 
     <!-- Customers -->
-    
+
     <!-- end of customers -->
 
 
@@ -186,12 +186,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 <i class="fas fa-square"></i>
                                 <div class="media-body">24/7 towing service all around the country</div>
                             </li>
+                            
+                           
                         </ul>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="../assets/images/33.png" alt="alternative">
+                        <img class="img-fluid" src="../../assets/images/33.png" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -215,7 +217,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <ul class="nav nav-tabs" id="argoTabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab"
-                                aria-controls="tab-1" aria-selected="true"><i class="fas fa-motorcycle"></i>Motorcycle</a>
+                                aria-controls="tab-1" aria-selected="true"><i
+                                    class="fas fa-motorcycle"></i>Motorcycle</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab"
@@ -266,16 +269,23 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                                 <i class="fas fa-times"></i>
                                                 <div class="media-body">Coverage for Rider's Injuries</div>
                                             </li>
-                                            <br><br>
                                             
+                                            <br><br><br>
+
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="moto" href="cotizar.php">Buy</button>
-                                            <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="moto" href="buy.php">Buy</button>
+                                                <br><br>
+                                                
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="moto" href="cotizar.php">Price Quote</button>
                                             </form>
                                         </div>
+                                        
                                     </div>
                                 </div> <!-- end of card -->
 
@@ -287,7 +297,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
-                                        <li class="media">
+                                            <li class="media">
                                                 <i class="fas fa-check"></i>
                                                 <div class="media-body">Extended Third-Party Liability</div>
                                             </li>
@@ -310,16 +320,22 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
                                                 <div class="media-body">Coverage for Rider's Injuries</div>
-                                            </li>
-                                        
+                                            </li><br>
+
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="moto" href="cotizar.php">Buy</button>
-                                            <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="moto" href="buy.php">Buy</button>
+                                                <br><br>
+                                                
                                             </form>
+                                           
                                         </div>
+                                        <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="moto" href="cotizar.php">Price Quote</button>
+                                            </form>
                                     </div>
                                 </div> <!-- end of card -->
 
@@ -337,7 +353,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Motorcycle Damage Coverage with Agreed Value</div>
+                                                <div class="media-body">Maximum Motorcycle Damage Coverage with Agreed
+                                                    Value</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
@@ -353,10 +370,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="moto" href="buy.php">Buy</button>
+                                                <br><br>
+                                               
+                                            </form>
                                             <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="moto" href="cotizar.php">Buy</button>
-                                            <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="moto" href="cotizar.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -368,7 +390,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <!-- end of tab -->
 
                         <!-- Tab -->
-                        
+
                         <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
                             <div class="row">
                                 <div class="card">
@@ -406,11 +428,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <br><br><br><br>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="car" href="cotizar.php">Buy</button>
-                                            <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
-                                        </form>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="car" href="buy.php">Buy</button>
+                                                <br><br>
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="car" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -450,11 +476,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <br>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="car" href="cotizar.php">Buy</button>
-                                            <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
-                                        </form>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="car" href="buy.php">Buy</button>
+                                                <br><br>
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -473,11 +503,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Collision Coverage with Agreed Value</div>
+                                                <div class="media-body">Expanded Collision Coverage with Agreed Value
+                                                </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Comprehensive Coverage with Deductible Waiver</div>
+                                                <div class="media-body">Expanded Comprehensive Coverage with Deductible
+                                                    Waiver</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
@@ -493,10 +525,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="car" href="cotizar.php">Buy</button>
-                                            <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="car" href="buy.php">Buy</button>
+                                                <br><br>
+
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="car" href="cotizar.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -504,12 +541,12 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                             </div> <!-- end of col -->
                         </div> <!-- end of col -->
-                        
+
 
                         <!-- end of tab -->
 
                         <!-- Tab -->
-                        
+
                         <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
                             <div class="row">
                                 <div class="card">
@@ -536,10 +573,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <br><br><br><br>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="industry" href="cotizar.php">Buy</button>
-                                            <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="industry" href="buy.php">Buy</button>
+                                                <br><br>
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -573,11 +614,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <br>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="industry" href="cotizar.php">Buy</button>
-                                            <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
-                                        </form>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="industry" href="buy.php">Buy</button>
+                                                <br><br>
+                                            </form>
+                                             <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -613,10 +658,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="industry" href="cotizar.php">Buy</button>
-                                            <br><br>
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf_information" id="pdf_information" value="car" href="cotizar_info.php">Price Quote</button>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="industry" href="buy.php">Buy</button>
+                                                <br><br>
+
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -624,7 +674,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                             </div> <!-- end of col -->
                         </div> <!-- end of col -->
-                        
+
                     </div> <!-- end of tab-pane -->
                 </div> <!-- end of row -->
             </div> <!-- end of tab-pane -->
@@ -710,15 +760,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
     <!-- Scripts -->
-    <script src="../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="../assets/boss/js/jquery.easing.min.js"></script>
+    <script src="../../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../../assets/boss/js/jquery.easing.min.js"></script>
     <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!--<script src="js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
-    <script src="../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 
 </html>
