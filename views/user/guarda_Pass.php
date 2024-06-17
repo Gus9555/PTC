@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>LifeLine</title>
-    <link rel="icon" href="../assets/boss/images/favicon.png">
+    <link rel="icon" href="../../assets/boss/images/favicon.png">
 </head>
 
 <body>
@@ -17,8 +17,8 @@
 
 </html>
 <?php
- require '../funcs/conexion.php';
- require '../funcs/funcs.php';
+ require '../../funcs/conexion.php';
+ require '../../funcs/funcs.php';
 
  $user_id = $mysqli->real_escape_string($_POST['user_id']);
  $token = $mysqli->real_escape_string($_POST['token']);
@@ -37,7 +37,7 @@
             text: "Updated Password",
             icon: "success",
              }).then(function() {
-            window.location = "../views/login.php";
+            window.location = "../../views/login.php";
             });</script></p>';
 
      }else{

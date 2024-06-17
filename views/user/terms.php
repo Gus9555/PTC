@@ -25,14 +25,14 @@
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
         rel="stylesheet">
-    <link href="../assets/boss/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/boss/css/fontawesome-all.css" rel="stylesheet">
-    <link href="../assets/boss/css/swiper.css" rel="stylesheet">
-    <link href="../assets/boss/css/magnific-popup.css" rel="stylesheet">
-    <link href="../assets/boss/css/styles.css" rel="stylesheet">
+    <link href="../../assets/boss/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/boss/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../../assets/boss/css/swiper.css" rel="stylesheet">
+    <link href="../../assets/boss/css/magnific-popup.css" rel="stylesheet">
+    <link href="../../assets/boss/css/styles.css" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="../assets/boss/images/latido-del-corazon2.png">
+    <link rel="icon" href="../../assets/boss/images/latido-del-corazon2.png">
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -56,7 +56,7 @@
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="../assets/images/logo.png"
+            <a class="navbar-brand logo-image" href="index.html"><img src="../../assets/images/logo.png"
                     alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
@@ -416,15 +416,15 @@
 
 
     <!-- Scripts -->
-    <script src="../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="../assets/boss/js/jquery.easing.min.js"></script>
+    <script src="../../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../../assets/boss/js/jquery.easing.min.js"></script>
     <!-- jQuery Easing for smooth scrolling between anchors -->
     <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
     <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!--<script src="js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
-    <script src="../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 
 </html>

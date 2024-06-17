@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LifeLine</title>
     <!-- Favicon  -->
-    <link rel="icon" href="../assets/boss/images/favicon.png">
-
+    <link rel="icon" href="../../assets/boss/images/favicon.png">
 </head>
 <body>
     
@@ -14,15 +13,15 @@
 </html>
 
 <?php
-require '../funcs/conexion.php';
-require '../funcs/funcs.php';
+require '../../funcs/conexion.php';
+require '../../funcs/funcs.php';
 
 if (empty ($_GET['id'])) {
-    header('Location: ../views/login.php');
+    header('Location: ../../views/user/login.php');
 }
 
 if (empty ($_GET['token'])) {
-    header('Location: ../views/login.php');
+    header('Location: ../../views/user/login.php');
 }
 
 $user_id = $mysqli->real_escape_string($_GET['id']);
@@ -50,14 +49,14 @@ if (!verificaTokenPass($user_id, $token)) {
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
         rel="stylesheet">
-    <link href="../assets/boss/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/boss/css/fontawesome-all.css" rel="stylesheet">
-    <link href="../assets/boss/css/swiper.css" rel="stylesheet">
-    <link href="../assets/boss/css/magnific-popup.css" rel="stylesheet">
-    <link href="../assets/boss/css/styles2.css" rel="stylesheet">
+    <link href="../../assets/boss/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/boss/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../../assets/boss/css/swiper.css" rel="stylesheet">
+    <link href="../../assets/boss/css/magnific-popup.css" rel="stylesheet">
+    <link href="../../assets/boss/css/styles2.css" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="../assets/boss/images/favicon.png">
+    <link rel="icon" href="../../assets/boss/images/favicon.png">
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -79,7 +78,7 @@ if (!verificaTokenPass($user_id, $token)) {
                     <div class="form-container">
                             <form id="loginform" action="guarda_pass.php" method="POST">
                             <div class="card-header">
-                                <a class="navbar-brand logo-image" href=""><img src="../assets/boss/images/padlock-unlock.png"
+                                <a class="navbar-brand logo-image" href=""><img src="../../assets/boss/images/padlock-unlock.png"
                                         alt="alternative" width="100px"></a>
                             </div>
                                 <input type="hidden" id="user_id" name="user_id" value="<?php echo $user_id; ?>" />
@@ -110,14 +109,14 @@ if (!verificaTokenPass($user_id, $token)) {
 
 
     <!-- Scripts -->
-    <script src="../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="../assets/boss/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../../assets/boss/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="../../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!--  <script src="boss/js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
-    <script src="../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 
 </html>

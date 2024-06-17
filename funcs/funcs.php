@@ -335,7 +335,7 @@ function login($usuario, $password)
 
                 switch ($id_tipo) {
                     case "2":
-                        header("location:../views/view_user.php");
+                        header("location:../user/view_user.php");
                         exit;
                     case "1":
                         header("location:../views/Admin/Admin.php");
@@ -409,7 +409,7 @@ function validaIdToken($id, $token)
                 text: "Active",
                  type: "success"
                  }).then(function() {
-                 window.location = "../views/login.php";
+                 window.location = "../views/user/login.php";
                  });</script></p>';
         } else {
             if (activarUsuario($id)) {
@@ -419,7 +419,7 @@ function validaIdToken($id, $token)
                     text: "Active",
                     icon: "success"
                     }).then(function() {
-                    window.location = "../views/login.php";
+                    window.location = "../views/user/login.php";
                     });</script></p>';
             } else {
                 $msg = 'We got an error with the account activation';
