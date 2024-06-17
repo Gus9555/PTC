@@ -279,8 +279,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="buy.php">Buy</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="S_moto" href="buy.php">Buy</button>
                                                 <br><br>
                                                 
                                             </form>
@@ -329,8 +329,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="buy.php">Buy</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="G_moto" href="buy.php">Buy</button>
                                                 <br><br>
                                                 
                                             </form>
@@ -375,8 +375,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="buy.php">Buy</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="D_moto" href="buy.php">Buy</button>
                                                 <br><br>
                                                
                                             </form>
@@ -433,8 +433,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="buy.php">Buy</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="S_auto" href="buy.php">Buy</button>
                                                 <br><br>
                                             </form>
                                             <form method="POST" action="cotizar.php">
@@ -481,8 +481,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="buy.php">Buy</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="G_auto" href="buy.php">Buy</button>
                                                 <br><br>
                                             </form>
                                             <form method="POST" action="cotizar.php">
@@ -530,8 +530,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="buy.php">Buy</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="D_auto" href="buy.php">Buy</button>
                                                 <br><br>
 
                                             </form>
@@ -578,8 +578,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="buy.php">Buy</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="S_util" href="buy.php">Buy</button>
                                                 <br><br>
                                             </form>
                                             <form method="POST" action="cotizar.php">
@@ -619,8 +619,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="buy.php">Buy</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="G_util" href="buy.php">Buy</button>
                                                 <br><br>
                                             </form>
                                              <form method="POST" action="cotizar.php">
@@ -663,8 +663,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="buy.php">Buy</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="D_util" href="buy.php">Buy</button>
                                                 <br><br>
 
                                             </form>
