@@ -38,16 +38,16 @@
                   //esta es la variable que redireccionara al usuario en el correo que se le enviara
                 $url = 'http://'.$_SERVER["SERVER_NAME"].'/PTC/views/cambiaPass.php? id='.$user_id.'&token='.$token;
                 //el asuto y cuerpo es lo que ira en el mesaje del correo
-                $asunto = 'Recover Password - LIFELINE';
-                $cuerpo = "DEER $nombre: <br /><br /> A restart has been requested
-                from Password .<br /> To reset your password, click on the following link: <a href='$url'>$url</a>";
+                $asunto = 'Recuperacion de contraseña- LIFELINE';
+                $cuerpo = "ESTIMADO $nombre: <br /><br /> Se ha solicitado un reinicio
+                de Contraseña .<br /> Para restablecer su contraseña, haga clic en el siguiente enlace: <a href='$url'>$url</a>";
                 //aca se envia el correo usando las anteriores mencionadas variables
                 if(enviarEmail($email, $nombre, $asunto, $cuerpo))
                 {
                     
                     echo '<p><script>swal({
-                        title: "E-Mail Sent!",
-                        text: "Check your E-Mail",
+                        title: "Email enviado!",
+                        text: "Compruebe su correo electrónico",
                         icon: "success",
                          }).then(function() {
                         window.location = "../../views/login.php";
@@ -59,7 +59,7 @@
                 {
                     echo '<p><script>Swal.fire({
                         title: "Opsss!",
-                        text: "We got a problem sending the E-Mail!",
+                        text: "¡Tenemos un problema enviando el E-Mail!",
                         type: "error"
                         }).then(function() {
                         window.location = "../../views/registro.php";
@@ -73,7 +73,7 @@
         {
             echo '<p><script>Swal.fire({
                 title: "Opsss!",
-                text: "This E-Mail address does not exist, try again",
+                text: "Esta dirección de correo electrónico no existe, inténtelo de nuevo",
                 type: "error"
                 }).then(function() {
                 window.location = "../../views/registro.php";
@@ -91,7 +91,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Website Title -->
-    <title>Log In</title>
+    <title>LifeLine</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
@@ -117,7 +117,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Password Recovery</h1>
+                    <h1>Recuperación de contraseñas</h1>
                     <br>
                     <!-- Sign Up Form -->
                     <div class="form-container">
@@ -127,27 +127,27 @@
                                         alt="alternative" width="100px"></a>
                             </div>
                             <div class="card-body">
-                                <div class="small mb-3 text-muted">Enter your email address and we will send you a link
-                                    to reset your password.</div>
+                                <div class="small mb-3 text-muted">Introduzca su dirección de correo electrónico y le enviaremos un enlace
+                                para restablecer su contraseña.</div>
                                 <form id="loginform" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                        <label class="small mb-1" for="inputEmailAddress">Correo electronico</label>
                                         <input class="form-control py-4" id="inputEmailAddress" name="email"
                                             type="email" aria-describedby="emailHelp"
-                                            placeholder="Enter email address" />
+                                            placeholder="Ingresa tu correo electronico" />
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
 
-                                        <button type="submit" class="form-control-submit-button">Send</a>
+                                        <button type="submit" class="form-control-submit-button">Enviar</a>
                                     </div>
                                     <div>
-                                        <a class="small" href="../../views/login.php">Return to login</a>
+                                        <a class="small" href="../../views/spanish/login.php">Volver a inicio de sesion</a>
                                     </div>
                                 </form>
                                 <?php echo resultBlock($errors); ?>
                             </div>
                             <div class="card-footer text-center">
-                                <div class="small"><a href="../../views/registro.php">No account? Sign up!</a></div>
+                                <div class="small"><a href="../../views/spanish/registro.php">¿No tienes cuenta? Regístrese</a></div>
                             </div>
                         </form>
 

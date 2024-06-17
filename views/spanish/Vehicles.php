@@ -22,8 +22,8 @@ session_start();
 
 if (!isset($_SESSION['id'])) {
     echo '<p><script>Swal.fire({
-          title: "Warning",
-          text: "LogIn again"
+          title: "OPPS",
+          text: "Debes Iniciar sesion"
           }).then(function() {
           window.location = "../../views/login.php";
           });</script></p>';
@@ -105,11 +105,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../view_user.php">HOME <span
+                        <a class="nav-link page-scroll" href="../view_user.php">INICIO <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../../views/support/home.php">CHAT-SUPPORT <span
+                        <a class="nav-link page-scroll" href="../user/view_user.php">ENGLISH <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../support/home.php">CHAT DE SOPORTE <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <!-- Dropdown Menu -->
@@ -117,21 +121,20 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
                             aria-haspopup="true" aria-expanded="false">VIDEO</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE
-                                    DETAILS</span></a>
+                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTÍCULO
+                            DETALLES</span></a>
                             <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS
-                                    CONDITIONS</span></a>
+                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMINOS Y CONDICIONES</span></a>
                             <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY
-                                    POLICY</span></a>
+                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACIDAD Y
+                            POLÍTICA</span></a>
                         </div>
                     </li>
                     <!-- end of dropdown menu -->
 
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="logout.php">LOG OUT</a>
+                    <a class="btn-outline-sm" href="logout.php">SALIR</a>
                 </span>
             </div>
         </div> <!-- end of container -->
@@ -160,31 +163,31 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>Now is the time to upgrade your car insurance</h2>
-                        <p>Here at LifeLine we focus on our customer's safety, that's why we offer the best car
-                            insurance plans. Click down below to enter a request for a price quote.
+                        <h2>Ahora es el momento de actualizar su seguro de coche</h2>
+                        <p>Aquí en LifeLine nos centramos en la seguridad de nuestros clientes, es por eso que ofrecemos la mejor
+                        planes de seguro. Haga clic abajo para ingresar una solicitud de cotización.
                         </p>
                         <ul class="list-unstyled li-space-lg">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Damage to the insured vehicle</div>
+                                <div class="media-body">Daños al vehículo asegurado</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Civil Liability for injury or death of third parties</div>
+                                <div class="media-body">Responsabilidad civil por lesiones o muerte de terceros</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Total or Partial Theft</div>
+                                <div class="media-body">Robo total o parcial</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Civil Liability for property damage to third parties' assets
+                                <div class="media-body">Responsabilidad civil por daños materiales a bienes de terceros
                                 </div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">24/7 towing service all around the country</div>
+                                <div class="media-body">Servicio de grúa 24/7 en todo el país</div>
                             </li>
                             
                            
@@ -207,8 +210,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="above-heading">PRICING</div>
-                    <h2 class="h2-heading">Pricing Options Table</h2>
+                    <div class="above-heading">PRECIOS</div>
+                    <h2 class="h2-heading">PRECIOS DE LOS PAQUETES</h2>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -218,7 +221,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <li class="nav-item">
                             <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab"
                                 aria-controls="tab-1" aria-selected="true"><i
-                                    class="fas fa-motorcycle"></i>Motorcycle</a>
+                                    class="fas fa-motorcycle"></i>Motocicleta</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab"
@@ -226,7 +229,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab"
-                                aria-controls="tab-3" aria-selected="false"><i class="fas fa-tractor"></i>Utility</a>
+                                aria-controls="tab-3" aria-selected="false"><i class="fas fa-tractor"></i>Utilidad</a>
                         </li>
                     </ul>
                     <!-- end of tabs links -->
@@ -239,35 +242,35 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="card-title">SILVER</div>
+                                        <div class="card-title">PLATA</div>
                                         <div class="price"><span class="currency">$</span><span
                                                 class="value">14.99</span></div>
-                                        <div class="frequency">Monthly</div>
+                                        <div class="frequency">MENSUALMENTE</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Third-Party Liability</div>
+                                                <div class="media-body">Responsabilidad civil</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Damage to your Motorcycle</div>
+                                                <div class="media-body">Daños en tu moto</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Roadside Assistance</div>
+                                                <div class="media-body">Asistencia en carretera</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Theft</div>
+                                                <div class="media-body">Robo</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Legal Assistance</div>
+                                                <div class="media-body">Asistencia jurídica</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Coverage for Rider's Injuries</div>
+                                                <div class="media-body">Cobertura de las lesiones del motorista</div>
                                             </li>
                                             
                                             <br><br><br>
@@ -276,13 +279,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="buy.php">Buy</button>
+                                                    id="pdf" value="moto" href="buy.php">Adquirir</button>
                                                 <br><br>
                                                 
                                             </form>
                                             <form method="POST" action="cotizar.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="cotizar.php">Price Quote</button>
+                                                    id="pdf" value="moto" href="cotizar.php">Cotizar Informacion</button>
                                             </form>
                                         </div>
                                         
@@ -291,42 +294,42 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <div class=" card">
                                     <div class="card-body ">
-                                        <div class="card-title">GOLD</div>
+                                        <div class="card-title">ORO</div>
                                         <div class="price"><span class="currency">$</span><span
                                                 class="value">24.99</span></div>
-                                        <div class="frequency">Monthly</div>
+                                        <div class="frequency">MENSUALMENTE</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Extended Third-Party Liability</div>
+                                                <div class="media-body">Responsabilidad civil ampliada</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Motorcycle Damage Coverage</div>
+                                                <div class="media-body">Cobertura ampliada de daños a motocicletas</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Total and Partial Theft</div>
+                                                <div class="media-body">Robo total y parcial</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Legal Assistance</div>
+                                                <div class="media-body">Asistencia jurídica</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Extended Travel Assistance</div>
+                                                <div class="media-body">Asistencia ampliada en viaje</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Coverage for Rider's Injuries</div>
+                                                <div class="media-body">Cobertura de las lesiones del motorista</div>
                                             </li><br>
 
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="buy.php">Buy</button>
+                                                    id="pdf" value="moto" href="buy.php">Adquirir</button>
                                                 <br><br>
                                                 
                                             </form>
@@ -334,51 +337,51 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </div>
                                         <form method="POST" action="cotizar.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="cotizar.php">Price Quote</button>
+                                                    id="pdf" value="moto" href="cotizar.php">Cotizar Informacion</button>
                                             </form>
                                     </div>
                                 </div> <!-- end of card -->
 
                                 <div class=" card">
                                     <div class="card-body ">
-                                        <div class="card-title">DIAMOND</div>
+                                        <div class="card-title">DIAMANTE</div>
                                         <div class="price"><span class="currency">$</span><span
                                                 class="value">49.99</span></div>
-                                        <div class="frequency">Monthly</div>
+                                        <div class="frequency">MENSUALMENTE</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Third-Party Liability</div>
+                                                <div class="media-body">Responsabilidad máxima frente a terceros</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Motorcycle Damage Coverage with Agreed
-                                                    Value</div>
+                                                <div class="media-body">Cobertura Máxima de Daños a Motocicletas con
+                                                Valor acordado</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Total and Partial Theft Expanded</div>
+                                                <div class="media-body">Robo total y parcial ampliado</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Travel Assistance</div>
+                                                <div class="media-body">Máxima asistencia en viaje</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Coverage for Rider's Injuries</div>
+                                                <div class="media-body">Cobertura de las lesiones del motorista</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="buy.php">Buy</button>
+                                                    id="pdf" value="moto" href="buy.php">Adquirir</button>
                                                 <br><br>
                                                
                                             </form>
                                             <form method="POST" action="cotizar.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="cotizar.php">Price Quote</button>
+                                                    id="pdf" value="moto" href="cotizar.php">Cotizar Informacion</button>
                                             </form>
                                         </div>
                                     </div>
@@ -395,47 +398,47 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             <div class="row">
                                 <div class="card">
                                     <div class="card-body ">
-                                        <div class="card-title">SILVER</div>
+                                        <div class="card-title">PLATA</div>
                                         <div class="price"><span class="currency">$</span><span
                                                 class="value">24.99</span></div>
-                                        <div class="frequency">Monthly</div>
+                                        <div class="frequency">MENSUALMENTE</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Third-Party Liability</div>
+                                                <div class="media-body">Responsabilidad civil</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Collision Coverage</div>
+                                                <div class="media-body">Cobertura de colisión</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Comprehensive Coverage</div>
+                                                <div class="media-body">Cobertura total</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Roadside Assistance</div>
+                                                <div class="media-body">Asistencia en carretera</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Legal Assistance</div>
+                                                <div class="media-body">Asistencia jurídica</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Coverage for Occupant Injuries</div>
+                                                <div class="media-body">Cobertura de lesiones de ocupante</div>
                                             </li>
                                             <br><br><br><br>
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="buy.php">Buy</button>
+                                                    id="pdf" value="car" href="buy.php">Adquirir</button>
                                                 <br><br>
                                             </form>
                                             <form method="POST" action="cotizar.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="cotizar.php">Price Quote</button>
+                                                    id="pdf" value="car" href="cotizar.php">Cotizar Informacion</button>
                                             </form>
                                         </div>
                                     </div>
@@ -443,47 +446,47 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <div class="card">
                                     <div class="card-body ">
-                                        <div class="card-title">GOLD</div>
+                                        <div class="card-title">ORO</div>
                                         <div class="price"><span class="currency">$</span><span
                                                 class="value">49.99</span></div>
-                                        <div class="frequency">Monthly</div>
+                                        <div class="frequency">MENSUALMENTE</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Extended Third-Party Liability</div>
+                                                <div class="media-body">Responsabilidad civil ampliada</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Collision Coverage</div>
+                                                <div class="media-body">Cobertura de colisión ampliada</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Non-collision Coverage</div>
+                                                <div class="media-body">Cobertura Ampliada No Colisión</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Total and Partial Theft</div>
+                                                <div class="media-body">Robo total y parcial</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Legal Assistance</div>
+                                                <div class="media-body">Asistencia jurídica</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Coverage for Occupant Injuries</div>
+                                                <div class="media-body">Cobertura de lesiones de ocupantes</div>
                                             </li>
                                             <br>
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="buy.php">Buy</button>
+                                                    id="pdf" value="car" href="buy.php">Adquirir</button>
                                                 <br><br>
                                             </form>
                                             <form method="POST" action="cotizar.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
+                                                    id="pdf" value="industry" href="cotizar.php">Cotizar Informacion</button>
                                             </form>
                                         </div>
                                     </div>
@@ -491,49 +494,49 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <div class="card">
                                     <div class="card-body ">
-                                        <div class="card-title">DIAMOND</div>
+                                        <div class="card-title">DIAMANTE</div>
                                         <div class="price"><span class="currency">$</span><span
                                                 class="value">99.99</span></div>
-                                        <div class="frequency">Monthly</div>
+                                        <div class="frequency">MENSUALMENTE</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Third-Party Liability</div>
+                                                <div class="media-body">Responsabilidad máxima frente a terceros</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Collision Coverage with Agreed Value
+                                                <div class="media-body">Cobertura de colisión ampliada con valor acordado
                                                 </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Comprehensive Coverage with Deductible
-                                                    Waiver</div>
+                                                <div class="media-body">Cobertura Amplia Ampliada con Deducible
+                                                RenunciaRenuncia</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Total and Partial Theft Expanded</div>
+                                                <div class="media-body">Robo total y parcial ampliado</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Travel Assistance</div>
+                                                <div class="media-body">Máxima asistencia en viaje</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Coverage for Occupant Injuries</div>
+                                                <div class="media-body">Cobertura de lesiones de ocupantes</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="buy.php">Buy</button>
+                                                    id="pdf" value="car" href="buy.php">Adquirir</button>
                                                 <br><br>
 
                                             </form>
                                             <form method="POST" action="cotizar.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="cotizar.php">Price Quote</button>
+                                                    id="pdf" value="car" href="cotizar.php">Cotizar Informacion</button>
                                             </form>
                                         </div>
                                     </div>
@@ -551,36 +554,36 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             <div class="row">
                                 <div class="card">
                                     <div class="card-body ">
-                                        <div class="card-title">SILVER</div>
+                                        <div class="card-title">PLATA</div>
                                         <div class="price"><span class="currency">$</span><span
                                                 class="value">44.99</span>
                                         </div>
-                                        <div class="frequency">Monthly</div>
+                                        <div class="frequency">MENSUALMENTE</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Liability Coverage</div>
+                                                <div class="media-body">Cobertura de responsabilidad civil</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Collision Coverage</div>
+                                                <div class="media-body">Cobertura de colisión</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Non-collision Coverage</div>
+                                                <div class="media-body">Cobertura de no colisión</div>
                                             </li>
                                             <br><br><br><br>
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="buy.php">Buy</button>
+                                                    id="pdf" value="industry" href="buy.php">Adquirir</button>
                                                 <br><br>
                                             </form>
                                             <form method="POST" action="cotizar.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
+                                                    id="pdf" value="industry" href="cotizar.php">Cotizar Informacion</button>
                                             </form>
                                         </div>
                                     </div>
@@ -588,40 +591,40 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <div class="card">
                                     <div class="card-body ">
-                                        <div class="card-title">GOLD</div>
+                                        <div class="card-title">ORO</div>
                                         <div class="price"><span class="currency">$</span><span
                                                 class="value">84.99</span>
                                         </div>
-                                        <div class="frequency">Monthly</div>
+                                        <div class="frequency">MENSUALMENTE</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Extended Liability Coverage</div>
+                                                <div class="media-body">Cobertura de responsabilidad ampliada</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Rental Reimbursement</div>
+                                                <div class="media-body">Reembolso del alquiler</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Towing and Roadside Assistance</div>
+                                                <div class="media-body">Remolque y asistencia en carretera</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-times"></i>
-                                                <div class="media-body">Uninsured/Underinsured Motorist Coverage</div>
+                                                <div class="media-body">Cobertura de motorista no asegurado/subasegurado</div>
                                             </li>
                                             <br>
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="buy.php">Buy</button>
+                                                    id="pdf" value="industry" href="buy.php">Adquirir</button>
                                                 <br><br>
                                             </form>
                                              <form method="POST" action="cotizar.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
+                                                    id="pdf" value="industry" href="cotizar.php">Cotizar Informacion</button>
                                             </form>
                                         </div>
                                     </div>
@@ -629,44 +632,44 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <div class="card">
                                     <div class="card-body ">
-                                        <div class="card-title">DIAMOND</div>
+                                        <div class="card-title">DIAMANTE</div>
                                         <div class="price"><span class="currency">$</span><span
                                                 class="value">149.99</span>
                                         </div>
-                                        <div class="frequency">Monthly</div>
+                                        <div class="frequency">MENSUALMENTE</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Agreed Value Coverage</div>
+                                                <div class="media-body">Cobertura del valor acordado</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Business Interruption Coverage</div>
+                                                <div class="media-body">Cobertura de interrupción de la actividad</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Equipment Coverage</div>
+                                                <div class="media-body">Cobertura de equipos</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Loss of Use Coverage</div>
+                                                <div class="media-body">Cobertura de pérdida de uso</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Enhanced Medical Payments</div>
+                                                <div class="media-body">Pagos médicos mejorados</div>
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="buy.php">Buy</button>
+                                                    id="pdf" value="industry" href="buy.php">Adquirir</button>
                                                 <br><br>
 
                                             </form>
                                             <form method="POST" action="cotizar.php">
                                                 <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
+                                                    id="pdf" value="industry" href="cotizar.php">Cotizar Informacion</button>
                                             </form>
                                         </div>
                                     </div>
@@ -696,25 +699,24 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="row">
                 <div class="col-md-4">
                     <div class="footer-col first">
-                        <h4>About LifeLine</h4>
-                        <p class="p-small">We are one of your best options in the market to acquire an insurance policy.
+                        <h4>Acerca LifeLine</h4>
+                        <p class="p-small">Somos una de sus mejores opciones en el mercado para adquirir una póliza de seguros.
                         </p>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
                     <div class="footer-col middle">
-                        <h4>Important Links</h4>
+                        <h4>Enlaces Importantes</h4>
                         <ul class="list-unstyled li-space-lg p-small">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Our business partners <a class="white"
+                                <div class="media-body">Nuestros socios comerciales <a class="white"
                                         href="#your-link">startupguide.com</a></div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Read our <a class="white"
-                                        href="views/terms-conditions.html">Terms &
-                                        Conditions</a>, <a class="white" href="privacy-policy.html">Privacy Policy</a>
+                                <div class="media-body">Lea nuestro <a class="white"
+                                        href="views/terms-conditions.html">Terminos y condiciones</a>, <a class="white" href="privacy-policy.html">Política de privacidad</a>
                                 </div>
                             </li>
                         </ul>
@@ -722,7 +724,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </div> <!-- end of col -->
                 <div class="col-md-4">
                     <div class="footer-col last">
-                        <h4>Contact</h4>
+                        <h4>Contactanos</h4>
                         <ul class="list-unstyled li-space-lg p-small">
                             <li class="media">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -751,7 +753,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2020 Template by LifeLine</p>
+                    <p class="p-small">Copyright © 2024 Template by LifeLine</p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->

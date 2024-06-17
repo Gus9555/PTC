@@ -74,6 +74,10 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link page-scroll" href="">ENGLISH <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.html#features">FEATURES</a>
                     </li>
                     <li class="nav-item">
@@ -421,8 +425,8 @@
     <script src="../../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="../../assets/boss/js/jquery.easing.min.js"></script>
     <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="../../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="../../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!--<script src="js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
     <script src="../../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
 </body>

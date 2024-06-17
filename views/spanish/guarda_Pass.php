@@ -37,7 +37,7 @@
             text: "Contraseña Actualizada",
             icon: "success",
              }).then(function() {
-            window.location = "../../views/login.php";
+            window.location = "../../views/spanish/login.php";
             });</script></p>';
 
      }else{

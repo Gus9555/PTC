@@ -97,21 +97,12 @@ if (!empty($_POST)) {
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
-                    
-                    <!-- Dropdown Menu -->
-                    <li class="nav-item dropdown">
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE
-                                    DETAILS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS
-                                    CONDITIONS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY
-                                    POLICY</span></a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../spanish/login.php">ESPAÑOL <span class="sr-only">(current)</span></a>
                     </li>
-                    <!-- end of dropdown menu -->
+                    
+                   
+                  
 
                   
                 </ul>
@@ -167,7 +158,7 @@ if (!empty($_POST)) {
                             <br>
                             <div class="form-group">
 
-                                <a class="small" href="restorePass.php">Forgot Password?</a>
+                                <a class="small" href="../user/restorePass.php">Forgot Password?</a>
 
                             </div>
                         </form>

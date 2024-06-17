@@ -107,7 +107,10 @@
                         <a class="nav-link page-scroll" href="view_user.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../views/support/users.php">CHAT-SUPPORT <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="../spanish/view_user.php">ESPAÑOL <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../support/users.php">CHAT-SUPPORT <span class="sr-only">(current)</span></a>
                     </li>
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">

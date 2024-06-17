@@ -18,11 +18,11 @@ require '../../funcs/conexion.php';
 require '../../funcs/funcs.php';
 
 if (empty ($_GET['id'])) {
-    header('Location: ../../views/login.php');
+    header('Location: ../../views/spanish/login.php');
 }
 
 if (empty ($_GET['token'])) {
-    header('Location: ../../views/login.php');
+    header('Location: ../../views/spanish/login.php');
 }
 
 $user_id = $mysqli->real_escape_string($_GET['id']);

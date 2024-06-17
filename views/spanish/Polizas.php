@@ -314,7 +314,7 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="form-control-submit-button">SUBMIT</button>
+                                        <button type="submit" class="form-control-submit-button">ENVIAR</button>
                                     </div>
                                     <div class="form-message">
                                         <div id="pmsgSubmit" class="h3 text-center hidden"></div>
@@ -325,7 +325,7 @@
 
                         </div> <!-- end of col-->
                     </div> <!-- end of row -->
-                    <a class="btn-outline-reg" href="index.html">BACK</a>
+                    <a class="btn-outline-reg" href="index.html">VOLVER</a>
                 </div> <!-- end of col-->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -355,9 +355,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="footer-col first">
-                        <h4>About Tivo</h4>
-                        <p class="p-small">We're passionate about offering some of the best business growth services for
-                            start more words</p>
+                        <h4>Acerca:</h4>
+                        <p class="p-small">Nos apasiona ofrecer algunos de los mejores servicios de crecimiento empresarial para
+                        empezar más palabras.</p>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
@@ -366,13 +366,13 @@
                         <ul class="list-unstyled li-space-lg p-small">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Our business partners <a class="white"
+                                <div class="media-body">Nuestros socios comerciales <a class="white"
                                         href="#your-link">startupguide.com</a></div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Read our <a class="white" href="terms-conditions.html">Terms &
-                                        Conditions</a>, <a class="white" href="privacy-policy.html">Privacy Policy</a>
+                                <div class="media-body">Lee acerca nuestro <a class="white" href="terms-conditions.html">Terminos y condiciones</a>, 
+                                <a class="white" href="privacy-policy.html">Política de privacidad</a>
                                 </div>
                             </li>
                         </ul>
@@ -380,7 +380,7 @@
                 </div> <!-- end of col -->
                 <div class="col-md-4">
                     <div class="footer-col last">
-                        <h4>Contact</h4>
+                        <h4>Contactanos</h4>
                         <ul class="list-unstyled li-space-lg p-small">
                             <li class="media">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -407,7 +407,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Template by Inovatik</a></p>
+                    <p class="p-small">Copyright © 2024 <a href="https://inovatik.com">Template by Inovatik</a></p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->
@@ -421,8 +421,8 @@
     <script src="../../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="../../assets/boss/js/jquery.easing.min.js"></script>
     <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!--<script src="js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
     <script src="../../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
 </body>

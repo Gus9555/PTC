@@ -108,7 +108,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../../views/user/support/home.php">CHAT-SUPPORT <span
+                        <a class="nav-link page-scroll" href="../spanish/view_user.php">ESPAÑOL <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../../views/support/users.php">CHAT-SUPPORT <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <!-- Dropdown Menu -->

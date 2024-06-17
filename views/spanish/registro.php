@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,17 +68,19 @@
                 <!-- end of preloader -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="index.php">INICIO <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../spanish/registro.php">ESPAÑOL <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="../user/registro.php">ENGLISH <span class="sr-only">(current)</span></a>
                     </li>
 
+                    <!-- Dropdown Menu -->
                     
+
                     
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="login.php">LOG IN</a>
+                    <a class="btn-outline-sm" href="login.php">INCIA SESION</a>
                 </span>
             </div>
         </div> <!-- end of container -->
@@ -99,7 +102,7 @@
                 </div>
                 <!-- end of preloader -->
                 <div class="col-lg-12">
-                    <h1>Sign Up</h1>
+                    <h1>Regístrate</h1>
                     <br>
                     <!-- Sign Up Form -->
                     <div class="form-container">
@@ -107,44 +110,42 @@
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="nombre">Full name</label>
+                                        <label class="small mb-1" for="nombre">Nombre completo</label>
                                         <input class="form-control-input" id="nombre" name="nombre" type="text"
-                                            placeholder="Enter Full name" />
+                                            placeholder="Ingrese tu nombre completo" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="usuario">Username</label>
+                                        <label class="small mb-1" for="usuario">Usuario</label>
                                         <input class="form-control-input" id="usuario" name="usuario" type="text"
-                                            placeholder="Enter Username" />
+                                            placeholder="Ingresa Usuario" />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                <label class="small mb-1" for="inputEmailAddress">Correo electronico</label>
                                 <input class="form-control-input" id="inputEmailAddress" name="email" type="email"
-                                    aria-describedby="emailHelp" placeholder="Example@gmail.com" />
+                                    aria-describedby="emailHelp" placeholder="Ejemplo@gmail.com" />
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="inputPassword">Password</label>
+                                        <label class="small mb-1" for="inputPassword">contraseña</label>
                                         <input class="form-control-input" id="inputPassword" name="password"
-                                            placeholder="password" type="password" />
+                                            placeholder="Contraseña" type="password" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="inputConfirmPassword">Confirm
-                                            Password</label>
+                                        <label class="small mb-1" for="inputConfirmPassword">Confirmar contraseña</label>
                                         <input class="form-control-input" id="inputConfirmPassword" name="passwordc"
-                                            type="password" placeholder="Confirm password" />
+                                            type="password" placeholder="Confirmar contraseña" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group mt-4 mb-0">
-                                <button type="submit"
-                                    class="form-control-submit-button">Create Account</button></div>
+                            <div class="form-group mt-4 mb-0"><button type="submit"
+                                    class="form-control-submit-button">Crear cuenta</button></div>
                         </form>
                     </div> <!-- end of form container -->
                     <!-- end of sign up form -->
@@ -201,7 +202,7 @@ if (!empty($_POST)) {
     if ($nombre == "" || $usuario == "" || $password == "" || $passwordc == "" || $email == "") {
         echo '<p><script>swal({
             title: "ERROR!",
-            text: "Do not leave empty fields",
+            text: "No dejes espacios vacios",
             icon: "error",
             });</script></p>';
         $i = 100;
@@ -211,37 +212,37 @@ if (!empty($_POST)) {
         if (!isEmail($email)) {
             echo '<p><script>Swal.fire({
                 title: "ERROR",
-                text: "Unvalid E-Mail address",
+                text: "E-mail invalido, ingrese uno correcto",
                 icon: "error"
                 });</script></p>';
 
         } elseif(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8){
-            $errors[] = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
+            $errors[] = "La contraseña debe tener al menos 8 caracteres e incluir como mínimo una letra mayúscula, un número y un carácter especial.";
             echo '<p><script>Swal.fire({
             title: "ERROR",
-            text: "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.",
+            text: "La contraseña debe tener al menos 8 caracteres e incluir como mínimo una letra mayúscula, un número y un carácter especial.",
             icon: "error"
             });</script></p>';
         } elseif (!validaPassword($password, $passwordc)) {
-            $errors[] = "Both passwords need to match";
+            $errors[] = "Las contraseñas no conciden";
             echo '<p><script>Swal.fire({
             title: "ERROR",
-            text: "Both passwords need to match",
+            text: "Las contraseñas no conciden",
             icon: "error"
             });</script></p>';
 
         } elseif (usuarioExiste($usuario)) {
-            $errors[] = "The username: $usuario, already exists";
+            $errors[] = "El : $usuario, ya existe";
             echo '<p><script>Swal.fire({
                    title: "ERROR",
-                   text: "This username already exists",
+                   text: "El usuario, ya existe",
                    icon: "error"
                    });</script></p>';
         } elseif (emailExiste($email)) {
-            $errors[] = "The E-Mail: $email already exists";
+            $errors[] = "El E-Mail: $email ya existe";
             echo '<p><script>Swal.fire({
             title: "ERROR",
-            text: "This E-Mail already exists",
+            text: "El E-mail ya existe",
             icon: "error"
             });</script></p>';
 
@@ -272,28 +273,28 @@ if (!empty($_POST)) {
                 //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
                 if ($registro > 0) {
         
-                    $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/user/activar.php?id=' . $registro . '&val=' . $token;
+                    $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
                     //el asuto y cuerpo es lo que ira en el mesaje del correo
                     $asunto = 'PIN - LIFELINE';
-                    $cuerpo = "Dear $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo <br /><br /> Confirm your identity <a href='$url'>Confirm E-Mail</a>";
+                    $cuerpo = "Estimado $nombre: <br /><br />este es su código de identificación personal, no lo comparta con nadie: $codigo <br /><br /> Confirma tu identidad <a href='$url'>Confirma el correo</a>";
                     //aca se envia el correo usando las anteriores mencionadas variables
                     if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
         
                         echo '<p><script>swal({
                             title: "Good job!",
-                            text: "Succesfully, Confirm your identity in your email ",
+                            text: "Con éxito, Confirme su identidad en su correo electrónico ",
                             icon: "success",
                              }).then(function() {
-                            window.location = "../views/user/login.php";
+                            window.location = "../../views/login.php";
                             });</script></p>';
         
                     } else {
                         echo '<p><script>Swal.fire({
                             title: "Opsss!",
-                            text: "We got a problem, try again",
+                            text: "Tenemos un problema, inténtelo de nuevo",
                             type: "error"
                             }).then(function() {
-                            window.location = "../views/user/registro.php";
+                            window.location = "../../views/registro.php";
                             });</script></p>';
                     }
         
@@ -301,7 +302,7 @@ if (!empty($_POST)) {
                     $errors[] = "Error";
                     echo '<p><script>Swal.fire({
                         title: "ERROR",
-                        text: "Sign Up ERROR",
+                        text: "Registrarse ERROR",
                         icon: "error"
                         });</script></p>';
                 }

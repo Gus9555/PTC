@@ -95,28 +95,18 @@ if (!empty($_POST)) {
                 <!-- end of preloader -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="index.php">INICIO <span
+                                class="sr-only">(current)</span></a>
                     </li>
-                    
-                    <!-- Dropdown Menu -->
-                    <li class="nav-item dropdown">
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE
-                                    DETAILS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS
-                                    CONDITIONS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY
-                                    POLICY</span></a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../user/login.php">ENGLISH <span
+                                class="sr-only">(current)</span></a>
                     </li>
-                    <!-- end of dropdown menu -->
 
-                  
+
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="registro.php">SIGN UP</a>
+                    <a class="btn-outline-sm" href="registro.php">REGISTRO</a>
                 </span>
             </div>
         </div> <!-- end of container -->
@@ -147,27 +137,30 @@ if (!empty($_POST)) {
                         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
                             <div class="form-group">
-                                <input class="form-control-input" id="inputEmailAddress" name="correo" type="email" placeholder="Enter email address" required />
+                                <input class="form-control-input" id="inputEmailAddress" name="correo" type="email"
+                                    placeholder="Ingresa tu Correo electronico" required />
                             </div>
 
                             <div class="form-group">
-                               <input class="form-control-input" id="inputPassword" name="password" type="password" placeholder="Enter password" />
+                                <input class="form-control-input" id="inputPassword" name="password" type="password"
+                                    placeholder="Ingrese contraseña" />
                             </div>
-                            
+
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                    <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
+                                    <label class="custom-control-label" for="rememberPasswordCheck">Recordar
+                                        contraseña</label>
                                 </div>
                             </div>
                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                <button type="submit" class="form-control-submit-button">Login</button>
+                                <button type="submit" class="form-control-submit-button">Iniciar sesion</button>
 
                             </div>
                             <br>
                             <div class="form-group">
 
-                                <a class="small" href="restorePass.php">Forgot Password?</a>
+                                <a class="small" href="restorePass.php">Olvidaste tu contraseña?</a>
 
                             </div>
                         </form>

@@ -91,26 +91,25 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="index.php">INICIO <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../index.php">INGLISH <span class="sr-only">(current)</span></a>
                     </li>
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
                             aria-haspopup="false" aria-expanded="false">VIDEO</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICULOS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMINOS Y CONDICIONES </span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACIDAD Y POLITICA</span></a>
-                        </div>
+                       
                     </li>
                     <!-- end of dropdown menu -->
 
                 </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="login.php">INICIO DE SESION</a>
+                    
                 </span>
+
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
@@ -247,7 +246,7 @@
                             <img class="img-fluid" src="../../assets/boss/images/casa.png" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title" style="color:#3b5d50">Casa</h4>
+                            <h4 class="card-title" style="color:#3b5d50">Inmobiliaria</h4>
                             <p>Asegure una protección integral para su hogar y sus valiosos muebles, garantizando su
                             su seguridad y su tranquilidad.</p>
                         </div>
@@ -301,7 +300,7 @@
                         </li>
 
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="vehicles.php">SEGURO</a> <a
+                    <a class="btn-solid-reg mfp-close" href="vehicles.php">ADQUIRIR</a> <a
                         class="btn-outline-reg mfp-close as-button" href="#screenshots">VOLVER</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -348,7 +347,7 @@
                             <div class="media-body">Invalidez absoluta y permanente</div>
                         </li>
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="Medical.php">SEGURO</a> <a
+                    <a class="btn-solid-reg mfp-close" href="Medical.php">ADQUIRIR</a> <a
                         class="btn-outline-reg mfp-close as-button" href="#screenshots">VOLVER</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -367,39 +366,39 @@
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>Casa<h3>
+                    <h3>Inmobiliaria<h3>
                             <hr>
                             <h5>Protección a prueba de daños</h5>
-                            <p>This insurance protects against all risks of loss or damage to your home and personal
-                                belongings caused by any accidental, sudden or unforeseen event.</p>
+                            <p>Este seguro protege contra todo riesgo de pérdida o daño a su vivienda y efectos personales
+                            personales causados por cualquier acontecimiento accidental, repentino o imprevisto..</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Fire or lightning</div>
+                                    <div class="media-body">Incendio o rayo</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Earthquake, tremor or volcanic eruption</div>
+                                    <div class="media-body">Terremoto, temblor o erupción volcánica</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Gas leaks</div>
+                                    <div class="media-body">Fugas de gas</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Pipe bursting</div>
+                                    <div class="media-body">Rotura de tuberías</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Temporary transfers</div>
+                                    <div class="media-body">Traslados temporales</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body">Theft</div>
+                                    <div class="media-body">Robo</div>
                                 </li>
                             </ul>
-                            <a class="btn-solid-reg mfp-close" href="Home.php">INSURANCE</a> <a
-                                class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
+                            <a class="btn-solid-reg mfp-close" href="Home.php">ADQUIRIR</a> <a
+                                class="btn-outline-reg mfp-close as-button" href="#screenshots">VOLVER</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -414,11 +413,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>What to do in case of an emergency?</h2>
-                        <p>Learn the process for handling claims involving cars, people or your home. Being informed
-                            about how to proceed is essential for an effective response and quick recovery. From
-                            reporting the incident to handling paperwork and repairs, each step is crucial to protecting
-                            your interests and facilitating problem resolution.
+                        <h2>Qué hacer en caso de emergencia?</h2>
+                        <p>Conozca el proceso de tramitación de siniestros relacionados con automóviles, personas o su vivienda. Estar informado
+                            sobre cómo proceder es esencial para una respuesta eficaz y una rápida recuperación. Desde
+                            desde la comunicación del siniestro hasta la gestión de los trámites y reparaciones, cada paso es crucial para proteger
+                            sus intereses y facilitar la resolución del problema.
                         </p>
 
                         <a class="btn-solid-reg page-scroll" href="../../views/registro.php">BLOG</a>
@@ -456,8 +455,8 @@
                     </div> <!-- end of image-container -->
                     <!-- end of video preview -->
 
-                    <div class="p-heading">What better way to showcase our LifeLine life insurance website than by
-                        presenting in a video great situations of each module and tool available to users.</div>
+                    <div class="p-heading">Qué mejor manera de mostrar nuestro sitio web de seguros de vida LifeLine que
+                    presentando en un vídeo grandes situaciones de cada módulo y herramienta a disposición de los usuarios.</div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -485,25 +484,25 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="footer-col first">
-                        <h4>About LifeLine</h4>
-                        <p class="p-small">We are one of your best options in the market to acquire an insurance policy.
+                        <h4>Acerca de LifeLine</h4>
+                        <p class="p-small">Somos una de sus mejores opciones en el mercado para adquirir una póliza de seguros.
                         </p>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
                     <div class="footer-col middle">
-                        <h4>Important Links</h4>
+                        <h4>Enlaces importantes</h4>
                         <ul class="list-unstyled li-space-lg p-small">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Our business partners <a class="white"
+                                <div class="media-body">Nuestros socios comerciales <a class="white"
                                         href="#your-link">startupguide.com</a></div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Read our <a class="white"
-                                        href="views/terms-conditions.html">Terms &
-                                        Conditions</a>, <a class="white" href="privacy-policy.html">Privacy Policy</a>
+                                <div class="media-body">Lea nuestro <a class="white"
+                                        href="views/terms-conditions.html">Condiciones generales
+                                        Condiciones</a>, <a class="white" href="privacy-policy.html">Política de privacidad</a>
                                 </div>
                             </li>
                         </ul>
