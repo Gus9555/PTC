@@ -141,15 +141,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
-            
+
         </div> <!-- end of header-content -->
     </header> <!-- end of header -->
-    
+
     <!-- end of header -->
 
 
     <!-- Customers -->
-    
+
     <!-- end of customers -->
 
 
@@ -213,7 +213,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <ul class="nav nav-tabs" id="argoTabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab"
-                                aria-controls="tab-1" aria-selected="true"><i class="fas fa-heartbeat"></i>HealthCare</a>
+                                aria-controls="tab-1" aria-selected="true"><i
+                                    class="fas fa-heartbeat"></i>HealthCare</a>
                         </li>
                     </ul>
                     <!-- end of tabs links -->
@@ -248,12 +249,20 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
                                                 <div class="media-body">Emergency Care</div>
-                                            </li>
+                                            </li><br><br>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="medical" href="cotizar.php">Price Quote</button>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="medical" href="buy.php">Buy</button>
+                                                <br><br>
+
                                             </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="medical" href="cotizar.php">Price Quote</button>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div> <!-- end of card -->
@@ -266,13 +275,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         <div class="frequency">Monthly</div>
                                         <div class="divider"></div>
                                         <ul class="list-unstyled li-space-lg">
-                                        <li class="media">
+                                            <li class="media">
                                                 <i class="fas fa-check"></i>
                                                 <div class="media-body">Extended Medical Coverage</div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
-                                                <div class="media-body">Mental Health and Substance Abuse Treatment</div>
+                                                <div class="media-body">Mental Health and Substance Abuse Treatment
+                                                </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
@@ -281,11 +291,18 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             <li class="media">
                                                 <i class="fas fa-check"></i>
                                                 <div class="media-body">Wellness Programs</div>
-                                            </li>
+                                            </li><br>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="medical" href="cotizar.php">Price Quote</button>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="medical" href="buy.php">Buy</button>
+                                                <br><br>
+
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="medical" href="cotizar.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -321,8 +338,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                             </li>
                                         </ul>
                                         <div class="button-wrapper">
-                                        <form method="POST" action="cotizar.php">
-                                            <button type="submit"  class="btn-solid-reg page-scroll" name="pdf" id="pdf" value="medical" href="cotizar.php">Price Quote</button>
+                                            <form method="POST" action="buy.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="medical" href="buy.php">Buy</button>
+                                                <br><br>
+
+                                            </form>
+                                            <form method="POST" action="cotizar.php">
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                    id="pdf" value="medical" href="cotizar.php">Price Quote</button>
                                             </form>
                                         </div>
                                     </div>
@@ -333,22 +357,22 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </div> <!-- end of tab-pane -->
                         <!-- end of tab -->
 
-                        
+
 
 
                         <!-- end of tab -->
 
                         <!-- Tab -->
-                        
 
-                            </div> <!-- end of col -->
-                        </div> <!-- end of col -->
-                    </div> <!-- end of tab-pane -->
-                </div> <!-- end of row -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of col -->
             </div> <!-- end of tab-pane -->
-            <!-- end of tab -->
+        </div> <!-- end of row -->
+    </div> <!-- end of tab-pane -->
+    <!-- end of tab -->
 
-        </div> <!-- end of tab content -->
+    </div> <!-- end of tab content -->
 
 
     </div> <!-- end of col -->

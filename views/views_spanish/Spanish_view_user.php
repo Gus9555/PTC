@@ -24,7 +24,7 @@
          title: "Warning",
          text: "LogIn again"
          }).then(function() {
-         window.location = "../views/user/login.php";
+         window.location = "../../views/login.php";
          });</script></p>';
      exit; // Salir del script si no hay sesión iniciada
  }
@@ -575,7 +575,7 @@
                         <p>Learn the process for handling claims involving cars, people or your home. Being informed about how to proceed is essential for an effective response and quick recovery. From reporting the incident to handling paperwork and repairs, each step is crucial to protecting your interests and facilitating problem resolution.
                         </p>
                         
-                        <a class="btn-solid-reg page-scroll" href="views/registro.php">BLOG</a>
+                        <a class="btn-solid-reg page-scroll" href="../views/registro.php">BLOG</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
@@ -652,7 +652,7 @@
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Read our <a class="white" href="terms-conditions.html">Terms &
+                                <div class="media-body">Read our <a class="white" href="views/terms-conditions.html">Terms &
                                         Conditions</a>, <a class="white" href="privacy-policy.html">Privacy Policy</a>
                                 </div>
                             </li>

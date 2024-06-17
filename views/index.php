@@ -17,7 +17,7 @@
 
 </html>
 <?php
- 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +77,8 @@
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.php"><img src="../assets/boss/images/logo.png" alt="alternative"></a>
+            <a class="navbar-brand logo-image" href="index.php"><img src="../assets/boss/images/logo.png"
+                    alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -92,13 +93,10 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../views/support/users.php">CHAT-SUPPORT <span class="sr-only">(current)</span></a>
-                    </li>
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">VIDEO</a>
+                            aria-haspopup="false" aria-expanded="false">VIDEO</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE
                                     DETAILS</span></a>
@@ -111,7 +109,7 @@
                         </div>
                     </li>
                     <!-- end of dropdown menu -->
-   
+
                 </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="login.php">LOG IN</a>
@@ -137,7 +135,8 @@
                     <div class="col-lg-6 col-xl-7">
                         <div class="image-container">
                             <div class="img-wrapper">
-                                <img class="img-fluid" src="../assets/boss/images/header-software-app.png" alt="alternative">
+                                <img class="img-fluid" src="../assets/boss/images/header-software-app.png"
+                                    alt="alternative">
                             </div> <!-- end of img-wrapper -->
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
@@ -166,28 +165,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-
                     <!-- Image Slider -->
                     <div class="slider-container">
                         <div class="swiper-container image-slider">
                             <div class="swiper-wrapper">
+
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-1.png" alt="alternative">
+                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-1.png"
+                                        alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-2.png" alt="alternative">
+                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-2.png"
+                                        alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-3.png" alt="alternative">
+                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-3.png"
+                                        alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-4.png" alt="alternative">
+                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-4.png"
+                                        alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-5.png" alt="alternative">
+                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-5.png"
+                                        alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-6.png" alt="alternative">
+                                    <img class="img-fluid" src="../assets/boss/images/customer-logo-6.png"
+                                        alt="alternative">
                                 </div>
                             </div> <!-- end of swiper-wrapper -->
                         </div> <!-- end of swiper container -->
@@ -260,154 +265,7 @@
 
 
     <!-- Features -->
-    <div id="features" class="tabs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="above-heading">FEATURES</div>
-                    <h2 class="h2-heading">Insurance</h2>
-                    <p class="p-heading">Discover the ultimate insurance solution tailored to meet your specific needs,
-                        providing unrivaled coverage and peace of mind.</p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
 
-                    <!-- Tabs Links -->
-                    <ul class="nav nav-tabs" id="argoTabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab"
-                                aria-controls="tab-1" aria-selected="true"><i class="fas fa-car-crash"></i>Vehicle</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab"
-                                aria-controls="tab-2" aria-selected="false"><i class="fas fa-heartbeat"></i>Medical</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab"
-                                aria-controls="tab-3" aria-selected="false"><i class="fas fa-house-damage"></i>Home</a>
-                        </li>
-                    </ul>
-                    <!-- end of tabs links -->
-
-                    <!-- Tabs Content -->
-                    <div class="tab-content" id="argoTabsContent">
-
-                        <!-- Tab -->
-                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="image-container">
-                                        <img class="img-fluid" src="../assets/boss/images/33.png" alt="alternative">
-                                    </div> <!-- end of image-container -->
-                                </div> <!-- end of col -->
-                                <div class="col-lg-6">
-                                    <div class="text-container">
-                                        <h3>Secure your car easier than ever</h3>
-                                        <p>Safeguard your mobility on the move with versatile plans that perfectly match
-                                            your requirements, ensuring unparalleled security and peace of mind.</p>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Crash and collisions</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Damage to third parties in property</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Add and remove subscribers using the control panel</div>
-                                            </li>
-                                        </ul>
-                                        <a class="btn-solid-reg popup-with-move-anim"
-                                            href="#details-lightbox-1">ABOUT</a>
-                                    </div> <!-- end of text-container -->
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-
-                        <!-- Tab -->
-                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="image-container">
-                                        <img class="img-fluid" src="../assets/boss/images/44.png" alt="alternative">
-                                    </div> <!-- end of image-container -->
-                                </div> <!-- end of col -->
-                                <div class="col-lg-6">
-                                    <div class="text-container">
-                                        <h3>Insurance tailored to you</h3>
-                                        <p>At LifeLine we offer a variety of coverages depending on your budget. Whether
-                                            you are looking for basic auto insurance or comprehensive coverage.</p>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Serious diseases</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Death from any cause</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Funeral Expenses</div>
-                                            </li>
-                                        </ul>
-                                        <a class="btn-solid-reg popup-with-move-anim"
-                                            href="#details-lightbox-2">ABOUT</a>
-                                    </div> <!-- end of text-container -->
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-
-                        <!-- Tab -->
-                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="image-container">
-                                        <img class="img-fluid" src="../assets/boss/images/333.png" alt="alternative">
-                                    </div> <!-- end of image-container -->
-                                </div> <!-- end of col -->
-                                <div class="col-lg-6">
-                                    <div class="text-container">
-                                        <h3>Protecting your life has never been easier</h3>
-                                        <p>This insurance has been designed to cover damages to your home and the
-                                            property it contains, as well as damages caused to third parties for which
-                                            you may be liable.</p>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Explosion</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Damage caused by landslides and mudslides and
-                                                    mudslides</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">Earthquake or volcanic eruption</div>
-                                            </li>
-                                        </ul>
-                                        <a class="btn-solid-reg popup-with-move-anim"
-                                            href="#details-lightbox-3">ABOUT</a>
-                                    </div> <!-- end of text-container -->
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-
-                    </div> <!-- end of tab content -->
-                    <!-- end of tabs content -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of tabs -->
-    <!-- end of features -->
 
 
     <!-- Details Lightboxes -->
@@ -425,7 +283,8 @@
                     <h3>Vehicle</h3>
                     <hr>
                     <h5>Tailor-made insurance</h5>
-                    <p>With LifeLine we offer a variety of coverages to fit your budget. Whether you are looking for basic auto insurance or comprehensive coverage.</p>
+                    <p>With LifeLine we offer a variety of coverages to fit your budget. Whether you are looking for
+                        basic auto insurance or comprehensive coverage.</p>
                     <ul class="list-unstyled li-space-lg">
                         <li class="media">
                             <i class="fas fa-square"></i>
@@ -512,37 +371,38 @@
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
                     <h3>Home<h3>
-                    <hr>
-                    <h5>Damage-proof protection</h5>
-                    <p>This insurance protects against all risks of loss or damage to your home and personal belongings caused by any accidental, sudden or unforeseen event.</p>
-                    <ul class="list-unstyled li-space-lg">
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Fire or lightning</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Earthquake, tremor or volcanic eruption</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Gas leaks</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Pipe bursting</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Temporary transfers</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Theft</div>
-                        </li>
-                    </ul>
-                    <a class="btn-solid-reg mfp-close" href="Home.php">INSURANCE</a> <a
-                        class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
+                            <hr>
+                            <h5>Damage-proof protection</h5>
+                            <p>This insurance protects against all risks of loss or damage to your home and personal
+                                belongings caused by any accidental, sudden or unforeseen event.</p>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Fire or lightning</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Earthquake, tremor or volcanic eruption</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Gas leaks</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Pipe bursting</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Temporary transfers</div>
+                                </li>
+                                <li class="media">
+                                    <i class="fas fa-square"></i>
+                                    <div class="media-body">Theft</div>
+                                </li>
+                            </ul>
+                            <a class="btn-solid-reg mfp-close" href="Home.php">INSURANCE</a> <a
+                                class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -558,15 +418,19 @@
                 <div class="col-lg-6">
                     <div class="text-container">
                         <h2>What to do in case of an emergency?</h2>
-                        <p>Learn the process for handling claims involving cars, people or your home. Being informed about how to proceed is essential for an effective response and quick recovery. From reporting the incident to handling paperwork and repairs, each step is crucial to protecting your interests and facilitating problem resolution.
+                        <p>Learn the process for handling claims involving cars, people or your home. Being informed
+                            about how to proceed is essential for an effective response and quick recovery. From
+                            reporting the incident to handling paperwork and repairs, each step is crucial to protecting
+                            your interests and facilitating problem resolution.
                         </p>
-                        
-                        <a class="btn-solid-reg page-scroll" href="views/registro.php">BLOG</a>
+
+                        <a class="btn-solid-reg page-scroll" href="../views/registro.php">BLOG</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="../assets/boss/images/Diseño_sin_título__7_-removebg-preview.png" alt="alternative">
+                        <img class="img-fluid" src="../assets/boss/images/Diseño_sin_título__7_-removebg-preview.png"
+                            alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -595,14 +459,15 @@
                     </div> <!-- end of image-container -->
                     <!-- end of video preview -->
 
-                    <div class="p-heading">What better way to showcase our LifeLine life insurance website than by presenting in a video great situations of each module and tool available to users.</div>
+                    <div class="p-heading">What better way to showcase our LifeLine life insurance website than by
+                        presenting in a video great situations of each module and tool available to users.</div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of basic-2 -->
     <!-- end of video -->
 
-        
+
     <!-- Footer -->
     <svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
         viewBox="0 0 1920 79">
@@ -624,7 +489,8 @@
                 <div class="col-md-4">
                     <div class="footer-col first">
                         <h4>About LifeLine</h4>
-                        <p class="p-small">We are one of your best options in the market to acquire an insurance policy. </p>
+                        <p class="p-small">We are one of your best options in the market to acquire an insurance policy.
+                        </p>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
@@ -638,7 +504,8 @@
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Read our <a class="white" href="views/terms-conditions.html">Terms &
+                                <div class="media-body">Read our <a class="white"
+                                        href="views/terms-conditions.html">Terms &
                                         Conditions</a>, <a class="white" href="privacy-policy.html">Privacy Policy</a>
                                 </div>
                             </li>
@@ -656,9 +523,10 @@
                             <li class="media">
                                 <i class="fas fa-envelope"></i>
                                 <div class="media-body">
-                                <a class="white" href="mailto:lifeline.ptc.2024@gmail.com">lifeline.ptc.2024@gmail.com</a>
-                                <i class="fas fa-globe"></i>
-                                <a class="white" href="#your-link">www.LifeLine.com</a>
+                                    <a class="white"
+                                        href="mailto:lifeline.ptc.2024@gmail.com">lifeline.ptc.2024@gmail.com</a>
+                                    <i class="fas fa-globe"></i>
+                                    <a class="white" href="#your-link">www.LifeLine.com</a>
                                 </div>
                             </li>
                         </ul>
@@ -675,7 +543,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2020 Template by LifeLine</p>
+                    <p class="p-small">Copyright © 2024 Template by LifeLine</p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->
@@ -687,7 +555,8 @@
     <script src="../assets/boss/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="../assets/boss/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="../assets/boss/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="../assets/boss/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="../assets/boss/js/jquery.easing.min.js"></script>
+    <!-- jQuery Easing for smooth scrolling between anchors -->
     <script src="../assets/boss/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
     <script src="../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!--<script src="js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->

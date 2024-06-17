@@ -100,7 +100,7 @@ if (!empty($_POST)) {
                 //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
                 if ($registro > 0) {
         
-                    $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/user/activar.php?id=' . $registro . '&val=' . $token;
+                    $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/activar.php?id=' . $registro . '&val=' . $token;
                     //el asuto y cuerpo es lo que ira en el mesaje del correo
                     $asunto = 'PIN - LIFELINE';
                     $cuerpo = "Dear $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo <br /><br /> Confirm your identity <a href='$url'>Confirm E-Mail</a>";
@@ -112,7 +112,7 @@ if (!empty($_POST)) {
                             text: "Succesfully, Confirm your identity in your email ",
                             icon: "success",
                              }).then(function() {
-                            window.location = "../views/user/login.php";
+                            window.location = "../../views/login.php";
                             });</script></p>';
         
                     } else {
@@ -121,7 +121,7 @@ if (!empty($_POST)) {
                             text: "We got a problem, try again",
                             type: "error"
                             }).then(function() {
-                            window.location = "../views/user/registro.php";
+                            window.location = "../../views/registro.php";
                             });</script></p>';
                     }
         
@@ -298,8 +298,7 @@ if (!empty($_POST)) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group mt-4 mb-0">
-                                <button type="submit"
+                            <div class="form-group mt-4 mb-0"><button type="submit"
                                     class="form-control-submit-button">Create Account</button></div>
                         </form>
                     </div> <!-- end of form container -->

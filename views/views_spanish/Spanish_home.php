@@ -24,7 +24,7 @@ if (!isset($_SESSION['id'])) {
           title: "Warning",
           text: "LogIn again"
           }).then(function() {
-          window.location = "../../views/user/login.php";
+          window.location = "../../views/login.php";
           });</script></p>';
     exit; // Salir del script si no hay sesión iniciada
 }
@@ -90,7 +90,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="view_user.php"><img src="../../assets/boss/images/logo.png"
+            <a class="navbar-brand logo-image" href="view_user.php"><img src="../assets/boss/images/logo.png"
                     alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
@@ -108,7 +108,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../../views/user/support/home.php">CHAT-SUPPORT <span
+                        <a class="nav-link page-scroll" href="../views/support/home.php">CHAT-SUPPORT <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <!-- Dropdown Menu -->
@@ -401,7 +401,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             <li class="media">
                                 <i class="fas fa-square"></i>
                                 <div class="media-body">Read our <a class="white"
-                                        href="terms-conditions.html">Terms &
+                                        href="views/terms-conditions.html">Terms &
                                         Conditions</a>, <a class="white" href="privacy-policy.html">Privacy Policy</a>
                                 </div>
                             </li>

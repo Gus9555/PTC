@@ -191,7 +191,7 @@ function enviarEmail($email, $nombre, $asunto, $cuerpo)
     else
         return false;
 }
-
+/////////////////////////////////////////Proceso de envio de cotizacion/////////////////////////////////
 function enviarPDF($email, $nombre, $asunto, $cuerpo)
 {
     require ("../plugins/PHPMailer-master/src/PHPMailer.php");
@@ -215,9 +215,9 @@ function enviarPDF($email, $nombre, $asunto, $cuerpo)
     $mail->addAddress($email, $nombre);
 
     // Asignar asunto y cuerpo del mensaje
-    $mail->Subject = 'Prueba de adjunto con PHPMailer';
-    $mail->Body = 'Este es un correo de prueba con un archivo adjunto.';
-//"C:\xampp\htdocs\PTC\assets\images\MANUAL DE LECCIONES TÉCNOLOGIA II SEGUNDO PERIODO.pdf";
+    $mail->Subject = 'LIFELINE - insurance contracting process';
+    $mail->Body = 'Lifeline will not ask you for personal information outside of the quotation process.';
+
     // Adjuntar un archivo
 
     $accion = $_POST['pdf'];
@@ -262,6 +262,81 @@ function enviarPDF($email, $nombre, $asunto, $cuerpo)
             });</script></p>';
     }
 }
+/////////////////////////////////////////Fin de Proceso de envio de cotizacion/////////////////////////////////
+
+
+/////////////////////////////////////////Proceso de envio de compra/////////////////////////////////
+function EmailComprar($email, $nombre, $asunto, $cuerpo)
+{
+    require ("../plugins/PHPMailer-master/src/PHPMailer.php");
+    require ("../plugins/PHPMailer-master/src/Exception.php");
+    require ("../plugins/PHPMailer-master/src/SMTP.php");
+    // $mail = new PHPMailer();
+
+    $mail = new PHPMailer;
+
+    // Configurar el servidor SMTP
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'lifeline.ptc.2024@gmail.com';
+    $mail->Password = 'xufuzzvkjdgxqqck';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+
+    // Configurar el remitente y destinatario
+    $mail->setFrom('lifeline.ptc.2024@gmail.com', 'LifeLine');
+    $mail->addAddress($email, $nombre);
+
+    // Asignar asunto y cuerpo del mensaje
+    $mail->Subject = 'LIFELINE - insurance contracting process';
+    $mail->Body = 'Lifeline will not ask you for personal information outside of the quotation process.';
+
+    // Adjuntar un archivo
+
+    $accion = $_POST['pdf'];
+    if ($accion == "moto") {
+        $pdf = 'Motorcycle Insurance.pdf';
+    } elseif ($accion == "car") {
+        $pdf = 'Car Insurance.pdf';
+    } elseif ($accion == "industry") {
+        $pdf = 'Utility Vehicles Insurance.pdf';
+    }  elseif ($accion == "medical") {
+        $pdf = 'Healthcare Insurance.pdf';
+    } elseif ($accion == "home") {
+        $pdf = 'Home Insurance.pdf';
+    } else {
+        echo "There is no file";
+    }
+    
+
+
+
+    $file = $pdf;
+    $file_path = '../assets/images/' . $file; // Ruta del archivo a adjuntar
+    $mail->addAttachment($file_path); // Adjuntar el archivo
+
+    // Enviar el correo
+    if ($mail->send()) {
+        echo '<p><script>swal({
+            title: "Check Your E-Mail!",
+            text: "We sent a link to your E-Mail",
+            icon: "success",
+             }).then(function() {
+            window.location = "../views/view_user.php";
+            });</script></p>';
+        echo $pdf;
+    } else {
+        echo '<p><script>swal({
+            title: "Try Again!",
+            text: "We got an error sending the E-Mail",
+            icon: "error",
+             }).then(function() {
+            window.location = "../views/view_user.php";
+            });</script></p>';
+    }
+}
+/////////////////////////////////////////Fin de Proceso de envio de compra/////////////////////////////////
 
 function resultBlock($errors)
 {

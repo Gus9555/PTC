@@ -25,7 +25,7 @@ if (!isset($_SESSION['id'])) {
           title: "Warning",
           text: "LogIn again"
           }).then(function() {
-          window.location = "../../views/User/login.php";
+          window.location = "../../views/login.php";
           });</script></p>';
     exit; // Salir del script si no hay sesión iniciada
 }
@@ -105,11 +105,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="view_user.php">HOME <span
+                        <a class="nav-link page-scroll" href="../view_user.php">HOME <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../views/support/home.php">CHAT-SUPPORT <span
+                        <a class="nav-link page-scroll" href="../../views/support/home.php">CHAT-SUPPORT <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <!-- Dropdown Menu -->
