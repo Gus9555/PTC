@@ -126,7 +126,7 @@
                                 <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle"></i> Perfil</a>
                                 <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Ajustes</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="../../views/spanish/logout.php"><i class="mdi mdi-power text-danger"></i> Salir</a>
+                                <a class="dropdown-item text-danger" href="../spanish/logout.php"><i class="mdi mdi-power text-danger"></i> Salir</a>
                             </div>
                         </div>
                     </li>

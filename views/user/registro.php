@@ -70,11 +70,12 @@
                         <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../spanish/registro.php">ESPAÑOL <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="../spanish/registro.php">ESPAÑOL <span
+                                class="sr-only">(current)</span></a>
                     </li>
 
-                    
-                    
+
+
                 </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="login.php">LOG IN</a>
@@ -106,7 +107,10 @@
                         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                             <div class="form-row">
                                 <div class="col-md-6">
+
                                     <div class="form-group">
+                                        <input type="hidden" name="token_password" value="<?= $request['token_password'] ?>">
+                                        <input type="hidden" name="password_request" value="<?= $request['password_request'] ?>">
                                         <label class="small mb-1" for="nombre">Full name</label>
                                         <input class="form-control-input" id="nombre" name="nombre" type="text"
                                             placeholder="Enter Full name" />
@@ -143,8 +147,8 @@
                                 </div>
                             </div>
                             <div class="form-group mt-4 mb-0">
-                                <button type="submit"
-                                    class="form-control-submit-button">Create Account</button></div>
+                                <button type="submit" class="form-control-submit-button">Create Account</button>
+                            </div>
                         </form>
                     </div> <!-- end of form container -->
                     <!-- end of sign up form -->
@@ -195,7 +199,7 @@ if (!empty($_POST)) {
 
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);
-    $number= preg_match('@[0-9]@', $password);
+    $number = preg_match('@[0-9]@', $password);
     $specialChars = preg_match('@[^\w]@', $password);
 
     if ($nombre == "" || $usuario == "" || $password == "" || $passwordc == "" || $email == "") {
@@ -215,7 +219,7 @@ if (!empty($_POST)) {
                 icon: "error"
                 });</script></p>';
 
-        } elseif(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8){
+        } elseif (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
             $errors[] = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
             echo '<p><script>Swal.fire({
             title: "ERROR",
@@ -245,7 +249,7 @@ if (!empty($_POST)) {
             icon: "error"
             });</script></p>';
 
-        }else{
+        } else {
             if (count($errors) == 0) {
                 function generador()
                 {
@@ -271,14 +275,14 @@ if (!empty($_POST)) {
                 $registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $token, $tipo_usuario, $codigo, $estatus, $fechaRegistro, $ran_id);
                 //proceso para acitvar la cuenta registrada si la variable registro es 0 hara el proceso
                 if ($registro > 0) {
-        
+
                     $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC/views/user/activar.php?id=' . $registro . '&val=' . $token;
                     //el asuto y cuerpo es lo que ira en el mesaje del correo
                     $asunto = 'PIN - LIFELINE';
                     $cuerpo = "Dear $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo <br /><br /> Confirm your identity <a href='$url'>Confirm E-Mail</a>";
                     //aca se envia el correo usando las anteriores mencionadas variables
                     if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
-        
+
                         echo '<p><script>swal({
                             title: "Good job!",
                             text: "Succesfully, Confirm your identity in your email ",
@@ -286,7 +290,7 @@ if (!empty($_POST)) {
                              }).then(function() {
                             window.location = "../views/user/login.php";
                             });</script></p>';
-        
+
                     } else {
                         echo '<p><script>Swal.fire({
                             title: "Opsss!",
@@ -296,7 +300,7 @@ if (!empty($_POST)) {
                             window.location = "../views/user/registro.php";
                             });</script></p>';
                     }
-        
+
                 } else {
                     $errors[] = "Error";
                     echo '<p><script>Swal.fire({
@@ -305,11 +309,11 @@ if (!empty($_POST)) {
                         icon: "error"
                         });</script></p>';
                 }
-            }
+            } 
 
         }
 
     }
 
-}
+} 
 ?>
