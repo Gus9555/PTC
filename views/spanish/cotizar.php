@@ -39,7 +39,7 @@ if ($rows > 0) {
     $stmt->bind_result($nombre, $email);
     $stmt->fetch();
 }
-$url = 'http://' . $_SERVER["SERVER_NAME"] . ':81/PTC/views/cotizacion.php';
+$url = 'http://' . $_SERVER["SERVER_NAME"] . ':81/PTC/views/cotizar.php';
 //el asuto y cuerpo es lo que ira en el mesaje del correo$file = $pdf;
 $asunto = 'PRICE QUOTE - LIFELINE';
 $cuerpo = "Dear $nombre: <br /><br />Price Quote <br /><br /> Confirm your identity <a href='$url'>Price Quote</a>";

@@ -110,7 +110,7 @@
                         <a class="nav-link page-scroll" href="../user/view_user.php">ENGLISH <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../support/users.php">CHAT DE SOPORTE <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="../support_spanish/users.php">CHAT DE SOPORTE <span class="sr-only">(current)</span></a>
                     </li>
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">

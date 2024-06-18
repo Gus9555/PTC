@@ -96,26 +96,10 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="spanish/index.php">ESPAÑOL <span class="sr-only">(current)</span></a>
                     </li>
-                    <!-- Dropdown Menu -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
-                            aria-haspopup="false" aria-expanded="false">VIDEO</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE
-                                    DETAILS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS
-                                    CONDITIONS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY
-                                    POLICY</span></a>
-                        </div>
-                    </li>
-                    <!-- end of dropdown menu -->
-
+                
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="login.php">LOG IN</a>
+                    <a class="btn-outline-sm" href="user/login.php">LOG IN</a>
                 </span>
             </div>
         </div> <!-- end of container -->

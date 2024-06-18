@@ -22,10 +22,10 @@ require 'php/config.php'; // Aquí incluye el archivo que contiene la conexión 
 
 if (!isset($_SESSION['unique_id'])) {
     echo '<p><script>Swal.fire({
-        title: "Warning",
-        text: "LogIn again"
+        title: "OPSS",
+        text: "Inicia sesion primero"
         }).then(function() {
-        window.location = "../../views/user/login.php";
+        window.location = "../../views/spanish/login.php";
         });</script></p>';
     exit; // Salir del script si no hay sesión iniciada
 }
@@ -52,11 +52,11 @@ include_once "header.php";
             <p><?php echo $row['estatus']; ?></p>
           </div>
         </div>
-        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
+        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Salir</a>
       </header>
       <div class="search">
-        <span class="text">Select an user to start chat</span>
-        <input type="text" placeholder="Enter name to search...">
+        <span class="text">Seleccion el usuario en el chat</span>
+        <input type="text" placeholder="Ingresa el usuario aqui....">
         <button><i class="fas fa-search"></i></button>
       </div>
       <div class="users-list">

@@ -9,12 +9,12 @@
             if($sql){
                 session_unset();
                 session_destroy();
-                header("location: ../../../views/user/login.php");
+                header("location: ../../../views/spanish/login.php");
             }
         }else{
             header("location: ../users.php");
         }
     }else{  
-        header("location: ../../../views/user/login.php");
+        header("location: ../../../views/spanish/login.php");
     }
 ?>
