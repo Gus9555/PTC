@@ -233,15 +233,13 @@ if (!isset($_SESSION['id'])) {
                     </div> <!-- end of text-container -->
 
                     <div class="text-container last">
+                    
                         <form method="POST" action="confirmarCompra.php">
-                            <div class="form-group checkbox">
-                                <input type="checkbox" id="terms" name="terms" value="Agreed-to-Terms">I have read and I
-                                agree to LifeLine's Terms Conditions
+                        <div class="form-group checkbox">
+                                <input type="checkbox" id="terms" name="terms" required>I have read and I agree to LifeLine's Terms Conditions
                                 <div class="help-block with-errors"></div>
                             </div>
-
-                            <button type="submit" class="btn-solid-reg page-scroll"
-                                href="confirmarCompra.php">BUY</button>
+                            <button type="submit" class="btn-solid-reg page-scroll">BUY</button>
                         </form>
                     </div> <!-- end of text-container -->
                 </div>
@@ -341,6 +339,16 @@ if (!isset($_SESSION['id'])) {
     <script src="../../assets/boss/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <!--<script src="js/validator.min.js"></script>  Validator.js - Bootstrap plugin that validates forms -->
     <script src="../../assets/boss/js/scripts.js"></script> <!-- Custom scripts -->
+    <script>
+    function verificarCheckbox() {
+            var checkbox = document.getElementById("terms");
+            if (checkbox.disabled) {
+                alert("El checkbox está deshabilitado.");
+                return false; // Evita el envío del formulario
+            }
+            return true; // Permite el envío del formulario
+        }
+        </script>
 </body>
 
 </html>
