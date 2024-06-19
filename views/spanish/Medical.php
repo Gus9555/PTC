@@ -256,8 +256,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="medical" href="buy.php">Adquirir</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="S_vida" href="buy.php">Adquirir</button>
                                                 <br><br>
 
                                             </form>
@@ -298,8 +298,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="medical" href="buy.php">Adquirir</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="S_vida" href="buy.php">Adquirir</button>
                                                 <br><br>
 
                                             </form>
@@ -342,8 +342,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                         </ul>
                                         <div class="button-wrapper">
                                             <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="medical" href="buy.php">Adquirir</button>
+                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                    id="buy" value="S_vida" href="buy.php">Adquirir</button>
                                                 <br><br>
 
                                             </form>

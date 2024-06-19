@@ -35,7 +35,7 @@ if (!isset($_SESSION['id'])) {
     <meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Terms Conditions - Tivo - SaaS App HTML Landing Page Template</title>
+    <title>Terms Conditions - LifeLine</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
@@ -84,21 +84,22 @@ if (!isset($_SESSION['id'])) {
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.html#header">HOME <span
-                                class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                        <a class="nav-link page-scroll" href="view_user.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.html#features">FEATURES</a>
+                        <a class="nav-link page-scroll" href="../spanish/buy.php">ESPAÑOL <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.html#details">DETAILS</a>
+                        <a class="nav-link page-scroll" href="../support/users.php">CHAT-SUPPORT <span class="sr-only">(current)</span></a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../profile/profile.php">MY PROFILE <span class="sr-only">(current)</span></a>
+                    </li>
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="index.html#video" id="navbarDropdown"
-                            role="button" aria-haspopup="true" aria-expanded="false">VIDEO</a>
+                        <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">VIDEO</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE
                                     DETAILS</span></a>
