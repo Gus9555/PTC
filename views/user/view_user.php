@@ -112,6 +112,9 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="../support/users.php">CHAT-SUPPORT <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../profile/profile.php">MY PROFILE <span class="sr-only">(current)</span></a>
+                    </li>
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"

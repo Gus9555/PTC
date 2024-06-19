@@ -1,3 +1,134 @@
+<?php
+require '../../funcs/conexion.php';
+require '../../funcs/funcs.php';
+session_start();
+$id = $_SESSION['id'];
+$nombre = $_SESSION['nombre'];
+$correo = $_SESSION['correo'];
+
+$stmt1 = "SELECT S_moto, S_auto, S_util, S_casa, S_vida FROM users WHERE id =".$id; // ? indica que va un valor ahi
+$result = $mysqli->query($stmt1);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+}
+
+if ($row['S_moto'] == 1) {
+    $S_moto = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Silver Motorcycle Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_moto'] == 2) {
+    $S_moto = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Golden Motorcycle Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_moto'] == 3) {
+    $S_moto = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Diamond Motorcycle Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+}
+
+if ($row['S_auto'] == 4) {
+    $S_auto = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Silver Car Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_auto'] == 5) {
+    $S_auto = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Golden Car Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_auto'] == 6) {
+    $S_auto = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Diamond Car Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+}
+
+if ($row['S_util'] == 7) {
+    $S_util = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Silver Utility Vehicles Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_util'] == 8) {
+    $S_util = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Golden Utility Vehicles Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_util'] == 9) {
+    $S_util = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Diamond Utility Vehicles Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+}
+
+if ($row['S_casa'] == 10) {
+    $S_casa = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Silver Home Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_casa'] == 11) {
+    $S_casa = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Golden Home Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_casa'] == 12) {
+    $S_casa = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Diamond Home Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+}
+
+if ($row['S_vida'] == 13) {
+    $S_vida = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Silver Health Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_vida'] == 14) {
+    $S_vida = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Golden Health Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+} elseif ($row['S_vida'] == 15) {
+    $S_vida = '<p class="mb-4"><span class="text-primary font-italic me-1"></span>Insurance</p>
+                                    <p class="mb-1" style="font-size: .77rem;"><b>Diamond Health Insurance</b></p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,9 +170,7 @@
                         <div class="card-body text-center">
                             <img src="img/5-removebg-preview.png"
                                 alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                            <h5 class="my-3">John Smith</h5>
-                            <p class="text-muted mb-1">Full Stack Developer</p>
-                            <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                            <h5 class="my-3"><?php echo $nombre; ?></h5>
                             <div class="d-flex justify-content-center mb-2">
                                 <button type="button" class="btn btn-primary">Logout</button>
                                 <button type="button" class="btn btn-outline-primary ms-1">Home</button>
@@ -58,7 +187,7 @@
                                     <p class="mb-0">Full Name</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <p class="text-muted mb-0">Johnatan Smith</p>
+                                    <p class="text-muted mb-0"><?php echo $nombre; ?></p>
                                 </div>
                             </div>
                             <hr>
@@ -67,7 +196,7 @@
                                     <p class="mb-0">Email</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <p class="text-muted mb-0">example@example.com</p>
+                                    <p class="text-muted mb-0"><?php echo $correo; ?></p>
                                 </div>
                             </div>                           
                         </div>
@@ -76,70 +205,44 @@
                         <div class="col-md-6">
                             <div class="card mb-4 mb-md-0">
                                 <div class="card-body">
-                                    <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project
-                                        Status</p>
-                                    <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                                    <div class="progress rounded" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 80%"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                                    <div class="progress rounded" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 72%"
-                                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                                    <div class="progress rounded" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 89%"
-                                            aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                                    <div class="progress rounded" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 55%"
-                                            aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                                    <div class="progress rounded mb-2" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 66%"
-                                            aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                                <?php echo $S_moto ?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="card mb-4 mb-md-0">
-                                <div class="card-body">
-                                    <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project
-                                        Status</p>
-                                    <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                                    <div class="progress rounded" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 80%"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                                    <div class="progress rounded" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 72%"
-                                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                                    <div class="progress rounded" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 89%"
-                                            aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                                    <div class="progress rounded" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 55%"
-                                            aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                                    <div class="progress rounded mb-2" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 66%"
-                                            aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                            <div class="card-body">
+                                <?php echo $S_auto ?>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                            <div class="card mb-4 mb-md-0">
+                            <div class="card-body">
+                                <?php echo $S_util ?>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                            <div class="card mb-4 mb-md-0">
+                            <div class="card-body">
+                                <?php echo $S_casa ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                            <div class="card mb-4 mb-md-0">
+                            <div class="card-body">
+                                <?php echo $S_vida ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

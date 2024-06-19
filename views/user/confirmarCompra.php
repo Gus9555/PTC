@@ -110,6 +110,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 if($stmt != "100"){ 
 if ($stmt->execute()) {
+
+    echo '<p><script>swal({
+        title: "SUCCESS!",
+        text: "You bought one of our insurance plans",
+        icon: "success",
+         }).then(function() {
+        window.location = "../user/view_user.php";
+        });</script></p>';
+
     return $mysqli;
 } else {
     //y si no hara el return en falso 
