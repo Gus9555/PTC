@@ -37,7 +37,7 @@
             text: "Updated Password",
             icon: "success",
              }).then(function() {
-            window.location = "../../views/login.php";
+            window.location = "../../user/login.php";
             });</script></p>';
 
      }else{

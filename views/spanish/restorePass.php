@@ -36,7 +36,7 @@
                  //se declara la variable con token con el proceso que esta en funcs.php, que es generatetokenpass
                 $token = generateTokenPass($user_id);
                   //esta es la variable que redireccionara al usuario en el correo que se le enviara
-                $url = 'http://'.$_SERVER["SERVER_NAME"].'/PTC/views/cambiaPass.php? id='.$user_id.'&token='.$token;
+                $url = 'http://'.$_SERVER["SERVER_NAME"].'/PTC/view/spanish/cambiaPass.php? id='.$user_id.'&token='.$token;
                 //el asuto y cuerpo es lo que ira en el mesaje del correo
                 $asunto = 'Recuperacion de contraseña- LIFELINE';
                 $cuerpo = "ESTIMADO $nombre: <br /><br /> Se ha solicitado un reinicio
@@ -50,7 +50,7 @@
                         text: "Compruebe su correo electrónico",
                         icon: "success",
                          }).then(function() {
-                        window.location = "../../views/login.php";
+                        window.location = "../../spanish/login.php";
                         });</script></p>';
         
                     exit;
@@ -62,7 +62,7 @@
                         text: "¡Tenemos un problema enviando el E-Mail!",
                         type: "error"
                         }).then(function() {
-                        window.location = "../../views/registro.php";
+                        window.location = "../../spanish/registro.php";
                         });</script></p>';
                 } 
                 
@@ -76,7 +76,7 @@
                 text: "Esta dirección de correo electrónico no existe, inténtelo de nuevo",
                 type: "error"
                 }).then(function() {
-                window.location = "../../views/registro.php";
+                window.location = "../../spanish/registro.php";
                 });</script></p>';
         }
     }

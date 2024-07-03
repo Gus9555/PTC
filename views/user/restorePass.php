@@ -50,7 +50,7 @@
                         text: "Check your E-Mail",
                         icon: "success",
                          }).then(function() {
-                        window.location = "../views/user/login.php";
+                        window.location = "../user/login.php";
                         });</script></p>';
         
                     exit;
@@ -62,7 +62,7 @@
                         text: "We got a problem sending the E-Mail!",
                         type: "error"
                         }).then(function() {
-                        window.location = "../views/user/registro.php";
+                        window.location = "../user/registro.php";
                         });</script></p>';
                 } 
                 
@@ -76,7 +76,7 @@
                 text: "This E-Mail address does not exist, try again",
                 type: "error"
                 }).then(function() {
-                window.location = "../views/user/registro.php";
+                window.location = "../user/registro.php";
                 });</script></p>';
         }
     }
