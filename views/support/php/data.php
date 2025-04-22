@@ -1,32 +1,33 @@
 <?php
-    while($row = mysqli_fetch_assoc($query)){
-        $sql2 = "SELECT * FROM messages WHERE (incoming_msg_id = {$row['unique_id']}
-                OR outgoing_msg_id = {$row['unique_id']}) AND (outgoing_msg_id = {$outgoing_id} 
-                OR incoming_msg_id = {$outgoing_id}) ORDER BY msg_id DESC LIMIT 1";
-        $query2 = mysqli_query($conn, $sql2);
-        $row2 = mysqli_fetch_assoc($query2);
-        (mysqli_num_rows($query2) > 0) ? $result = $row2['msg'] : $result ="No message available";
-        (strlen($result) > 28) ? $msg =  substr($result, 0, 28) . '...' : $msg = $result;
-        if(isset($row2['outgoing_msg_id'])){
-            ($outgoing_id == $row2['outgoing_msg_id']) ? $you = "You: " : $you = "";
-        }else{
-            $you = "";
-        }
-        ($row['estatus'] == "Offline now") ? $offline = "offline" : $offline = "";
-        ($outgoing_id == $row['unique_id']) ? $hid_me = "hide" : $hid_me = "";
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $sql2 = "SELECT * FROM messages 
+             WHERE (incoming_msg_id = :unique_id OR outgoing_msg_id = :unique_id)
+             AND (outgoing_msg_id = :outgoing_id OR incoming_msg_id = :outgoing_id)
+             ORDER BY msg_id DESC LIMIT 1";
+    $stmt2 = $pdo->prepare($sql2);
+    $stmt2->bindParam(':unique_id', $row['unique_id'], PDO::PARAM_INT);
+    $stmt2->bindParam(':outgoing_id', $outgoing_id, PDO::PARAM_INT);
+    $stmt2->execute();
+    $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
 
-        // Verifica el tipo de usuario para determinar qué imagen mostrar
-        $userTypeImage = ($row['id_tipo'] == 2) ? "php/images/OIP_2.jpeg" : "php/images/support.png";
+    $result = $stmt2->rowCount() > 0 ? $row2['msg'] : "No message available";
+    $msg = strlen($result) > 28 ? substr($result, 0, 28) . '...' : $result;
+    $you = isset($row2['outgoing_msg_id']) ? ($outgoing_id == $row2['outgoing_msg_id'] ? "You: " : "") : "";
+    $offline = $row['estatus'] == "Offline now" ? "offline" : "";
+    $hid_me = $outgoing_id == $row['unique_id'] ? "hide" : "";
+    $userTypeImage = $row['id_tipo'] == 2 ? "php/images/OIP_2.jpeg" : "php/images/support.png";
 
-        $output .= '<a href="chat.php?user_id='. $row['unique_id'] .'">
-                    <div class="content">
-                    <img src="' . $userTypeImage . '" alt="">
-                    <div class="details">
-                        <span>'. $row['nombre']. " " .'</span>
-                        <p>'. $you . $msg .'</p>
-                    </div>
-                    </div>
-                    <div class="status-dot '. $offline .'"><i class="fas fa-circle"></i></div>
-                </a>';
-    }
+    $decryptedName = decryptPayload($row['nombre']); // Desencriptar el nombre
+
+    $output .= '<a href="chat.php?user_id='. $row['unique_id'] .'">
+                <div class="content">
+                <img src="' . $userTypeImage . '" alt="">
+                <div class="details">
+                    <span>'. htmlspecialchars($decryptedName) . " " .'</span>
+                    <p>'. htmlspecialchars($you . $msg) .'</p>
+                </div>
+                </div>
+                <div class="status-dot '. $offline .'"><i class="fas fa-circle"></i></div>
+            </a>';
+}
 ?>

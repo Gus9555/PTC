@@ -687,7 +687,7 @@ readers do not read off random characters that represent icons */
 .fa-business-time:before {
   content: "\f64a"; }
 
-.fa-buysellads:before {
+.fa-sellads:before {
   content: "\f20d"; }
 
 .fa-calculator:before {

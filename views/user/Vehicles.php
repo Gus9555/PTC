@@ -1,37 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>LifeLine</title>
-    <link rel="icon" href="../../assets/boss/images/favicon.png">
-</head>
-
-<body>
-
-</body>
-
-</html>
-<b></b>
 <?php
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require '../../funcs/conexion.php';
+require '../../funcs/funcs.php';
 
 if (!isset($_SESSION['id'])) {
     echo '<p><script>Swal.fire({
           title: "Warning",
-          text: "LogIn again"
+          text: "Login again"
           }).then(function() {
-          window.location = "../../views/User/login.php";
+          window.location = "../../views/user/login.php";
           });</script></p>';
     exit; // Salir del script si no hay sesión iniciada
 }
 
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
+
+try {
+    $pdo = getConnection();
+
+    // Función para obtener datos de seguros por tipo
+    function getSegurosByTipo($pdo, $tipo)
+    {
+        $sql = "SELECT * FROM seguros WHERE seguro = :tipo";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':tipo', $tipo);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Obtener datos de seguros de hogar
+    $segurosMoto = getSegurosByTipo($pdo, 'motorcycle');
+    $segurosVehi = getSegurosByTipo($pdo, 'Vehicule');
+    $segurosUtil = getSegurosByTipo($pdo, 'Utility');
+
+    function compararPrecios($a, $b)
+    {
+        return $a['precio'] - $b['precio'];
+    }
+
+    usort($segurosMoto, 'compararPrecios');
+    usort($segurosUtil, 'compararPrecios');
+    usort($segurosVehi, 'compararPrecios');
+
+} catch (PDOException $e) {
+    echo 'Query failed: ' . $e->getMessage();
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +56,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
 
+    <title>LifeLine</title>
+    <link rel="icon" href="../../assets/boss/images/favicon.png">
     <!-- SEO Meta Tags -->
     <meta name="description"
         content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
@@ -109,29 +130,17 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../spanish/view_user.php">ESPAÑOL <span
+                        <a class="nav-link page-scroll" href="../user_spanish/Vehicles.php">ESPAÑOL <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="../../views/support/users.php">CHAT-SUPPORT <span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    <!-- Dropdown Menu -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">VIDEO</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE
-                                    DETAILS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS
-                                    CONDITIONS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY
-                                    POLICY</span></a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../profile/profile.php">PROFILE <span
+                                class="sr-only">(current)</span></a>
                     </li>
-                    <!-- end of dropdown menu -->
 
                 </ul>
                 <span class="nav-item">
@@ -190,8 +199,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 <i class="fas fa-square"></i>
                                 <div class="media-body">24/7 towing service all around the country</div>
                             </li>
-                            
-                           
+
+
                         </ul>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -239,156 +248,77 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="tab-content" id="argoTabsContent">
                         <!-- Tab -->
                         <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+
                             <div class="row">
-
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-title">SILVER</div>
-                                        <div class="price"><span class="currency">$</span><span
-                                                class="value">14.99</span></div>
-                                        <div class="frequency">Monthly</div>
-                                        <div class="divider"></div>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Third-Party Liability</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Damage to your Motorcycle</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Roadside Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Theft</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Legal Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Coverage for Rider's Injuries</div>
-                                            </li>
-                                            
-                                            <br><br><br>
-
-                                        </ul>
-                                        <div class="button-wrapper">
-                                            <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
-                                                    id="buy" value="S_moto" href="buy.php">Buy</button>
-                                                <br><br>
-                                                
-                                            </form>
-                                            <form method="POST" action="cotizar.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="cotizar.php">Price Quote</button>
-                                            </form>
-                                        </div>
-                                        
-                                    </div>
-                                </div> <!-- end of card -->
-
-                                <div class=" card">
-                                    <div class="card-body ">
-                                        <div class="card-title">GOLD</div>
-                                        <div class="price"><span class="currency">$</span><span
-                                                class="value">24.99</span></div>
-                                        <div class="frequency">Monthly</div>
-                                        <div class="divider"></div>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Extended Third-Party Liability</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Motorcycle Damage Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Total and Partial Theft</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Legal Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Extended Travel Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Coverage for Rider's Injuries</div>
-                                            </li><br>
-
-                                        </ul>
-                                        <div class="button-wrapper">
-                                            <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
-                                                    id="buy" value="G_moto" href="buy.php">Buy</button>
-                                                <br><br>
-                                                
-                                            </form>
-                                           
-                                        </div>
-                                        <form method="POST" action="cotizar.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="cotizar.php">Price Quote</button>
-                                            </form>
-                                    </div>
-                                </div> <!-- end of card -->
-
-                                <div class=" card">
-                                    <div class="card-body ">
-                                        <div class="card-title">DIAMOND</div>
-                                        <div class="price"><span class="currency">$</span><span
-                                                class="value">49.99</span></div>
-                                        <div class="frequency">Monthly</div>
-                                        <div class="divider"></div>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Third-Party Liability</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Motorcycle Damage Coverage with Agreed
-                                                    Value</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Total and Partial Theft Expanded</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Travel Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Coverage for Rider's Injuries</div>
-                                            </li>
-                                        </ul>
-                                        <div class="button-wrapper">
-                                            <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
-                                                    id="buy" value="D_moto" href="buy.php">Buy</button>
-                                                <br><br>
-                                               
-                                            </form>
-                                            <form method="POST" action="cotizar.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="moto" href="cotizar.php">Price Quote</button>
-                                            </form>
+                                <?php foreach ($segurosMoto as $seguro) { ?>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title"><?php echo htmlspecialchars($seguro['calidad']); ?>
+                                            </div>
+                                            <div class="price"><span class="currency">$</span><span
+                                                    class="value"><?php echo htmlspecialchars($seguro['precio']); ?></span>
+                                            </div>
+                                            <div class="frequency">Monthly</div>
+                                            <div class="divider"></div>
+                                            <ul class="list-unstyled li-space-lg">
+                                                <?php if (trim($seguro['description']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description2']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description2']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description3']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description3']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description4']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description4']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description5']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description5']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description6']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description6']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                            </ul>
+                                            <div class="button-wrapper">
+                                                <form method="POST" action="paypal.php">
+                                                    <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                        value="<?php echo htmlspecialchars($seguro['id']); ?>">Buy</button>
+                                                </form>
+                                                <br>
+                                                <form method="POST" action="../actions/Create_pdf.php">
+                                                    <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                        value="moto">Price Quote</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div> <!-- end of card -->
-
-                            </div> <!-- end of col -->
+                                <?php } ?>
+                            </div>
 
                         </div> <!-- end of tab-pane -->
                         <!-- end of tab -->
@@ -397,151 +327,75 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                         <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
                             <div class="row">
-                                <div class="card">
-                                    <div class="card-body ">
-                                        <div class="card-title">SILVER</div>
-                                        <div class="price"><span class="currency">$</span><span
-                                                class="value">24.99</span></div>
-                                        <div class="frequency">Monthly</div>
-                                        <div class="divider"></div>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Third-Party Liability</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Collision Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Comprehensive Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Roadside Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Legal Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Coverage for Occupant Injuries</div>
-                                            </li>
-                                            <br><br><br><br>
-                                        </ul>
-                                        <div class="button-wrapper">
-                                            <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
-                                                    id="buy" value="S_auto" href="buy.php">Buy</button>
-                                                <br><br>
-                                            </form>
-                                            <form method="POST" action="cotizar.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="cotizar.php">Price Quote</button>
-                                            </form>
+
+                                <?php foreach ($segurosVehi as $seguro) { ?>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title"><?php echo htmlspecialchars($seguro['calidad']); ?>
+                                            </div>
+                                            <div class="price"><span class="currency">$</span><span
+                                                    class="value"><?php echo htmlspecialchars($seguro['precio']); ?></span>
+                                            </div>
+                                            <div class="frequency">Monthly</div>
+                                            <div class="divider"></div>
+                                            <ul class="list-unstyled li-space-lg">
+                                                <?php if (trim($seguro['description']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description2']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description2']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description3']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description3']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description4']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description4']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description5']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description5']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description6']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description6']); ?>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                            </ul>
+                                            <div class="button-wrapper">
+                                                <form method="POST" action="paypal.php">
+                                                    <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                        value="<?php echo htmlspecialchars($seguro['id']); ?>">Buy</button>
+                                                </form>
+                                                <br>
+                                                <form method="POST" action="../actions/Create_pdf.php">
+                                                    <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                        value="vehi">Price Quote</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div> <!-- end of card -->
-
-                                <div class="card">
-                                    <div class="card-body ">
-                                        <div class="card-title">GOLD</div>
-                                        <div class="price"><span class="currency">$</span><span
-                                                class="value">49.99</span></div>
-                                        <div class="frequency">Monthly</div>
-                                        <div class="divider"></div>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Extended Third-Party Liability</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Collision Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Non-collision Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Total and Partial Theft</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Legal Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Coverage for Occupant Injuries</div>
-                                            </li>
-                                            <br>
-                                        </ul>
-                                        <div class="button-wrapper">
-                                            <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
-                                                    id="buy" value="G_auto" href="buy.php">Buy</button>
-                                                <br><br>
-                                            </form>
-                                            <form method="POST" action="cotizar.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of card -->
-
-                                <div class="card">
-                                    <div class="card-body ">
-                                        <div class="card-title">DIAMOND</div>
-                                        <div class="price"><span class="currency">$</span><span
-                                                class="value">99.99</span></div>
-                                        <div class="frequency">Monthly</div>
-                                        <div class="divider"></div>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Third-Party Liability</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Collision Coverage with Agreed Value
-                                                </div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Expanded Comprehensive Coverage with Deductible
-                                                    Waiver</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Total and Partial Theft Expanded</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Maximum Travel Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Coverage for Occupant Injuries</div>
-                                            </li>
-                                        </ul>
-                                        <div class="button-wrapper">
-                                            <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
-                                                    id="buy" value="D_auto" href="buy.php">Buy</button>
-                                                <br><br>
-
-                                            </form>
-                                            <form method="POST" action="cotizar.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="car" href="cotizar.php">Price Quote</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of card -->
+                                <?php } ?>
 
                             </div> <!-- end of col -->
                         </div> <!-- end of col -->
@@ -553,128 +407,69 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                         <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
                             <div class="row">
-                                <div class="card">
-                                    <div class="card-body ">
-                                        <div class="card-title">SILVER</div>
-                                        <div class="price"><span class="currency">$</span><span
-                                                class="value">44.99</span>
-                                        </div>
-                                        <div class="frequency">Monthly</div>
-                                        <div class="divider"></div>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Liability Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Collision Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Non-collision Coverage</div>
-                                            </li>
-                                            <br><br><br><br>
-                                        </ul>
-                                        <div class="button-wrapper">
-                                            <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
-                                                    id="buy" value="S_util" href="buy.php">Buy</button>
-                                                <br><br>
-                                            </form>
-                                            <form method="POST" action="cotizar.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
-                                            </form>
+
+                                <?php foreach ($segurosUtil as $seguro) { ?>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title"><?php echo htmlspecialchars($seguro['calidad']); ?>
+                                            </div>
+                                            <div class="price"><span class="currency">$</span><span
+                                                    class="value"><?php echo htmlspecialchars($seguro['precio']); ?></span>
+                                            </div>
+                                            <div class="frequency">Monthly</div>
+                                            <div class="divider"></div>
+                                            <ul class="list-unstyled li-space-lg">
+                                                <?php if (trim($seguro['description']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description']); ?></div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description2']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description2']); ?></div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description3']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description3']); ?></div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description4']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description4']); ?></div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description5']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description5']); ?></div>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php if (trim($seguro['description6']) !== '') { ?>
+                                                    <li class="media"><i class="fas fa-check"></i>
+                                                        <div class="media-body">
+                                                            <?php echo htmlspecialchars($seguro['description6']); ?></div>
+                                                    </li>
+                                                <?php } ?>
+                                            </ul>
+                                            <div class="button-wrapper">
+                                                <form method="POST" action="paypal.php">
+                                                    <button type="submit" class="btn-solid-reg page-scroll" name="buy"
+                                                        value="<?php echo htmlspecialchars($seguro['id']); ?>">Buy</button>
+                                                </form>
+                                                <br>
+                                                <form method="POST" action="../actions/Create_pdf.php">
+                                                    <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
+                                                        value="util">Price Quote</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div> <!-- end of card -->
-
-                                <div class="card">
-                                    <div class="card-body ">
-                                        <div class="card-title">GOLD</div>
-                                        <div class="price"><span class="currency">$</span><span
-                                                class="value">84.99</span>
-                                        </div>
-                                        <div class="frequency">Monthly</div>
-                                        <div class="divider"></div>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Extended Liability Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Rental Reimbursement</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Towing and Roadside Assistance</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-times"></i>
-                                                <div class="media-body">Uninsured/Underinsured Motorist Coverage</div>
-                                            </li>
-                                            <br>
-                                        </ul>
-                                        <div class="button-wrapper">
-                                            <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
-                                                    id="buy" value="G_util" href="buy.php">Buy</button>
-                                                <br><br>
-                                            </form>
-                                             <form method="POST" action="cotizar.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of card -->
-
-                                <div class="card">
-                                    <div class="card-body ">
-                                        <div class="card-title">DIAMOND</div>
-                                        <div class="price"><span class="currency">$</span><span
-                                                class="value">149.99</span>
-                                        </div>
-                                        <div class="frequency">Monthly</div>
-                                        <div class="divider"></div>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Agreed Value Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Business Interruption Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Equipment Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Loss of Use Coverage</div>
-                                            </li>
-                                            <li class="media">
-                                                <i class="fas fa-check"></i>
-                                                <div class="media-body">Enhanced Medical Payments</div>
-                                            </li>
-                                        </ul>
-                                        <div class="button-wrapper">
-                                            <form method="POST" action="buy.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="buy"
-                                                    id="buy" value="D_util" href="buy.php">Buy</button>
-                                                <br><br>
-
-                                            </form>
-                                            <form method="POST" action="cotizar.php">
-                                                <button type="submit" class="btn-solid-reg page-scroll" name="pdf"
-                                                    id="pdf" value="industry" href="cotizar.php">Price Quote</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of card -->
+                                <?php } ?>
 
                             </div> <!-- end of col -->
                         </div> <!-- end of col -->

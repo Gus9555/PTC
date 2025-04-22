@@ -1,0 +1,84 @@
+<?php
+    require '../../funcs/conexion.php';
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['user_id']) && isset($_POST['id_compra'])) {
+        $user_id = htmlspecialchars($_POST['user_id']);
+        $id_compra = htmlspecialchars($_POST['id_compra']);
+
+        // Obtener la conexión
+        $pdo = getConnection();
+
+        // Iniciar una transacción para asegurar la integridad de la actualización
+        $pdo->beginTransaction();
+
+        try {
+            // Actualizar el estado de la compra en la tabla compra_plan
+            $stmt = $pdo->prepare("UPDATE compra_plan SET estado = 'activo' WHERE id = :id_compra AND user_id = :user_id");
+            $stmt->bindParam(':id_compra', $id_compra, PDO::PARAM_INT);
+            $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Verificar si la actualización fue exitosa
+            if ($stmt->rowCount() > 0) {
+                // Actualizar el estado del usuario en la tabla users
+                $stmt_user = $pdo->prepare("UPDATE users SET pago = 'activo' WHERE id = :user_id");
+                $stmt_user->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+                $stmt_user->execute();
+
+                // Si todo fue bien, confirmar la transacción
+                $pdo->commit();
+
+                // Enviar respuesta de éxito con SweetAlert
+                echo "<script>
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Payment and user status updated successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(function() {
+                    window.location = 'facturap.php';
+                });
+            </script>";
+            } else {
+                // Si no se actualizó nada, hacer rollback
+                $pdo->rollBack();
+                echo "<script>
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Failed to update purchase status.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                }).then(function() {
+                    window.location = 'error.php';
+                });
+            </script>";
+            }
+        } catch (Exception $e) {
+            // En caso de error, hacer rollback
+            $pdo->rollBack();
+            echo "<script>
+            Swal.fire({
+                title: 'Error',
+                text: 'An error occurred: " . $e->getMessage() . "',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            }).then(function() {
+                window.location = 'error.php';
+            });
+        </script>";
+        }
+    } else {
+        echo "<script>
+        Swal.fire({
+            title: 'Error',
+            text: 'Invalid request.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        }).then(function() {
+            window.location = 'error.php';
+        });
+    </script>";
+    }
+    ?>

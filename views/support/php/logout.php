@@ -1,20 +1,35 @@
 <?php
-    session_start();
-    if(isset($_SESSION['unique_id'])){
-        include_once "config.php";
-        $logout_id = mysqli_real_escape_string($conn, $_GET['logout_id']);
-        if(isset($logout_id)){
+session_start();
+if (isset($_SESSION['unique_id'])) {
+    include_once "config.php";
+    $logout_id = $_GET['logout_id'];
+    
+    if (isset($logout_id)) {
+        try {
+            $pdo = getConnection();
             $status = "Offline now";
-            $sql = mysqli_query($conn, "UPDATE users SET estatus = '{$status}' WHERE unique_id={$_GET['logout_id']}");
-            if($sql){
+            $sql = "UPDATE users SET estatus = :status WHERE unique_id = :logout_id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':status', $status, PDO::PARAM_STR);
+            $stmt->bindParam(':logout_id', $logout_id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
                 session_unset();
                 session_destroy();
-                header("location: ../../../views/user/login.php");
+                header("Location: ../../../views/user/login.php");
+                exit;
             }
-        }else{
-            header("location: ../users.php");
+        } catch (PDOException $e) {
+            echo 'Query failed: ' . $e->getMessage();
+            exit;
         }
-    }else{  
-        header("location: ../../../views/user/login.php");
+    } else {
+        header("Location: ../users.php");
+        exit;
     }
+} else {  
+    header("Location: ../../../views/user/login.php");
+    exit;
+}
 ?>

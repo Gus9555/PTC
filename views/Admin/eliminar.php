@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
     <title>LifeLine</title>
     <link rel="icon" href="../assets/boss/images/favicon.png">
 </head>
@@ -14,54 +14,76 @@
 </html>
 <?php
 require '../../funcs/conexion.php';
-if (!isset($_GET["id"])) {
+
+if (!isset($_POST["id"])) {
     exit("No hay id");
 }
 
-// Incluir el archivo de conexión y asignar el objeto de conexión a la variable $mysqli
+$id = $_POST["id"];
+$id_tipo = $_POST["id_tipo"];
 
-$id = $_GET["id"];
-$id_tipo = $_GET["id_tipo"];
+// Obtener la conexión PDO
+$pdo = getConnection();
 
-// Verificar si la conexión es válida
-if ($mysqli instanceof mysqli) {
+try {
+    // Verificar si el usuario es Admin o Support
+    $sentenciaVerificar = $pdo->prepare("SELECT id_tipo FROM users WHERE id = :id");
+    $sentenciaVerificar->bindParam(':id', $id, PDO::PARAM_INT);
+    $sentenciaVerificar->execute();
+    $resultadoVerificar = $sentenciaVerificar->fetch(PDO::FETCH_ASSOC);
 
-   
-        $sentencia = $mysqli->prepare("DELETE FROM users WHERE id = ?");
-        if (!$sentencia) {
-            exit("Error en la preparación de la consulta: " . $mysqli->error);
-        }
-        $sentencia->bind_param("i", $id);
-        if($id_tipo >= 2)
-        {
-            if($sentencia->execute()) 
-            {
-             echo '<p><script>swal({
-                 title: "Good job!",
-                 text: "Succesfully deleted",
-                 icon: "success",
-                  }).then(function() {
-                 window.location = "TablaU.php";
-                 });</script></p>';
-            }
-        }
-        else
-        {
+    if ($resultadoVerificar['id_tipo'] == 1 || $resultadoVerificar['id_tipo'] == 3) {
+        echo '<p><script>Swal.fire({
+            title: "ERROR",
+            text: "An admin or support user cannot be deactivated",
+            icon: "error",
+            confirmButtonText: "OK",
+            confirmButtonClass: "center-button"
+        }).then(function() {
+            window.location = "TablaU.php";
+        });</script></p>';
+        exit;
+    }
+
+    // Cambiar el estado del usuario según el valor de id_tipo
+    $sentencia = $pdo->prepare("UPDATE users SET id_tipo = :id_tipo WHERE id = :id");
+    if (!$sentencia) {
+        exit("Error en la preparación de la consulta.");
+    }
+    $sentencia->bindParam(':id', $id, PDO::PARAM_INT);
+    $sentencia->bindParam(':id_tipo', $id_tipo, PDO::PARAM_INT);
+    
+    if ($id_tipo == 2 || $id_tipo == 4) {
+        if ($sentencia->execute()) {
+            $message = $id_tipo == 2 ? "Successfully activated" : "Successfully deactivated";
             echo '<p><script>Swal.fire({
-                title: "ERROR",
-                text: "An admin can not be deleted",
-                icon: "error"
-                }).then(function() {
-                    window.location = "TablaU.php";
-                    });</script></p>';
-                 
-            
+                title: "Good job!",
+                text: "' . $message . '",
+                icon: "success",
+                confirmButtonText: "OK",
+                confirmButtonClass: "center-button"
+            }).then(function() {
+                window.location = "TablaU.php";
+            });</script></p>';
         }
-    
-
-    
-} else {
-    exit("Error de conexión");
+    } else {
+        echo '<p><script>Swal.fire({
+            title: "ERROR",
+            text: "An admin or support user cannot be deactivated",
+            icon: "error",
+            confirmButtonText: "OK",
+            confirmButtonClass: "center-button"
+        }).then(function() {
+            window.location = "TablaU.php";
+        });</script></p>';
+    }
+} catch (PDOException $e) {
+    exit("Error en la ejecución de la consulta: " . $e->getMessage());
 }
-
 ?>
+
+<style>
+    .swal2-container .swal2-confirm {
+        margin: 0 auto;
+    }
+</style>

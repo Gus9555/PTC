@@ -1,0 +1,300 @@
+ <!-- Tab medical  ------------------------------------------------------------------- -->
+                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="image-container">
+                                        <img class="img-fluid" src="../assets/boss/images/doctor.png" alt="alternative">
+                                    </div> <!-- end of image-container -->
+                                </div> <!-- end of col -->
+                                <div class="col-lg-6">
+                                    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="password_request"
+                                                        value="<?= $request['password_request'] ?? '0' ?>" />
+                                                    <label class="small mb-1" for="nombre">Full name</label>
+                                                    <input class="form-control-input" id="nombre" name="nombre"
+                                                        type="text" maxlength="35" size="35"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 32)"
+                                                        placeholder="Enter Full name" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="usuario">Phone</label>
+                                                    <input class="form-control-input" id="usuario" maxlength="35"
+                                                        size="35" name="usuario" type="text"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 45 ||  event.charCode == 95 ||  event.charCode == 36 ||  event.charCode == 45 || (event.charCode >= 48 && event.charCode <= 57))"
+                                                        placeholder="Phone" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                            <input class="form-control-input" id="inputEmailAddress" name="email"
+                                                type="email" aria-describedby="emailHelp"
+                                                onkeypress="return (event.charCode == 209 || event.charCode == 241 || (event.charCode >= 64 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 45)||(event.charCode == 46)||(event.charCode == 95)||(event.charCode >= 48 && event.charCode <= 57))"
+                                                maxlength="50" size="50" placeholder="Example@gmail.com" />
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="password_request"
+                                                        value="<?= $request['password_request'] ?? '0' ?>" />
+                                                    <label class="small mb-1" for="nombre">DUI</label>
+                                                    <input class="form-control-input" id="nombre" name="nombre"
+                                                        type="text" maxlength="35" size="35"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 32)"
+                                                        placeholder="DUI" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="usuario">JVPM</label>
+                                                    <input class="form-control-input" id="usuario" maxlength="35"
+                                                        size="35" name="usuario" type="text"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 45 ||  event.charCode == 95 ||  event.charCode == 36 ||  event.charCode == 45 || (event.charCode >= 48 && event.charCode <= 57))"
+                                                        placeholder="JVPM" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="inputEmailAddress">NIT</label>
+                                            <input class="form-control-input" id="inputEmailAddress" name="email"
+                                                type="email" aria-describedby="emailHelp"
+                                                onkeypress="return (event.charCode == 209 || event.charCode == 241 || (event.charCode >= 64 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 45)||(event.charCode == 46)||(event.charCode == 95)||(event.charCode >= 48 && event.charCode <= 57))"
+                                                maxlength="50" size="50" placeholder="NIT" />
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="password_request"
+                                                        value="<?= $request['password_request'] ?? '0' ?>" />
+                                                    <label class="small mb-1" for="nombre">Specialty</label>
+                                                    <input class="form-control-input" id="nombre" name="nombre"
+                                                        type="text" maxlength="35" size="35"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 32)"
+                                                        placeholder="Enter Full name" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="usuario">Sub-specialty</label>
+                                                    <input class="form-control-input" id="usuario" maxlength="35"
+                                                        size="35" name="usuario" type="text"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 45 ||  event.charCode == 95 ||  event.charCode == 36 ||  event.charCode == 45 || (event.charCode >= 48 && event.charCode <= 57))"
+                                                        placeholder="Enter Username" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="inputEmailAddress">address</label>
+                                            <select id="form-control-input" class="form-control">
+                                                <option value="">Select a department</option>
+                                                <option value="1">Ahuachapán</option>
+                                                <option value="2">Cabañas</option>
+                                                <option value="3">Chalatenango</option>
+                                                <option value="4">Cuscatlán</option>
+                                                <option value="5">La Libertad</option>
+                                                <option value="6">La Paz</option>
+                                                <option value="7">La Unión</option>
+                                                <option value="8">Morazán</option>
+                                                <option value="9">San Miguel</option>
+                                                <option value="10">San Salvador</option>
+                                                <option value="11">Santa Ana</option>
+                                                <option value="12">San Vicente</option>
+                                                <option value="13">Sonsonate</option>
+                                                <option value="14">Usulután</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="password_request"
+                                                        value="<?= $request['password_request'] ?? '0' ?>" />
+                                                    <label class="small mb-1" for="nombre">clinic address</label>
+                                                    <input class="form-control-input" id="nombre" name="nombre"
+                                                        type="text" maxlength="35" size="35"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 32)"
+                                                        placeholder="Enter Full name" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="usuario">Attach CV</label>
+                                                    <input class="form-control-input" id="usuario" maxlength="35"
+                                                        size="35" name="usuario" type="file"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 45 ||  event.charCode == 95 ||  event.charCode == 36 ||  event.charCode == 45 || (event.charCode >= 48 && event.charCode <= 57))"
+                                                        placeholder="Enter Username" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="inputPassword">Password</label>
+                                                    <input class="form-control-input" id="inputPassword" maxlength="50"
+                                                        size="50" name="password" placeholder="password"
+                                                        type="password" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="inputConfirmPassword">Confirm
+                                                        Password</label>
+                                                    <input class="form-control-input" id="inputConfirmPassword"
+                                                        name="passwordc" type="password" maxlength="50" size="50"
+                                                        placeholder="Confirm password" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label class="small mb-1" for="usuario">Password should be at least 8 characters
+                                            in length
+                                            and should include at least one upper case letter, one number, and one
+                                            special
+                                            character.</label>
+                                        <div class="form-group mt-4 mb-0">
+                                            <button type="submit" class="form-control-submit-button">Send
+                                                request</button>
+                                        </div>
+                                    </form>
+                                </div> <!-- end of col -->
+                            </div> <!-- end of row -->
+                        </div> <!-- end of tab-pane -->
+                        <!-- end of tab medical------------------------------------------------------------->
+
+                        <!-- Tab constructoras------------------------------------------------------------------------>
+                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="image-container">
+                                        <img class="img-fluid" src="../assets/boss/images/arqui.png" alt="alternative">
+                                    </div> <!-- end of image-container -->
+                                </div> <!-- end of col -->
+                                <div class="col-lg-6">
+                                    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="password_request"
+                                                        value="<?= $request['password_request'] ?? '0' ?>" />
+                                                    <label class="small mb-1" for="nombre">Full name</label>
+                                                    <input class="form-control-input" id="nombre" name="nombre"
+                                                        type="text" maxlength="35" size="35"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 32)"
+                                                        placeholder="Enter Full name" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="usuario">Company name</label>
+                                                    <input class="form-control-input" id="usuario" maxlength="35"
+                                                        size="35" name="usuario" type="text"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 45 ||  event.charCode == 95 ||  event.charCode == 36 ||  event.charCode == 45 || (event.charCode >= 48 && event.charCode <= 57))"
+                                                        placeholder="Enter Username" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                            <input class="form-control-input" id="inputEmailAddress" name="email"
+                                                type="email" aria-describedby="emailHelp"
+                                                onkeypress="return (event.charCode == 209 || event.charCode == 241 || (event.charCode >= 64 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 45)||(event.charCode == 46)||(event.charCode == 95)||(event.charCode >= 48 && event.charCode <= 57))"
+                                                maxlength="50" size="50" placeholder="Example@gmail.com" />
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="inputEmailAddress">address</label>
+                                                    <select id="form-control-input" class="form-control">
+                                                        <option value="">Select a department</option>
+                                                        <option value="1">Ahuachapán</option>
+                                                        <option value="2">Cabañas</option>
+                                                        <option value="3">Chalatenango</option>
+                                                        <option value="4">Cuscatlán</option>
+                                                        <option value="5">La Libertad</option>
+                                                        <option value="6">La Paz</option>
+                                                        <option value="7">La Unión</option>
+                                                        <option value="8">Morazán</option>
+                                                        <option value="9">San Miguel</option>
+                                                        <option value="10">San Salvador</option>
+                                                        <option value="11">Santa Ana</option>
+                                                        <option value="12">San Vicente</option>
+                                                        <option value="13">Sonsonate</option>
+                                                        <option value="14">Usulután</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="inputEmailAddress">Agency</label>
+                                                    <select id="form-control-input" class="form-control">
+                                                        <option value="">Select a Option</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="2">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="password_request"
+                                                        value="<?= $request['password_request'] ?? '0' ?>" />
+                                                    <label class="small mb-1" for="nombre">Phone</label>
+                                                    <input class="form-control-input" id="nombre" name="nombre"
+                                                        type="text" maxlength="35" size="35"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 32)"
+                                                        placeholder="Enter Full name" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="usuario">Attach CV</label>
+                                                    <input class="form-control-input" id="usuario" maxlength="35"
+                                                        size="35" name="usuario" type="file"
+                                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 45 ||  event.charCode == 95 ||  event.charCode == 36 ||  event.charCode == 45 || (event.charCode >= 48 && event.charCode <= 57))"
+                                                        placeholder="Enter Username" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="inputPassword">Password</label>
+                                                    <input class="form-control-input" id="inputPassword" maxlength="50"
+                                                        size="50" name="password" placeholder="password"
+                                                        type="password" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="inputConfirmPassword">Confirm
+                                                        Password</label>
+                                                    <input class="form-control-input" id="inputConfirmPassword"
+                                                        name="passwordc" type="password" maxlength="50" size="50"
+                                                        placeholder="Confirm password" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label class="small mb-1" for="usuario">Password should be at least 8 characters
+                                            in length
+                                            and should include at least one upper case letter, one number, and one
+                                            special
+                                            character.</label>
+                                        <div class="form-group mt-4 mb-0">
+                                            <button type="submit" class="form-control-submit-button">Send
+                                                request</button>
+                                        </div>
+                                    </form>
+                                </div> <!-- end of col -->
+                            </div> <!-- end of row -->
+                        </div> <!-- end of tab-pane -->

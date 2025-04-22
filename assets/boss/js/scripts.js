@@ -156,18 +156,20 @@
     });
 
 
-    /* Sign Up Form */
-    $("#signUpForm").validator().on("submit", function(event) {
-    	if (event.isDefaultPrevented()) {
-            // handle the invalid form...
-            sformError();
-            ssubmitMSG(false, "Please fill all fields!");
-        } else {
-            // everything looks good!
-            event.preventDefault();
-            ssubmitForm();
-        }
-    });
+   /* Sign Up Form */
+/* Sign Up Form */
+$("#signUpForm").on("submit", function(event) {
+    if (event.isDefaultPrevented()) {
+        // handle the invalid form...
+        sformError();
+        ssubmitMSG(false, "Please fill all fields!");
+    } else {
+        // everything looks good!
+        event.preventDefault();
+        ssubmitForm();
+    }
+});
+
 
     function ssubmitForm() {
         // initiate variables with form content
@@ -214,17 +216,17 @@
 
 
     /* Log In Form */
-    $("#logInForm").validator().on("submit", function(event) {
-    	if (event.isDefaultPrevented()) {
+   // $("#logInForm").validator().on("submit", function(event) {
+    //	if (event.isDefaultPrevented()) {
             // handle the invalid form...
-            lformError();
-            lsubmitMSG(false, "Please fill all fields!");
-        } else {
-            // everything looks good!
-            event.preventDefault();
-            lsubmitForm();
-        }
-    });
+       //     lformError();
+//lsubmitMSG(false, "Please fill all fields!");
+     //   } else {
+      //      // everything looks good!
+      //      event.preventDefault();
+//lsubmitForm();
+     //   }
+  //  });
 
     function lsubmitForm() {
         // initiate variables with form content

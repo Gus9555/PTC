@@ -1,0 +1,484 @@
+ <!-- registro.php -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
+  
+    <title>LifeLine</title>
+    <link rel="icon" href="../assets/boss/images/favicon.png">
+    <!-- Google Sign-In Library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
+    <meta name="author" content="Inovatik">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="../../assets/boss/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/boss/boss/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../../assets/boss/css/swiper.css" rel="stylesheet">
+    <link href="../../assets/boss/css/magnific-popup.css" rel="stylesheet">
+    <link href="../../assets/boss/css/styles2.css" rel="stylesheet">
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../../assets/images/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+    <a href="body" class="back-to-top page-scroll">Back to Top</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand logo-image" href="login.php"><img src="../../assets/boss/images/logo.png"
+                    alt="alternative"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <div class="spinner-wrapper">
+                    <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                </div>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.php">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../spanish/registro.php">ESPAÑOL <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="login.php">LOG IN</a>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="header" class="ex-2-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Sign Up</h1>
+                    <br>
+                    <!-- Sign Up Form -->
+                    <div class="form-container">
+                        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="hidden" name="password_request"
+                                            value="<?= $request['password_request'] ?? '0' ?>" />
+                                        <label class="small mb-1" for="nombre">Full name</label>
+                                        <input class="form-control-input" id="nombre" name="nombre" type="text"
+                                            maxlength="35" size="35"
+                                            onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 32)"
+                                            placeholder="Enter Full name" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="usuario">Username</label>
+                                        <input class="form-control-input" id="usuario" maxlength="35" size="35"
+                                            name="usuario" type="text"
+                                            onkeypress="return (event.charCode >= 65 && event.charCode <= 122 ||  event.charCode == 45 ||  event.charCode == 95 ||  event.charCode == 36 ||  event.charCode == 45 || (event.charCode >= 48 && event.charCode <= 57))"
+                                            placeholder="Enter Username" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                <input class="form-control-input" id="inputEmailAddress" name="email" type="email"
+                                    aria-describedby="emailHelp"
+                                    onkeypress="return (event.charCode == 209 || event.charCode == 241 || (event.charCode >= 64 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) ||(event.charCode == 46)||(event.charCode == 95)||(event.charCode >= 48 && event.charCode <= 57))"
+                                    maxlength="50" size="50" placeholder="Example@gmail.com" />
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="inputPassword">Password</label>
+                                        <input class="form-control-input" id="inputPassword" maxlength="50" size="50"
+                                            name="password" placeholder="password" type="password" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="inputConfirmPassword">Confirm
+                                            Password</label>
+                                        <input class="form-control-input" id="inputConfirmPassword" name="passwordc"
+                                            type="password" maxlength="50" size="50" placeholder="Confirm password" />
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="small mb-1" for="usuario">Password should be at least 8 characters in length
+                                and should include at least one upper case letter, one number, and one special
+                                character.</label>
+                            <div class="form-group mt-4 mb-0">
+                                <button type="submit" class="form-control-submit-button">Create Account</button>
+                            </div>
+                        </form>
+                        <div id="g_id_onload"
+                            data-client_id="951472915187-6eg4cdkfjpv87uqlu1ru2skn2pled560.apps.googleusercontent.com"
+                            data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse"
+                            data-auto_prompt="false">
+                        </div>
+                        <div class="g_id_signin" data-type="standard"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scripts -->
+    <script src="../../assets/boss/js/jquery.min.js"></script>
+    <script src="../../assets/boss/js/popper.min.js"></script>
+    <script src="../../assets/boss/js/bootstrap.min.js"></script>
+    <script src="../../assets/boss/js/jquery.easing.min.js"></script>
+    <script src="../../assets/boss/js/swiper.min.js"></script>
+    <script src="../../assets/boss/js/jquery.magnific-popup.js"></script>
+    <script src="../../assets/boss/js/scripts.js"></script>
+    
+    <script>
+        $(function () {
+            $('#inputPassword').on('keypress', function (e) {
+                if (e.which == 32) {
+                    console.log('Space Detected');
+                    return false;
+                }
+            });
+        });
+        $(function () {
+            $('#inputConfirmPassword').on('keypress', function (e) {
+                if (e.which == 32) {
+                    console.log('Space Detected');
+                    return false;
+                }
+            });
+        });
+
+        function handleCredentialResponse(response) {
+            const data = JSON.parse(atob(response.credential.split('.')[1]));
+            console.log("Datos a enviar al servidor:", data); // Agregar para depuración
+            // Send data to your server
+            $.ajax({
+                type: 'POST',
+                url: 'your_registration_endpoint.php', // Asegúrate de que esta ruta sea correcta
+                data: {
+                    google_id: data.sub,
+                    name: data.name,
+                    email: data.email
+                },
+                success: function (response) {
+                    console.log("Respuesta del servidor:", response); // Agregar para depuración
+                    if (response.success) {
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "Successfully registered with Google",
+                            icon: "success",
+                        }).then(function () {
+                            window.location = "login.php";
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "Error",
+                            text: response.message,
+                            icon: "error",
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire({
+                        title: "Error",
+                        text: "An error occurred: " + error,
+                        icon: "error",
+                    });
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
+
+<?php
+require_once '../../funcs/conexion.php'; // Ensure the connection file is included
+$pdo = getConnection(); // Get the database connection
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require '../../funcs/funcs.php';
+$errors = array();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recibir y escapar datos del formulario
+    $nombre = trim(htmlspecialchars($_POST['nombre']));
+    $usuario = trim(htmlspecialchars($_POST['usuario']));
+    $password = trim(htmlspecialchars($_POST['password']));
+    $passwordc = trim(htmlspecialchars($_POST['passwordc']));
+    $email = trim(htmlspecialchars($_POST['email']));
+    $password_request = $_POST['password_request'] ?? '0';  // Asegúrate de que esté definido
+
+    // Validaciones y verificaciones de seguridad
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number = preg_match('@[0-9]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
+    $EspacioBlanco = "    ";
+
+    if (empty($nombre) || empty($usuario) || empty($password) || empty($passwordc) || empty($email) ||  empty($EspacioBlanco)) {
+        echo '<p><script>Swal.fire({
+            title: "ERROR!",
+            text: "Do not leave empty fields",
+            icon: "error"
+            });</script></p>';
+        $errors[] = "blank spaces";
+    } elseif (!isEmail($email)) {
+        echo '<p><script>Swal.fire({
+            title: "ERROR",
+            text: "Invalid E-Mail address",
+            icon: "error"
+            });</script></p>';
+    } elseif (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+        echo '<p><script>Swal.fire({
+            title: "ERROR",
+            text: "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.",
+            icon: "error"
+            });</script></p>';
+        $errors[] = "Password requirements not met";
+    } elseif (!validaPassword($password, $passwordc)) {
+        echo '<p><script>Swal.fire({
+            title: "ERROR",
+            text: "Both passwords need to match",
+            icon: "error"
+            });</script></p>';
+        $errors[] = "Passwords do not match";
+    } elseif (usuarioExiste($pdo, $usuario)) {
+        echo '<p><script>Swal.fire({
+            title: "ERROR",
+            text: "This username already exists",
+            icon: "error"
+            });</script></p>';
+        $errors[] = "Username already exists";
+    } elseif (emailExiste($pdo, $email)) {
+        echo '<p><script>Swal.fire({
+            title: "ERROR",
+            text: "This E-Mail already exists",
+            icon: "error"
+            });</script></p>';
+        $errors[] = "Email already exists";
+    } else {
+        // Todos los datos son válidos, proceder con el registro
+$pass_hash = encryptPayload($password);
+        $token = generateToken(); // Función para generar un token
+        $tipo_usuario = 2; // Asigna el tipo de usuario correspondiente
+        $codigo = generador(); // Función para generar un código
+        $estatus = "Disconnected";
+        $ran_id = rand(time(), 100000000);
+        $fechaRegistro = date("d/m/Y h:i a", time() - 3600 * date('I'));
+        $nombre_hash = encryptPayload($nombre);
+        $email_hash = encryptPayload($email);
+
+        // Registro del usuario en la base de datos
+        $registro = registraUsuario($pdo, $usuario, $pass_hash, $nombre_hash, $email_hash, $token, $tipo_usuario, $codigo, $estatus, $fechaRegistro, $ran_id, $password_request);
+
+        // Manejo de la respuesta
+        if ($registro > 0) {
+            $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC2/views/user/activar.php?id=' . $registro . '&val=' . $token;
+            //el asuto y cuerpo es lo que ira en el mesaje del correo
+            $asunto = 'PIN - LIFELINE';
+            $cuerpo = "Dear $nombre: <br /><br />this is your personal identification code, do not share it with anyone: $codigo <br /><br /> Confirm your identity <a href='$url'>Confirm E-Mail</a>";
+            //aca se envia el correo usando las anteriores mencionadas variables
+            if (enviarEmail($email, $nombre, $asunto, $cuerpo)) {
+                echo '<p><script>swal({
+                    title: "Good job!",
+                    text: "Successfully, Confirm your identity in your email ",
+                    icon: "success",
+                     }).then(function() {
+                    window.location = "../user/login.php";
+                    });</script></p>';
+            } else {
+                echo '<p><script>Swal.fire({
+                    title: "Opsss!",
+                    text: "We got a problem, try again",
+                    type: "error"
+                    }).then(function() {
+                    window.location = "../views/user/registro.php";
+                    });</script></p>';
+            }
+        } else {
+            echo '<p><script>Swal.fire({
+                title: "ERROR",
+                text: "There was an error creating your account",
+                icon: "error"
+                });</script></p>';
+        }
+    }
+}
+?>
+
+
+ <!-- registro.php -->
+
+<!-- your_registration_endpoint.php -->
+
+<?php
+require_once '../../funcs/conexion.php'; // Asegúrate de que esta ruta sea correcta
+require '../../funcs/funcs.php'; // Asegúrate de que esta ruta sea correcta
+
+$response = array('success' => false, 'message' => '');
+
+// Habilitar la depuración de errores
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+error_log("Inicio de la solicitud de registro.");
+
+// Definir una nueva función única para registrar usuario
+function registraUsuarioGoogle($pdo, $usuario, $password, $nombre, $email, $token, $tipo_usuario, $codigo, $estatus, $fechaRegistro, $ran_id, $api, $password_request = 0)
+{
+    date_default_timezone_set("America/Bogota");
+
+    // Preparación de datos adicionales
+    $hora = date('h:i a', time() - 3600 * date('I'));
+    $fecha = date("d/m/Y");
+    $estatus = "Disconnected";
+    $ran_id = rand(time(), 100000000);
+    $fechaRegistro = $fecha . " " . $hora;
+
+    // Check if the tipo_usuario exists in the tipo_usuario table
+    $stmt = $pdo->prepare("SELECT id FROM tipo_usuario WHERE id = :id_tipo");
+    $stmt->bindParam(':id_tipo', $tipo_usuario, PDO::PARAM_INT);
+    $stmt->execute();
+    if (!$stmt->fetch()) {
+        // If the tipo_usuario doesn't exist, insert it into the tipo_usuario table
+        $stmt = $pdo->prepare("INSERT INTO tipo_usuario (id, tipo) VALUES (:id_tipo, :tipo)");
+        $stmt->bindParam(':id_tipo', $tipo_usuario, PDO::PARAM_INT);
+        $defaultTipo = 'Some default type'; // Ajusta el valor por defecto según sea necesario
+        $stmt->bindParam(':tipo', $defaultTipo, PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
+    // Preparación y ejecución de la consulta SQL
+    $stmt = $pdo->prepare("INSERT INTO users (usuario, password, nombre, correo, token, id_tipo, codigo, estatus, fecha_registro, unique_id, token_password, password_request, activacion, Api) 
+                          VALUES (:usuario, :password, :nombre, :correo, :token, :id_tipo, :codigo, :estatus, :fecha_registro, :unique_id, '', :password_request, 0, :api)");
+    $stmt->bindParam(':usuario', $usuario, PDO::PARAM_STR);
+    $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+    $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+    $stmt->bindParam(':correo', $email, PDO::PARAM_STR);
+    $stmt->bindParam(':token', $token, PDO::PARAM_STR);
+    $stmt->bindParam(':id_tipo', $tipo_usuario, PDO::PARAM_INT);
+    $stmt->bindParam(':codigo', $codigo, PDO::PARAM_STR);
+    $stmt->bindParam(':estatus', $estatus, PDO::PARAM_STR);
+    $stmt->bindParam(':fecha_registro', $fechaRegistro, PDO::PARAM_STR);
+    $stmt->bindParam(':unique_id', $ran_id, PDO::PARAM_INT);
+    $stmt->bindParam(':password_request', $password_request, PDO::PARAM_INT); // Ajusta el tipo de dato según tu base de datos
+    $stmt->bindParam(':api', $api, PDO::PARAM_INT); // Establece el campo Api
+
+    return $stmt->execute() ? $pdo->lastInsertId() : 0;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    error_log("Método POST recibido.");
+
+    // Recibir y validar los datos enviados por la solicitud AJAX
+    $google_id = isset($_POST['google_id']) ? trim($_POST['google_id']) : '';
+    $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+
+    error_log("Datos recibidos - Google ID: $google_id, Nombre: $name, Email: $email");
+
+    if (empty($google_id) || empty($name) || empty($email)) {
+        $response['message'] = "Missing required fields";
+        echo json_encode($response);
+        exit();
+    }
+
+    // Generar los datos necesarios para el registro
+    $usuario = $google_id;
+    $password = ''; // No necesitas contraseña para la autenticación con Google
+    $token = bin2hex(random_bytes(16)); // Generar un token aleatorio
+    $tipo_usuario = 2; // Asigna el tipo de usuario correspondiente
+    $codigo = bin2hex(random_bytes(3)); // Generar un código aleatorio
+    $estatus = 'Disconnected';
+    $fechaRegistro = date("d/m/Y h:i a", time() - 3600 * date('I'));
+    $ran_id = rand(time(), 100000000);
+    $api = 1; // Establecer Api a 1 para los registros a través de la API
+
+    error_log("Datos para registro generados - Usuario: $usuario, Token: $token, Tipo Usuario: $tipo_usuario, Código: $codigo, Estatus: $estatus, Fecha Registro: $fechaRegistro, Ran ID: $ran_id, Api: $api");
+
+    // Verificar si el usuario ya existe
+    $pdo = getConnection();
+    if (emailExiste($pdo, $email)) {
+        error_log("El email ya está registrado: $email");
+        $response['message'] = "This email is already registered";
+        echo json_encode($response);
+        exit();
+    }
+
+    // Registrar el usuario en la base de datos
+    try {
+        $registro = registraUsuarioGoogle($pdo, $usuario, $password, $name, $email, $token, $tipo_usuario, $codigo, $estatus, $fechaRegistro, $ran_id, $api);
+
+        if ($registro > 0) {
+            // Generar URL de activación
+            $url = 'http://' . $_SERVER["SERVER_NAME"] . '/PTC2/views/user/activar.php?id=' . $registro . '&val=' . $token;
+            
+            // Preparar el asunto y el cuerpo del correo
+            $asunto = 'PIN - LIFELINE';
+            $cuerpo = "Dear $name:<br><br>This is your personal identification code, do not share it with anyone: $codigo<br><br>Confirm your identity <a href='$url'>Confirm E-Mail</a>";
+
+            // Enviar email de bienvenida
+            if (enviarEmail($email, $name, $asunto, $cuerpo)) {
+                $response['success'] = true;
+                $response['message'] = "User registered successfully and email sent";
+                error_log("Usuario registrado con éxito y email enviado. ID del usuario: $registro");
+            } else {
+                $response['success'] = true;
+                $response['message'] = "User registered successfully, but email not sent";
+                error_log("Usuario registrado con éxito, pero el email no se pudo enviar. ID del usuario: $registro");
+            }
+        } else {
+            $response['message'] = "There was an error registering the user";
+            error_log("Error al registrar el usuario.");
+        }
+    } catch (Exception $e) {
+        // Captura y maneja cualquier error
+        $response['message'] = "Error: " . $e->getMessage();
+        error_log("Excepción capturada: " . $e->getMessage());
+    }
+} else {
+    $response['message'] = "Invalid request method";
+    error_log("Método de solicitud no válido.");
+}
+
+echo json_encode($response);
+error_log("Fin de la solicitud de registro.");
+?>
+
+
+<!-- your_registration_endpoint.php -->
+
+
